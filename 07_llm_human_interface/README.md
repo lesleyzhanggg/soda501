@@ -1,4 +1,4 @@
-﻿# Week 12
+﻿# LLM-Assisted Extraction
 
 **Theme:** LLM-Assisted Extraction: Human-in-the-Loop
 
@@ -13,11 +13,5 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Gilardi et al. (2023) PNAS
+- Heseltine, M. & Bernhard Clemm von Hohenberg. (2024) Research & Politics

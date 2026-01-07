@@ -1,4 +1,4 @@
-﻿# Week 03
+﻿# API
 
 **Theme:** APIs at Scale: Auth, Pagination, Rate Limits
 
@@ -13,11 +13,5 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Bail et al. (2018) PNAS
+- Barbeta, P. (2015) Political Analysis

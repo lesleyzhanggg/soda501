@@ -1,4 +1,4 @@
-﻿# Week 09
+﻿# Spatial Data
 
 **Theme:** Spatial Data + GIS Workflows
 
@@ -13,11 +13,8 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
+- Harari, M. (2020) AER
+- Panagopoulos et al. (2023) Land
 
 ## Notes
 - Add links to slides / notebooks / datasets here as you publish them.

@@ -1,4 +1,4 @@
-﻿# Week 02
+﻿# Web as Data
 
 **Theme:** The Web as Data: Scraping + HTML
 
@@ -13,11 +13,8 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
+- Brown et al. (2025) Big Data and Society
+- Mahdavi, P. (2017) PSRM
 
 ## Notes
 - Add links to slides / notebooks / datasets here as you publish them.

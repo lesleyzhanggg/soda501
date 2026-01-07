@@ -1,4 +1,4 @@
-﻿# Week 10
+﻿# Reproducibility
 
 **Theme:** Reproducibility: Git, Containers, Research Artifacts
 
@@ -13,11 +13,9 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
+- Heath, Davidson, et al. (2023) The Journal of Finance
+- Holzmeister,et al. (2025) Nature Human Behaviour
 
-## Assignment
-- TBD
 
 ## Notes
 - Add links to slides / notebooks / datasets here as you publish them.

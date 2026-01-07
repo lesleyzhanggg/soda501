@@ -1,4 +1,4 @@
-﻿# Week 07
+﻿# Text as Data
 
 **Theme:** Text as Data: From Raw Text to Features
 
@@ -13,11 +13,8 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
+- Alsarra et al. (2025) Computational and Mathematical Organization Theory
+- Burnham et al. (2025) Political Analysis
 
 ## Notes
 - Add links to slides / notebooks / datasets here as you publish them.

@@ -1,4 +1,4 @@
-﻿# Week 04
+﻿# Surveys, Platforms, and Crowdsourcing Data
 
 **Theme:** Surveys, Platforms, and Crowdsourcing Data
 
@@ -13,11 +13,5 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Berinsky et al. (2012) Political Analysis
+- Bisbee (2024) Political Analysis

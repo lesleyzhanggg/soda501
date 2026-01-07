@@ -1,4 +1,4 @@
-﻿# Week 11
+﻿# Data Quality
 
 **Theme:** Data Quality + Validation
 
@@ -13,11 +13,5 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Lazer et al. (2014) Science
+- Parkinson, S. (2024) APSR

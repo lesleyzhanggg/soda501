@@ -1,4 +1,4 @@
-﻿# Week 01
+﻿# Introdcution
 
 **Theme:** Course Setup + Reproducible Workflow
 
@@ -12,12 +12,8 @@
 - Use /data/raw, /data/intermediate, /data/processed for datasets and outputs
 - Environment/setup notes live in /environment
 
-## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
 ## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Set up Git account
+- Download R, Python, Git, etc.
+- Create cloud storage for class content
+- Create ROAR account

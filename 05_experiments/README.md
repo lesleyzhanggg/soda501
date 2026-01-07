@@ -1,23 +1,21 @@
-﻿# Week 13
+﻿# Experiments
 
 **Theme:** Quantum Computing for Social Data (Intro)
 
+
 ## Goals
-- Learn basics of qubits/circuits and what 'speedup' does/doesn’t mean.
-- Implement a simple quantum workflow (simulation/circuits).
-- Connect quantum examples to social-science data tasks conceptually.
+- Understand core experimental concepts: potential outcomes, random assignment, compliance, and interference.
+- Design and diagnose experiments (power, balance, attrition, noncompliance).
+- Estimate treatment effects (ATE, ITT, TOT) and interpret results clearly.
+- Connect experiments to common social-science data tasks (field experiments, survey experiments, online experiments).
 
 ## Materials
-- demo/ — in-class demo code (if present)
-- Use /data/raw, /data/intermediate, /data/processed for datasets and outputs
-- Environment/setup notes live in /environment
+- `demo/` — in-class demo code (if present)
+- Add links to slides / notebooks / datasets below as you publish them
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
+- Allcott et al. (2020) AER
+- Bond et al. (2012) Nature
 
 ## Notes
 - Add links to slides / notebooks / datasets here as you publish them.

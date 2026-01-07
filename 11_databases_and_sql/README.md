@@ -1,4 +1,4 @@
-﻿# Week 05
+﻿# Databases + SQL
 
 **Theme:** Databases + SQL for Social Data
 
@@ -13,11 +13,5 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Baumgartner et al. (2020) Proceedings of the international AAAI conference on web and social media.
+- Green et al. (2025) APSR

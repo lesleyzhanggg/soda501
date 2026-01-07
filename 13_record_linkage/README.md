@@ -1,4 +1,4 @@
-﻿# Week 06
+﻿# Record Linkage
 
 **Theme:** Record Linkage + Entity Resolution
 
@@ -13,11 +13,6 @@
 - Environment/setup notes live in /environment
 
 ## Readings
-- TBD (add 2 articles that use this week's technique)
-- TBD
-
-## Assignment
-- TBD
-
-## Notes
-- Add links to slides / notebooks / datasets here as you publish them.
+- Ornstein, J. (2025) Political Analysis
+- Nyseth Nzitatira et al. (2024) ASR
+- Nyseth Nzitatira et al. (2022) JPR (optional)
