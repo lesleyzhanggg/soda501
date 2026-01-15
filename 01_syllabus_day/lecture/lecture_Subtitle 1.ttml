@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:ittp="http://www.w3.org/ns/ttml/profile/imsc1#parameter" xmlns:itts="http://www.w3.org/ns/ttml/profile/imsc1#styling" ttp:profile="http://www.w3.org/ns/ttml/profile/imsc1/text" ttp:frameRate="24" ttp:timeBase="media">
+  <head>
+    <styling>
+      <style xml:id="s0" tts:color="#ffffff" tts:opacity="1" tts:fontSize="100%" tts:fontFamily="proportionalSansSerif" tts:fontWeight="bold" tts:textOutline="#ffffff 1px" tts:textAlign="center"/>
+    </styling>
+    <layout>
+      <region xml:id="r0" tts:origin="11.047% 74.884%" tts:extent="77.917% 10.278%" tts:displayAlign="center"/>
+    </layout>
+  </head>
+  <body>
+    <div xml:id="d0" region="r0" style="s0">
+      <p begin="01:00:02.625" end="01:00:03.791">Hi everyone, today I'm going to give a</p>
+      <p begin="01:00:03.791" end="01:00:04.833">quick overview of the</p>
+      <p begin="01:00:04.833" end="01:00:05.583">course's human structure.</p>
+      <p begin="01:00:06.416" end="01:00:07.583">So in this course we're going to treat</p>
+      <p begin="01:00:07.583" end="01:00:08.791">big social data as</p>
+      <p begin="01:00:08.791" end="01:00:09.708">something more than just a</p>
+      <p begin="01:00:09.708" end="01:00:10.333">set of tools.</p>
+      <p begin="01:00:10.666" end="01:00:11.958">The core idea is that the modern social</p>
+      <p begin="01:00:11.958" end="01:00:12.875">science increasingly</p>
+      <p begin="01:00:12.875" end="01:00:15.000">depends on data that are large,</p>
+      <p begin="01:00:15.000" end="01:00:17.000">messy, and heterogenous, and often are</p>
+      <p begin="01:00:17.000" end="01:00:17.958">produced by systems that</p>
+      <p begin="01:00:17.958" end="01:00:19.041">were never built for research.</p>
+      <p begin="01:00:20.041" end="01:00:21.500">So in this first syllabus day lecture</p>
+      <p begin="01:00:21.500" end="01:00:22.333">we're going to set up a</p>
+      <p begin="01:00:22.333" end="01:00:23.666">course frame, what we mean</p>
+      <p begin="01:00:23.666" end="01:00:25.750">by social data, what comes with problems</p>
+      <p begin="01:00:25.750" end="01:00:26.375">that we've repeated</p>
+      <p begin="01:00:26.375" end="01:00:28.125">over your term two, and how</p>
+      <p begin="01:00:28.125" end="01:00:29.333">the course is organized weekly.</p>
+      <p begin="01:00:32.625" end="01:00:34.000">So I want to start with a simple claim.</p>
+      <p begin="01:00:34.833" end="01:00:36.541">The work of social data is not only</p>
+      <p begin="01:00:36.541" end="01:00:37.458">analysis, it's</p>
+      <p begin="01:00:37.458" end="01:00:38.875">everything upstream of analysis.</p>
+      <p begin="01:00:39.458" end="01:00:41.291">This course examines how social data are</p>
+      <p begin="01:00:41.291" end="01:00:42.250">created, collected,</p>
+      <p begin="01:00:42.541" end="01:00:44.500">curated, linked, validated, and</p>
+      <p begin="01:00:44.500" end="01:00:45.875">shared to scale, and under</p>
+      <p begin="01:00:45.875" end="01:00:46.958">real research constraints.</p>
+      <p begin="01:00:47.916" end="01:00:48.833">So let me make that concrete.</p>
+      <p begin="01:00:49.541" end="01:00:51.375">Suppose we see a paper with a model and</p>
+      <p begin="01:00:51.375" end="01:00:52.500">results we like, the</p>
+      <p begin="01:00:52.500" end="01:00:53.625">reliability of those results</p>
+      <p begin="01:00:53.708" end="01:00:55.250">depends on things like where the data</p>
+      <p begin="01:00:55.250" end="01:00:56.750">came from, what got</p>
+      <p begin="01:00:56.750" end="01:00:58.250">measured versus what was left</p>
+      <p begin="01:00:58.250" end="01:01:01.000">out, how missing is handled, how records</p>
+      <p begin="01:01:01.000" end="01:01:02.250">were linked, where the</p>
+      <p begin="01:01:02.250" end="01:01:03.541">units were duplicated, where</p>
+      <p begin="01:01:03.541" end="01:01:05.500">the labels were consistent, where the</p>
+      <p begin="01:01:05.500" end="01:01:06.666">whole pipeline can rerun.</p>
+      <p begin="01:01:07.666" end="01:01:08.666">So in this class we're going</p>
+      <p begin="01:01:08.666" end="01:01:10.541">to push attention upstream.</p>
+      <p begin="01:01:11.250" end="01:01:12.416">Once you're going to talk about modeling,</p>
+      <p begin="01:01:12.916" end="01:01:14.583">we're going to treat the data pipeline as</p>
+      <p begin="01:01:14.583" end="01:01:16.500">the object of methodological scrutiny.</p>
+      <p begin="01:01:18.125" end="01:01:20.291">So one core idea here, at</p>
+      <p begin="01:01:20.291" end="01:01:21.541">scale doesn't just mean bigger.</p>
+      <p begin="01:01:21.583" end="01:01:23.708">It means you start running into failure</p>
+      <p begin="01:01:23.708" end="01:01:24.958">modes that don't show up</p>
+      <p begin="01:01:24.958" end="01:01:26.291">in small project things,</p>
+      <p begin="01:01:26.791" end="01:01:28.041">and things often break</p>
+      <p begin="01:01:28.041" end="01:01:28.958">easily in these cases.</p>
+      <p begin="01:01:29.750" end="01:01:30.708">So under this</p>
+      <p begin="01:01:30.708" end="01:01:31.916">constraints, defaults matter.</p>
+      <p begin="01:01:32.458" end="01:01:33.750">The quality of the problems can become</p>
+      <p begin="01:01:33.750" end="01:01:35.583">systematic rather than idiosyncratic.</p>
+      <p begin="01:01:40.625" end="01:01:41.875">So what counts as social data?</p>
+      <p begin="01:01:42.583" end="01:01:44.000">In this course, social data includes</p>
+      <p begin="01:01:44.000" end="01:01:45.541">information about or</p>
+      <p begin="01:01:45.541" end="01:01:47.333">arising from a human interaction,</p>
+      <p begin="01:01:48.791" end="01:01:50.666">institutions, organizations, digital</p>
+      <p begin="01:01:50.666" end="01:01:52.416">platforms, text, networks,</p>
+      <p begin="01:01:52.875" end="01:01:54.041">spatial traces and sensors.</p>
+      <p begin="01:01:55.166" end="01:01:56.416">So yes, surveys and administrative</p>
+      <p begin="01:01:56.416" end="01:01:57.458">records are going to still account.</p>
+      <p begin="01:01:58.125" end="01:01:59.208">But we're also going to work with data</p>
+      <p begin="01:01:59.208" end="01:02:00.416">that came from web pages,</p>
+      <p begin="01:02:00.416" end="01:02:01.958">APIs, digitized documents,</p>
+      <p begin="01:02:02.625" end="01:02:04.458">communications and relational structures</p>
+      <p begin="01:02:04.458" end="01:02:06.291">like co-sponsorship networks or online</p>
+      <p begin="01:02:06.291" end="01:02:07.166">interaction networks.</p>
+      <p begin="01:02:08.541" end="01:02:10.291">A big reason this matters is that these</p>
+      <p begin="01:02:10.291" end="01:02:11.375">modalities come from</p>
+      <p begin="01:02:11.375" end="01:02:12.041">different assumptions.</p>
+      <p begin="01:02:13.000" end="01:02:14.208">Text data forces you to decide what</p>
+      <p begin="01:02:14.208" end="01:02:16.083">counts as a document and</p>
+      <p begin="01:02:16.083" end="01:02:17.000">how meaning is represented.</p>
+      <p begin="01:02:17.791" end="01:02:19.208">Network data forces you to decide what</p>
+      <p begin="01:02:19.208" end="01:02:21.416">counts as a time and what</p>
+      <p begin="01:02:21.416" end="01:02:22.750">the unit of analysis is.</p>
+      <p begin="01:02:23.875" end="01:02:25.125">Statial data forces you to care about</p>
+      <p begin="01:02:25.125" end="01:02:26.500">coordinate systems, aggregation</p>
+      <p begin="01:02:26.500" end="01:02:27.583">boundaries and remote</p>
+      <p begin="01:02:27.583" end="01:02:28.750">sensing measurement error.</p>
+      <p begin="01:02:29.916" end="01:02:31.458">A lot of the modern social science are</p>
+      <p begin="01:02:31.458" end="01:02:32.541">produced by platforms or</p>
+      <p begin="01:02:32.541" end="01:02:33.583">systems that are optimizing</p>
+      <p begin="01:02:33.708" end="01:02:35.666">something other than scientific validity</p>
+      <p begin="01:02:35.666" end="01:02:37.916">engagement, moderation, compliance,</p>
+      <p begin="01:02:38.375" end="01:02:39.541">things like ad revenue,</p>
+      <p begin="01:02:39.541" end="01:02:40.416">logistic efficiency.</p>
+      <p begin="01:02:41.333" end="01:02:42.625">That doesn't make them unusable.</p>
+      <p begin="01:02:42.958" end="01:02:44.083">It means we have to study them as</p>
+      <p begin="01:02:44.083" end="01:02:44.750">artifacts of the</p>
+      <p begin="01:02:44.750" end="01:02:45.791">systems that reduce them.</p>
+      <p begin="01:02:50.791" end="01:02:51.458">So here's the core</p>
+      <p begin="01:02:51.458" end="01:02:52.291">premise of this course.</p>
+      <p begin="01:02:53.333" end="01:02:55.041">First, data are constructed, not found.</p>
+      <p begin="01:02:55.500" end="01:02:57.000">Even the data feel out there.</p>
+      <p begin="01:02:57.833" end="01:02:59.541">They only become available after choices,</p>
+      <p begin="01:03:00.083" end="01:03:01.500">what to scrape, what to store, how to</p>
+      <p begin="01:03:01.500" end="01:03:02.916">parse, how to define entities,</p>
+      <p begin="01:03:03.458" end="01:03:04.333">how to code ambiguity,</p>
+      <p begin="01:03:04.708" end="01:03:05.708">which markers to exclude.</p>
+      <p begin="01:03:07.041" end="01:03:08.625">Second, measurement choices or</p>
+      <p begin="01:03:08.625" end="01:03:09.541">theoretical choices.</p>
+      <p begin="01:03:10.083" end="01:03:11.500">If we're studying polarization, your</p>
+      <p begin="01:03:11.500" end="01:03:13.666">operationalization embeds a theory about</p>
+      <p begin="01:03:13.666" end="01:03:14.708">what polarization is.</p>
+      <p begin="01:03:15.333" end="01:03:16.833">If you're studying violence, your event</p>
+      <p begin="01:03:16.833" end="01:03:18.208">definition embeds a theory</p>
+      <p begin="01:03:18.208" end="01:03:19.458">about what counts as violence.</p>
+      <p begin="01:03:20.083" end="01:03:21.291">If you're studying influence, your</p>
+      <p begin="01:03:21.291" end="01:03:23.291">network construction embeds a theory of</p>
+      <p begin="01:03:23.291" end="01:03:24.708">what influence looks like.</p>
+      <p begin="01:03:25.500" end="01:03:26.833">So third, collection decisions</p>
+      <p begin="01:03:26.833" end="01:03:28.000">shape down training influence.</p>
+      <p begin="01:03:29.333" end="01:03:30.333">Third, collection decisions</p>
+      <p begin="01:03:30.333" end="01:03:31.500">shape down training influence.</p>
+      <p begin="01:03:32.166" end="01:03:33.250">If coverage is uneven,</p>
+      <p begin="01:03:33.500" end="01:03:34.708">you don't just have noise.</p>
+      <p begin="01:03:35.208" end="01:03:36.333">You may have structural bias.</p>
+      <p begin="01:03:36.833" end="01:03:38.291">If mis-aniness is correlated with the</p>
+      <p begin="01:03:38.291" end="01:03:39.916">outcome, you don't just</p>
+      <p begin="01:03:39.916" end="01:03:41.000">lose power in that case.</p>
+      <p begin="01:03:41.416" end="01:03:42.666">You can change the sign of the effects.</p>
+      <p begin="01:03:43.625" end="01:03:45.500">If linkage error is concentrated in</p>
+      <p begin="01:03:45.500" end="01:03:47.208">certain subpopulations, you build</p>
+      <p begin="01:03:47.208" end="01:03:48.500">inequities into the dataset.</p>
+      <p begin="01:03:49.291" end="01:03:51.250">So when I say data pipelines are part of</p>
+      <p begin="01:03:51.250" end="01:03:53.000">the substantive argument, I mean if your</p>
+      <p begin="01:03:53.000" end="01:03:54.750">pipeline builds your object you study,</p>
+      <p begin="01:03:55.500" end="01:03:57.208">your pipeline is a claim about the world</p>
+      <p begin="01:03:57.208" end="01:03:58.666">and it should be open to critique.</p>
+      <p begin="01:04:04.583" end="01:04:05.500">So let me explain how</p>
+      <p begin="01:04:05.500" end="01:04:06.625">we'll run each class session.</p>
+      <p begin="01:04:07.208" end="01:04:08.375">Every session follows a consistent</p>
+      <p begin="01:04:08.375" end="01:04:09.375">structure built around</p>
+      <p begin="01:04:09.375" end="01:04:10.416">real research practice.</p>
+      <p begin="01:04:11.000" end="01:04:12.708">The goal is to connect tools, judgment,</p>
+      <p begin="01:04:13.000" end="01:04:15.125">and substantive inference about treating</p>
+      <p begin="01:04:15.125" end="01:04:16.083">methods in isolation.</p>
+      <p begin="01:04:17.333" end="01:04:18.375">So that's intentional.</p>
+      <p begin="01:04:19.041" end="01:04:19.750">In a lot of the methods</p>
+      <p begin="01:04:19.750" end="01:04:21.125">sequence, you learn a technique.</p>
+      <p begin="01:04:21.416" end="01:04:22.708">You only later see an application.</p>
+      <p begin="01:04:23.458" end="01:04:24.458">Here we're going to reverse that.</p>
+      <p begin="01:04:24.916" end="01:04:26.291">You're going to see real workflow.</p>
+      <p begin="01:04:26.958" end="01:04:28.041">We're going to learn about these tools</p>
+      <p begin="01:04:28.041" end="01:04:28.541">and then we're going</p>
+      <p begin="01:04:28.541" end="01:04:29.541">to value an application.</p>
+      <p begin="01:04:30.750" end="01:04:32.000">And there's also a deeper reason.</p>
+      <p begin="01:04:32.500" end="01:04:33.666">A lot of the hardest problems in big</p>
+      <p begin="01:04:33.666" end="01:04:34.958">social data are not how</p>
+      <p begin="01:04:34.958" end="01:04:36.000">do I run this function.</p>
+      <p begin="01:04:36.458" end="01:04:37.416">They're what decision did</p>
+      <p begin="01:04:37.416" end="01:04:39.000">I make without noticing.</p>
+      <p begin="01:04:39.750" end="01:04:41.250">So the structure, the course, the design,</p>
+      <p begin="01:04:41.250" end="01:04:42.791">the forces, the decisions that they open.</p>
+      <p begin="01:04:43.750" end="01:04:45.000">Each session is going to have a research</p>
+      <p begin="01:04:45.000" end="01:04:46.083">talk from an outside speaker.</p>
+      <p begin="01:04:46.750" end="01:04:48.333">The focus is not just on results.</p>
+      <p begin="01:04:48.625" end="01:04:49.875">It's going to be data generational</p>
+      <p begin="01:04:49.875" end="01:04:52.541">workflow, what their unit of analysis is,</p>
+      <p begin="01:04:52.541" end="01:04:53.708">how they construct the dataset,</p>
+      <p begin="01:04:54.208" end="01:04:55.958">what probe, what trade-offs they made,</p>
+      <p begin="01:04:55.958" end="01:04:57.875">and what they would do differently, and</p>
+      <p begin="01:04:57.875" end="01:04:58.541">where the inferential</p>
+      <p begin="01:04:58.541" end="01:04:59.416">vulnerabilities are.</p>
+      <p begin="01:05:00.250" end="01:05:01.333">So during these talks, I want you to</p>
+      <p begin="01:05:01.333" end="01:05:02.500">listen for a few recurring</p>
+      <p begin="01:05:02.500" end="01:05:03.708">questions during the talks.</p>
+      <p begin="01:05:04.541" end="01:05:05.416">What is the pipeline?</p>
+      <p begin="01:05:05.916" end="01:05:06.583">Not the model.</p>
+      <p begin="01:05:07.083" end="01:05:07.916">What is the pipeline?</p>
+      <p begin="01:05:09.208" end="01:05:10.166">What are the fragile points?</p>
+      <p begin="01:05:10.458" end="01:05:12.000">Things like scraping linkage labeling,</p>
+      <p begin="01:05:12.000" end="01:05:13.000">geocoding validation.</p>
+      <p begin="01:05:14.000" end="01:05:16.041">What is the biggest validity threat and</p>
+      <p begin="01:05:16.041" end="01:05:16.958">how did they address it?</p>
+      <p begin="01:05:17.375" end="01:05:18.500">And what is the unknown unknown?</p>
+      <p begin="01:05:19.000" end="01:05:20.250">What might be missing entirely?</p>
+      <p begin="01:05:21.000" end="01:05:22.500">If you learn to hear research talks in</p>
+      <p begin="01:05:22.500" end="01:05:24.541">that way, you start to see that data work</p>
+      <p begin="01:05:24.541" end="01:05:26.750">is not just pre-processing stuff.</p>
+      <p begin="01:05:27.041" end="01:05:27.833">It's a major part of the</p>
+      <p begin="01:05:27.833" end="01:05:28.875">scientific contribution.</p>
+      <p begin="01:05:32.916" end="01:05:33.750">So the core of each session</p>
+      <p begin="01:05:33.750" end="01:05:34.833">is going to be a coding lab.</p>
+      <p begin="01:05:35.958" end="01:05:38.000">It's important points are the demo code</p>
+      <p begin="01:05:38.000" end="01:05:39.583">is going to be, I'm going to prepare it,</p>
+      <p begin="01:05:39.583" end="01:05:40.708">but a student is going to</p>
+      <p begin="01:05:40.708" end="01:05:42.250">a walkthrough and adapt it.</p>
+      <p begin="01:05:42.916" end="01:05:43.500">We're going to do live</p>
+      <p begin="01:05:43.500" end="01:05:44.625">execution and debugging.</p>
+      <p begin="01:05:45.291" end="01:05:45.583">We're going to</p>
+      <p begin="01:05:45.583" end="01:05:47.083">emphasize rerunnable pipelines.</p>
+      <p begin="01:05:48.458" end="01:05:49.916">The last phrase, rerunnable</p>
+      <p begin="01:05:49.916" end="01:05:51.000">pipelines, is going to be key.</p>
+      <p begin="01:05:51.750" end="01:05:53.375">The goal is not to get something to work</p>
+      <p begin="01:05:53.375" end="01:05:54.250">once on your laptop.</p>
+      <p begin="01:05:54.625" end="01:05:56.041">The goal is to build workflows that can</p>
+      <p begin="01:05:56.041" end="01:05:57.750">be rerun safely and explained clearly.</p>
+      <p begin="01:05:58.541" end="01:05:59.916">In practical terms, that means you're</p>
+      <p begin="01:05:59.916" end="01:06:00.708">going to see patterns like</p>
+      <p begin="01:06:00.708" end="01:06:01.875">saving raw data separately,</p>
+      <p begin="01:06:02.333" end="01:06:03.666">logging progress, making</p>
+      <p begin="01:06:03.666" end="01:06:05.041">code implement meaning.</p>
+      <p begin="01:06:05.625" end="01:06:06.916">So you can run it twice without</p>
+      <p begin="01:06:06.916" end="01:06:08.250">corrupting help points or capturing</p>
+      <p begin="01:06:08.250" end="01:06:09.625">environments and then</p>
+      <p begin="01:06:09.625" end="01:06:10.791">documenting your assumptions.</p>
+      <p begin="01:06:12.041" end="01:06:13.458">And importantly, we're going to treat</p>
+      <p begin="01:06:13.458" end="01:06:15.041">code as a shared research artifact.</p>
+      <p begin="01:06:15.708" end="01:06:16.500">Code is not just going</p>
+      <p begin="01:06:16.500" end="01:06:17.500">to be your personal tool.</p>
+      <p begin="01:06:18.041" end="01:06:19.666">It's a way of communicating what you did.</p>
+      <p begin="01:06:20.458" end="01:06:21.208">Reader can't understand</p>
+      <p begin="01:06:21.208" end="01:06:22.250">your code you generated.</p>
+      <p begin="01:06:22.750" end="01:06:24.083">You can evaluate your claims.</p>
+      <p begin="01:06:28.583" end="01:06:29.958">So the third component is the discussion</p>
+      <p begin="01:06:29.958" end="01:06:31.250">of an application paper</p>
+      <p begin="01:06:31.250" end="01:06:32.416">that uses the week's tools.</p>
+      <p begin="01:06:33.333" end="01:06:35.333">The goal is going to be a critical</p>
+      <p begin="01:06:35.333" end="01:06:36.750">evaluation, not a replication.</p>
+      <p begin="01:06:37.500" end="01:06:39.458">We're going to use the paper to practice</p>
+      <p begin="01:06:39.458" end="01:06:40.708">asking, how does the data</p>
+      <p begin="01:06:40.708" end="01:06:42.250">pipeline affect substantive claims?</p>
+      <p begin="01:06:43.000" end="01:06:44.166">So in the discussion, we're going to</p>
+      <p begin="01:06:44.166" end="01:06:46.041">focus on things like what are the units</p>
+      <p begin="01:06:46.041" end="01:06:46.958">and where did they come from?</p>
+      <p begin="01:06:47.541" end="01:06:48.833">What are the key measurement choices?</p>
+      <p begin="01:06:49.250" end="01:06:49.875">What are the validity</p>
+      <p begin="01:06:49.875" end="01:06:51.166">threats and how are they handled?</p>
+      <p begin="01:06:52.000" end="01:06:53.041">And would we need to</p>
+      <p begin="01:06:53.041" end="01:06:53.958">know to trust the results?</p>
+      <p begin="01:06:54.875" end="01:06:56.166">You'll notice that this course repeatedly</p>
+      <p begin="01:06:56.166" end="01:06:57.541">returns to the single meta scale,</p>
+      <p begin="01:06:57.875" end="01:06:59.416">the ability to evaluate where the data</p>
+      <p begin="01:06:59.416" end="01:07:00.375">product is trustworthy.</p>
+      <p begin="01:07:01.375" end="01:07:03.833">That skill transfers across modalities of</p>
+      <p begin="01:07:03.833" end="01:07:05.541">web data, surveys, platforms,</p>
+      <p begin="01:07:05.791" end="01:07:07.625">text networks, visual data, and machine</p>
+      <p begin="01:07:07.625" end="01:07:08.500">assisted extraction.</p>
+      <p begin="01:07:11.458" end="01:07:12.666">Now I want you to name the pipeline</p>
+      <p begin="01:07:12.666" end="01:07:14.083">stages we're going to keep emphasizing.</p>
+      <p begin="01:07:14.583" end="01:07:15.458">Acquisition, storage,</p>
+      <p begin="01:07:15.708" end="01:07:17.541">cleaning, linkage, documentation,</p>
+      <p begin="01:07:18.041" end="01:07:19.041">validation with explicit</p>
+      <p begin="01:07:19.041" end="01:07:20.125">provenance in each step.</p>
+      <p begin="01:07:20.833" end="01:07:21.458">So let me define</p>
+      <p begin="01:07:21.458" end="01:07:23.333">provenance the way we'll use it.</p>
+      <p begin="01:07:24.083" end="01:07:25.375">Provenance is the story of where the data</p>
+      <p begin="01:07:25.375" end="01:07:27.125">came from, how it was collected,</p>
+      <p begin="01:07:27.500" end="01:07:29.000">the transformations that happened, and</p>
+      <p begin="01:07:29.000" end="01:07:30.000">what limitations are known.</p>
+      <p begin="01:07:30.875" end="01:07:32.375">So you can think of provenance as the</p>
+      <p begin="01:07:32.375" end="01:07:34.250">difference between here is a CSV,</p>
+      <p begin="01:07:35.083" end="01:07:35.958">and here's a data set</p>
+      <p begin="01:07:35.958" end="01:07:36.666">that you can defend.</p>
+      <p begin="01:07:37.791" end="01:07:39.000">So you want to notice the arc here.</p>
+      <p begin="01:07:39.666" end="01:07:40.375">Acquisition and</p>
+      <p begin="01:07:40.375" end="01:07:41.750">storage are not glamorous,</p>
+      <p begin="01:07:42.166" end="01:07:43.500">but they determine whether the rest of</p>
+      <p begin="01:07:43.500" end="01:07:44.250">your work is stable.</p>
+      <p begin="01:07:44.958" end="01:07:46.000">Cleaning and linkage determine</p>
+      <p begin="01:07:46.000" end="01:07:47.541">what your units actually are.</p>
+      <p begin="01:07:48.458" end="01:07:49.791">Documentation and validation determine</p>
+      <p begin="01:07:49.791" end="01:07:51.375">whether anyone, including you,</p>
+      <p begin="01:07:51.625" end="01:07:53.500">in six months can trust the output.</p>
+      <p begin="01:07:54.291" end="01:07:55.166">So in this sense, the</p>
+      <p begin="01:07:55.166" end="01:07:56.208">pipeline is the discipline.</p>
+      <p begin="01:07:56.458" end="01:07:58.291">It forces you to create separate raw</p>
+      <p begin="01:07:58.291" end="01:07:59.750">sources from processed products.</p>
+      <p begin="01:08:00.541" end="01:08:01.708">And of course, it even makes the</p>
+      <p begin="01:08:01.708" end="01:08:02.666">transformation explicit.</p>
+      <p begin="01:08:08.083" end="01:08:09.000">So this slide is one of the most</p>
+      <p begin="01:08:09.000" end="01:08:10.166">important ideas of the course.</p>
+      <p begin="01:08:10.708" end="01:08:11.458">Tooling is methodology.</p>
+      <p begin="01:08:12.958" end="01:08:13.583">Tools shape what is</p>
+      <p begin="01:08:13.583" end="01:08:14.791">easy, hard, or invisible.</p>
+      <p begin="01:08:15.750" end="01:08:17.166">Programming language, version control,</p>
+      <p begin="01:08:17.416" end="01:08:18.916">database containers, automation,</p>
+      <p begin="01:08:19.416" end="01:08:20.750">these are so make you faster.</p>
+      <p begin="01:08:21.166" end="01:08:22.375">They make certain kinds of research</p>
+      <p begin="01:08:22.375" end="01:08:23.416">possible when other</p>
+      <p begin="01:08:23.416" end="01:08:24.416">kinds are less likely.</p>
+      <p begin="01:08:25.375" end="01:08:26.541">So for example, if you</p>
+      <p begin="01:08:26.541" end="01:08:27.666">don't use version control,</p>
+      <p begin="01:08:27.875" end="01:08:29.666">you will not have a transparent history</p>
+      <p begin="01:08:29.666" end="01:08:30.541">of analytic choices.</p>
+      <p begin="01:08:31.208" end="01:08:31.875">If you don't use a</p>
+      <p begin="01:08:31.875" end="01:08:33.083">database, when you should,</p>
+      <p begin="01:08:33.500" end="01:08:35.708">you will end up with fragile joins or a</p>
+      <p begin="01:08:35.708" end="01:08:37.333">memory or silent duplications.</p>
+      <p begin="01:08:38.250" end="01:08:39.958">If you don't capture environments, you'll</p>
+      <p begin="01:08:39.958" end="01:08:41.333">get it worked on my machine.</p>
+      <p begin="01:08:42.208" end="01:08:44.000">But failures, especially with cloud</p>
+      <p begin="01:08:44.000" end="01:08:45.500">produce, can arise from this case.</p>
+      <p begin="01:08:46.333" end="01:08:47.541">And then if you don't automate without</p>
+      <p begin="01:08:47.541" end="01:08:49.250">validation, you can scale errors.</p>
+      <p begin="01:08:49.958" end="01:08:50.416">So we're going to</p>
+      <p begin="01:08:50.416" end="01:08:51.875">repeatedly treat the tools themselves</p>
+      <p begin="01:08:51.875" end="01:08:54.208">as part of the scientific apparatus, not</p>
+      <p begin="01:08:54.208" end="01:08:55.666">because you need the newest thing,</p>
+      <p begin="01:08:55.750" end="01:08:57.750">but because you need workflows that are</p>
+      <p begin="01:08:57.750" end="01:08:59.625">inspectable and repeatable.</p>
+      <p begin="01:09:05.000" end="01:09:06.750">So modern data work requires validation</p>
+      <p begin="01:09:06.750" end="01:09:08.000">of the first-class task.</p>
+      <p begin="01:09:08.625" end="01:09:10.250">By validation, I mean sanity checks,</p>
+      <p begin="01:09:10.750" end="01:09:11.791">audits and spot checks,</p>
+      <p begin="01:09:12.041" end="01:09:13.791">intercoder reliability where relevant,</p>
+      <p begin="01:09:14.291" end="01:09:15.583">and monitoring drift and bias.</p>
+      <p begin="01:09:16.458" end="01:09:17.291">This is where big social</p>
+      <p begin="01:09:17.291" end="01:09:18.833">data can be counterintuitive.</p>
+      <p begin="01:09:19.500" end="01:09:20.708">As you scale up, you can't</p>
+      <p begin="01:09:20.708" end="01:09:21.875">manually inspect everything,</p>
+      <p begin="01:09:22.083" end="01:09:23.208">so you need systematic checks.</p>
+      <p begin="01:09:23.791" end="01:09:25.375">When your data are produced by platforms</p>
+      <p begin="01:09:25.375" end="01:09:26.625">or complex processes,</p>
+      <p begin="01:09:26.916" end="01:09:27.500">drift is normal.</p>
+      <p begin="01:09:28.291" end="01:09:29.916">So the same keyboard query might retrieve</p>
+      <p begin="01:09:29.916" end="01:09:31.666">different kinds of content over time.</p>
+      <p begin="01:09:32.875" end="01:09:34.625">Platform rules change, user populations</p>
+      <p begin="01:09:34.625" end="01:09:36.416">change, reporting practices change.</p>
+      <p begin="01:09:37.958" end="01:09:38.791">So validation isn't</p>
+      <p begin="01:09:38.791" end="01:09:39.958">something you do once in the end.</p>
+      <p begin="01:09:40.875" end="01:09:41.583">It's a practice you</p>
+      <p begin="01:09:41.583" end="01:09:42.541">embed into your pipeline.</p>
+      <p begin="01:09:43.708" end="01:09:44.875">If you learn what happened from the</p>
+      <p begin="01:09:44.875" end="01:09:46.750">course, I want you to do this.</p>
+      <p begin="01:09:47.708" end="01:09:49.583">Whenever you produce an output data set,</p>
+      <p begin="01:09:49.583" end="01:09:50.833">you should have at least a few checks</p>
+      <p begin="01:09:50.833" end="01:09:52.458">that would catch obvious problems,</p>
+      <p begin="01:09:52.708" end="01:09:54.375">so unexpected missingness, impossible</p>
+      <p begin="01:09:54.375" end="01:09:55.625">values, duplication,</p>
+      <p begin="01:09:56.250" end="01:09:57.500">shifts in distribution, and</p>
+      <p begin="01:09:57.500" end="01:09:58.541">structural breaks over time.</p>
+      <p begin="01:10:03.541" end="01:10:04.750">So this course also includes</p>
+      <p begin="01:10:04.750" end="01:10:05.791">human-in-the-loop workflows,</p>
+      <p begin="01:10:06.166" end="01:10:07.166">especially around</p>
+      <p begin="01:10:07.166" end="01:10:08.833">LLM-assisted extraction labeling.</p>
+      <p begin="01:10:09.958" end="01:10:11.416">Here's the principle. Machine assistance</p>
+      <p begin="01:10:11.416" end="01:10:12.666">does not remove judgment.</p>
+      <p begin="01:10:13.000" end="01:10:14.291">It changes what judgment looks like.</p>
+      <p begin="01:10:15.000" end="01:10:16.458">So we're going to use LLMs for a task</p>
+      <p begin="01:10:16.458" end="01:10:18.916">like structured extraction or labeling,</p>
+      <p begin="01:10:19.541" end="01:10:21.208">but humans remain responsible for</p>
+      <p begin="01:10:21.208" end="01:10:22.458">validation and adjudication</p>
+      <p begin="01:10:22.791" end="01:10:23.500">and for documenting</p>
+      <p begin="01:10:23.500" end="01:10:24.750">uncertainty and failure modes.</p>
+      <p begin="01:10:25.541" end="01:10:26.125">So the focus is</p>
+      <p begin="01:10:26.125" end="01:10:27.416">augmentation, not replacement.</p>
+      <p begin="01:10:28.500" end="01:10:29.125">We're going to be very</p>
+      <p begin="01:10:29.125" end="01:10:30.250">explicit about the risks here.</p>
+      <p begin="01:10:30.791" end="01:10:32.041">Models can be confident or wrong.</p>
+      <p begin="01:10:32.500" end="01:10:33.291">Failure can be systematic.</p>
+      <p begin="01:10:33.875" end="01:10:35.333">And you can accidentally build</p>
+      <p begin="01:10:35.333" end="01:10:36.791">a pipeline that looks precise,</p>
+      <p begin="01:10:36.791" end="01:10:37.750">but it's not trustworthy.</p>
+      <p begin="01:10:38.500" end="01:10:40.083">So the human-in-the-loop framing keeps</p>
+      <p begin="01:10:40.083" end="01:10:41.208">the scientific responsibility</p>
+      <p begin="01:10:41.208" end="01:10:43.000">of where it belongs on the researcher.</p>
+      <p begin="01:10:46.875" end="01:10:48.083">So what should you be able to do?</p>
+      <p begin="01:10:48.416" end="01:10:49.291">Right in this course, you</p>
+      <p begin="01:10:49.291" end="01:10:50.458">should be able to do four things.</p>
+      <p begin="01:10:50.833" end="01:10:52.041">First, you should be able to design a</p>
+      <p begin="01:10:52.041" end="01:10:53.166">defensible data pipeline,</p>
+      <p begin="01:10:53.416" end="01:10:55.000">not just a script, but a pipeline that</p>
+      <p begin="01:10:55.000" end="01:10:55.916">can be explained every row.</p>
+      <p begin="01:10:56.833" end="01:10:57.416">Second, you should</p>
+      <p begin="01:10:57.416" end="01:10:59.041">evaluate data quality and bias.</p>
+      <p begin="01:10:59.375" end="01:11:00.250">This means understanding</p>
+      <p begin="01:11:00.250" end="01:11:01.916">where bias enters coverage,</p>
+      <p begin="01:11:02.291" end="01:11:04.750">selection, measurement, drift from being</p>
+      <p begin="01:11:04.750" end="01:11:06.541">able to argue about its consequences.</p>
+      <p begin="01:11:08.125" end="01:11:08.583">Third, you should</p>
+      <p begin="01:11:08.583" end="01:11:09.916">reproduce an audit workflows.</p>
+      <p begin="01:11:10.375" end="01:11:11.083">That includes running</p>
+      <p begin="01:11:11.083" end="01:11:12.416">someone else's pipeline,</p>
+      <p begin="01:11:12.416" end="01:11:13.583">identifying fragile points,</p>
+      <p begin="01:11:13.875" end="01:11:14.958">and checking whether your conclusions</p>
+      <p begin="01:11:14.958" end="01:11:16.041">depend on hidden choices.</p>
+      <p begin="01:11:17.000" end="01:11:18.083">Fourth, you should be able to communicate</p>
+      <p begin="01:11:18.083" end="01:11:19.208">your limitations clearly.</p>
+      <p begin="01:11:19.875" end="01:11:21.750">A major part of the credible research is</p>
+      <p begin="01:11:21.750" end="01:11:23.083">being clear about what your data</p>
+      <p begin="01:11:23.250" end="01:11:24.666">do not capture and what</p>
+      <p begin="01:11:24.666" end="01:11:26.000">assumptions your inference requires.</p>
+      <p begin="01:11:26.916" end="01:11:28.208">So these are foundational skills.</p>
+      <p begin="01:11:28.500" end="01:11:29.625">They apply on your own work,</p>
+      <p begin="01:11:30.000" end="01:11:31.458">and they're also applied when you read</p>
+      <p begin="01:11:31.458" end="01:11:32.916">papers, review papers,</p>
+      <p begin="01:11:33.416" end="01:11:35.125">and assess evidence and policy context.</p>
+      <p begin="01:11:36.791" end="01:11:37.958">So let me close with three questions.</p>
+      <p begin="01:11:38.583" end="01:11:39.583">So first, where do you</p>
+      <p begin="01:11:39.583" end="01:11:41.250">think bias enters most often?</p>
+      <p begin="01:11:41.583" end="01:11:43.625">Is it in a collection, at labeling, at</p>
+      <p begin="01:11:43.625" end="01:11:44.583">linkage, at interpretation?</p>
+      <p begin="01:11:45.416" end="01:11:47.208">In my experience, bias often introduces</p>
+      <p begin="01:11:47.208" end="01:11:49.916">things like coverage and selection,</p>
+      <p begin="01:11:50.333" end="01:11:51.833">and it becomes very hard to fix later.</p>
+      <p begin="01:11:53.250" end="01:11:54.125">Second, which steps of a</p>
+      <p begin="01:11:54.125" end="01:11:55.625">pipeline feel least transparent?</p>
+      <p begin="01:11:56.208" end="01:11:58.291">For most people, it's the early steps,</p>
+      <p begin="01:11:58.291" end="01:11:59.833">scraping decision, parsing</p>
+      <p begin="01:11:59.833" end="01:12:01.041">rules, linkage thresholds,</p>
+      <p begin="01:12:01.833" end="01:12:02.583">exclusion criteria,</p>
+      <p begin="01:12:03.041" end="01:12:04.208">because these are the steps that really</p>
+      <p begin="01:12:04.208" end="01:12:05.583">show up in the published paper.</p>
+      <p begin="01:12:06.750" end="01:12:09.208">Third, what makes a data set or a data</p>
+      <p begin="01:12:09.208" end="01:12:09.958">product trustworthy?</p>
+      <p begin="01:12:10.791" end="01:12:11.666">If you had to evaluate the</p>
+      <p begin="01:12:11.666" end="01:12:12.750">data set you didn't build,</p>
+      <p begin="01:12:13.125" end="01:12:14.166">what would you need to see?</p>
+      <p begin="01:12:14.625" end="01:12:15.625">Would you need to say read me?</p>
+      <p begin="01:12:16.291" end="01:12:18.125">Provence notes, validation checks,</p>
+      <p begin="01:12:18.125" end="01:12:20.041">a rerunable script, version environments?</p>
+      <p begin="01:12:20.833" end="01:12:22.916">As we watch the pre-class videos and do</p>
+      <p begin="01:12:22.916" end="01:12:24.041">these labs this semester,</p>
+      <p begin="01:12:24.250" end="01:12:25.208">keep returning to that question.</p>
+      <p begin="01:12:25.750" end="01:12:27.125">What would it take for someone else to</p>
+      <p begin="01:12:27.125" end="01:12:28.083">trust the data product?</p>
+      <p begin="01:12:29.083" end="01:12:30.125">So all right, now that</p>
+      <p begin="01:12:30.125" end="01:12:31.333">we've done this framing,</p>
+      <p begin="01:12:31.583" end="01:12:32.166">this is gonna be the</p>
+      <p begin="01:12:32.166" end="01:12:33.875">format for most of our classes,</p>
+      <p begin="01:12:33.875" end="01:12:34.916">where I'll upload a video lecture</p>
+      <p begin="01:12:35.375" end="01:12:35.791">and then have a</p>
+      <p begin="01:12:35.791" end="01:12:37.250">graduate student execute code</p>
+      <p begin="01:12:37.750" end="01:12:39.083">that they adjusted from what I wrote</p>
+      <p begin="01:12:39.375" end="01:12:42.791">or from what they wrote,</p>
+      <p begin="01:12:43.500" end="01:12:45.333">and then we are going to have a brief</p>
+      <p begin="01:12:45.333" end="01:12:46.166">recap of the lecture</p>
+      <p begin="01:12:46.166" end="01:12:47.166">that they introduced and do</p>
+      <p begin="01:12:47.166" end="01:12:48.083">an in-class coding assessment.</p>
+      <p begin="01:12:48.750" end="01:12:49.583">So looking forward to</p>
+      <p begin="01:12:49.583" end="01:12:50.333">meeting you all in person.</p>
+    </div>
+  </body>
+</tt>

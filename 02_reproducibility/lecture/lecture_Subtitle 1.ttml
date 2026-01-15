@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:ittp="http://www.w3.org/ns/ttml/profile/imsc1#parameter" xmlns:itts="http://www.w3.org/ns/ttml/profile/imsc1#styling" ttp:profile="http://www.w3.org/ns/ttml/profile/imsc1/text" ttp:frameRate="24" ttp:timeBase="media">
+  <head>
+    <styling>
+      <style xml:id="s0" tts:color="#ffffff" tts:opacity="1" tts:fontSize="100%" tts:fontFamily="proportionalSansSerif" tts:fontWeight="bold" tts:textOutline="#ffffff 1px" tts:textAlign="center"/>
+    </styling>
+    <layout>
+      <region xml:id="r0" tts:origin="0.000% 70.343%" tts:extent="100.000% 19.444%" tts:displayAlign="center"/>
+    </layout>
+  </head>
+  <body>
+    <div xml:id="d0" region="r0" style="s0">
+      <p begin="01:00:03.750" end="01:00:06.125">So in this lecture today we're going</p>
+      <p begin="01:00:06.125" end="01:00:07.666">to focus on reproducibility,</p>
+      <p begin="01:00:07.666" end="01:00:09.333">specifically reproducibility</p>
+      <p begin="01:00:09.333" end="01:00:10.541">as a research practice</p>
+      <p begin="01:00:10.541" end="01:00:12.083">and design constraint.</p>
+      <p begin="01:00:12.916" end="01:00:14.250">So in this course we're going to be</p>
+      <p begin="01:00:14.250" end="01:00:15.958">building pipelines doing things like</p>
+      <p begin="01:00:15.958" end="01:00:17.000">web data collection,</p>
+      <p begin="01:00:17.333" end="01:00:19.000">API, survey data processing,</p>
+      <p begin="01:00:19.375" end="01:00:21.250">databases, looking at</p>
+      <p begin="01:00:21.250" end="01:00:22.458">record linkages, etc.</p>
+      <p begin="01:00:23.250" end="01:00:24.708">So a common thread is that these</p>
+      <p begin="01:00:24.708" end="01:00:26.708">pipelines involve many decisions in</p>
+      <p begin="01:00:26.708" end="01:00:27.500">many moving parts.</p>
+      <p begin="01:00:29.250" end="01:00:30.541">One is the discipline that makes</p>
+      <p begin="01:00:30.541" end="01:00:32.291">these decisions visible and these</p>
+      <p begin="01:00:32.291" end="01:00:33.125">moving parts vulnerable.</p>
+      <p begin="01:00:34.083" end="01:00:34.583">So today we're going</p>
+      <p begin="01:00:34.583" end="01:00:35.500">to cover three layers.</p>
+      <p begin="01:00:35.958" end="01:00:37.833">First, what reproducibility is and</p>
+      <p begin="01:00:37.833" end="01:00:38.916">how it relates to</p>
+      <p begin="01:00:38.916" end="01:00:40.041">replication crisis.</p>
+      <p begin="01:00:41.000" end="01:00:42.875">Second, why multiple comparisons and</p>
+      <p begin="01:00:42.875" end="01:00:45.583">specification search matter, even</p>
+      <p begin="01:00:45.583" end="01:00:46.500">when you're using strong</p>
+      <p begin="01:00:46.500" end="01:00:48.083">designs like natural experiments.</p>
+      <p begin="01:00:48.958" end="01:00:51.333">And third, we're going to run some</p>
+      <p begin="01:00:51.333" end="01:00:53.708">practical tooling, environment</p>
+      <p begin="01:00:53.708" end="01:00:55.250">capture, Git workflows,</p>
+      <p begin="01:00:55.583" end="01:00:57.375">containers, and what it means to</p>
+      <p begin="01:00:57.375" end="01:00:58.708">produce a research artifact.</p>
+      <p begin="01:01:04.000" end="01:01:04.875">Reproducibility asks a simple</p>
+      <p begin="01:01:04.875" end="01:01:06.750">question, can someone else obtain</p>
+      <p begin="01:01:06.750" end="01:01:07.750">the same result, using</p>
+      <p begin="01:01:07.750" end="01:01:09.250">the same data and code without</p>
+      <p begin="01:01:09.250" end="01:01:10.041">informal guidance?</p>
+      <p begin="01:01:11.000" end="01:01:12.583">So that last phrase, without</p>
+      <p begin="01:01:12.583" end="01:01:14.000">informal guidance, is the key.</p>
+      <p begin="01:01:14.875" end="01:01:16.875">If your research works only if you</p>
+      <p begin="01:01:16.875" end="01:01:18.416">sit next to someone and explain</p>
+      <p begin="01:01:18.416" end="01:01:19.625">which files to run,</p>
+      <p begin="01:01:19.916" end="01:01:21.583">which settings to flip, and which</p>
+      <p begin="01:01:21.583" end="01:01:22.583">versions to install,</p>
+      <p begin="01:01:22.833" end="01:01:23.916">then it's not reproducible.</p>
+      <p begin="01:01:24.875" end="01:01:26.625">And reproducibility is the minimum</p>
+      <p begin="01:01:26.625" end="01:01:28.291">standard for credible research.</p>
+      <p begin="01:01:28.916" end="01:01:30.208">It doesn't guarantee the claim is</p>
+      <p begin="01:01:30.208" end="01:01:31.458">true, but it guarantees</p>
+      <p begin="01:01:31.458" end="01:01:32.750">the claim is inspectable.</p>
+      <p begin="01:01:33.416" end="01:01:34.958">So in this course, I want you to</p>
+      <p begin="01:01:34.958" end="01:01:36.791">treat reproducibility not as a</p>
+      <p begin="01:01:36.791" end="01:01:39.041">polishing step at the end, but as</p>
+      <p begin="01:01:39.041" end="01:01:40.333">a design choice from the beginning.</p>
+      <p begin="01:01:41.041" end="01:01:42.916">If you build reproducibility in</p>
+      <p begin="01:01:42.916" end="01:01:44.750">early, everything becomes easier.</p>
+      <p begin="01:01:45.375" end="01:01:46.416">Collaboration, debugging,</p>
+      <p begin="01:01:46.666" end="01:01:48.291">validation, and future reuse.</p>
+      <p begin="01:01:53.250" end="01:01:54.500">So now let's connect this to the</p>
+      <p begin="01:01:54.500" end="01:01:55.500">replication process.</p>
+      <p begin="01:01:56.250" end="01:01:57.666">Across the social science and</p>
+      <p begin="01:01:57.666" end="01:01:59.250">behavioral sciences, many published</p>
+      <p begin="01:01:59.250" end="01:02:00.458">findings fail to replicate,</p>
+      <p begin="01:02:01.208" end="01:02:02.750">effects such as shrink or disappear,</p>
+      <p begin="01:02:03.083" end="01:02:03.833">and results depend</p>
+      <p begin="01:02:03.833" end="01:02:05.166">on analytic choices.</p>
+      <p begin="01:02:06.125" end="01:02:08.041">So the key line is, this is not</p>
+      <p begin="01:02:08.041" end="01:02:09.666">about fraud, it's about systems.</p>
+      <p begin="01:02:10.708" end="01:02:11.416">So what does that mean?</p>
+      <p begin="01:02:12.083" end="01:02:14.000">It means that incentives, workflows,</p>
+      <p begin="01:02:14.000" end="01:02:15.750">and publication norms can produce a</p>
+      <p begin="01:02:15.750" end="01:02:17.291">world where gradual findings</p>
+      <p begin="01:02:17.291" end="01:02:17.916">can revive.</p>
+      <p begin="01:02:19.041" end="01:02:20.375">It's not that most researchers are</p>
+      <p begin="01:02:20.375" end="01:02:21.958">dishonest, it's that researchers</p>
+      <p begin="01:02:21.958" end="01:02:23.083">have degrees of freedom,</p>
+      <p begin="01:02:23.583" end="01:02:25.791">journal select for novelty, and many</p>
+      <p begin="01:02:25.791" end="01:02:27.250">results are underpowered or</p>
+      <p begin="01:02:27.250" end="01:02:28.250">sensitive to choices.</p>
+      <p begin="01:02:29.208" end="01:02:31.833">So reproducibility is part of the</p>
+      <p begin="01:02:31.833" end="01:02:33.583">responses because it</p>
+      <p begin="01:02:33.583" end="01:02:35.125">makes analytic choices visible</p>
+      <p begin="01:02:35.416" end="01:02:36.458">and our results checkable.</p>
+      <p begin="01:02:42.583" end="01:02:43.875">So this slide lists some common</p>
+      <p begin="01:02:43.875" end="01:02:45.875">contributors, research degrees of</p>
+      <p begin="01:02:45.875" end="01:02:47.208">freedom, small sample</p>
+      <p begin="01:02:47.208" end="01:02:49.375">sizes, noisy estimates, selective</p>
+      <p begin="01:02:49.375" end="01:02:51.291">reporting, and multiple</p>
+      <p begin="01:02:51.291" end="01:02:52.250">high-bombs of the testing.</p>
+      <p begin="01:02:53.208" end="01:02:54.791">So a useful way to think about this</p>
+      <p begin="01:02:54.791" end="01:02:56.375">is, many failures are not</p>
+      <p begin="01:02:56.375" end="01:02:57.958">errors, they're outcomes</p>
+      <p begin="01:02:57.958" end="01:02:58.625">of flexibility.</p>
+      <p begin="01:02:59.583" end="01:03:01.250">So if a researcher can reasonably</p>
+      <p begin="01:03:01.250" end="01:03:02.625">choose among many modeling</p>
+      <p begin="01:03:02.625" end="01:03:04.500">decisions, then some specifications</p>
+      <p begin="01:03:04.833" end="01:03:05.333">will produce</p>
+      <p begin="01:03:05.333" end="01:03:06.958">significant results by chance.</p>
+      <p begin="01:03:07.875" end="01:03:09.958">If only those are reported, the</p>
+      <p begin="01:03:09.958" end="01:03:12.416">publication record becomes biased</p>
+      <p begin="01:03:12.416" end="01:03:13.500">towards false positives.</p>
+      <p begin="01:03:14.750" end="01:03:16.291">That's why replication efforts often</p>
+      <p begin="01:03:16.291" end="01:03:17.458">find smaller effects.</p>
+      <p begin="01:03:17.791" end="01:03:19.708">The original literature contains a</p>
+      <p begin="01:03:19.708" end="01:03:20.583">selection mechanism.</p>
+      <p begin="01:03:21.375" end="01:03:23.000">So the big lesson here is, good</p>
+      <p begin="01:03:23.000" end="01:03:25.208">research practice is not only about</p>
+      <p begin="01:03:25.208" end="01:03:26.958">better models, it's about</p>
+      <p begin="01:03:26.958" end="01:03:29.375">constraining flexibility, making</p>
+      <p begin="01:03:29.375" end="01:03:31.416">choices transparent, and evaluating</p>
+      <p begin="01:03:31.416" end="01:03:32.708">robustness honestly.</p>
+      <p begin="01:03:33.375" end="01:03:35.166">So there's two kind of other key</p>
+      <p begin="01:03:35.166" end="01:03:36.083">points that I want to</p>
+      <p begin="01:03:36.083" end="01:03:37.333">relate into this lecture.</p>
+      <p begin="01:03:37.916" end="01:03:39.375">So the first is, we spent a lot of</p>
+      <p begin="01:03:39.375" end="01:03:41.041">time in social science research and</p>
+      <p begin="01:03:41.041" end="01:03:41.958">many form classes</p>
+      <p begin="01:03:42.000" end="01:03:44.458">talking about p-hacking as a</p>
+      <p begin="01:03:44.458" end="01:03:45.166">resource problem.</p>
+      <p begin="01:03:45.708" end="01:03:47.041">And often, p-hacking is nefarious.</p>
+      <p begin="01:03:47.750" end="01:03:50.333">There's a second problem that is</p>
+      <p begin="01:03:50.333" end="01:03:51.916">discussed most often, and</p>
+      <p begin="01:03:51.916" end="01:03:53.250">it's this idea called the</p>
+      <p begin="01:03:53.250" end="01:03:54.875">Garden of Orch-ing Path.</p>
+      <p begin="01:03:56.416" end="01:03:57.791">It's popularized by Andrew Bellman.</p>
+      <p begin="01:03:58.916" end="01:04:00.000">And it's the idea that small</p>
+      <p begin="01:04:00.000" end="01:04:01.708">decision rules that go into</p>
+      <p begin="01:04:01.708" end="01:04:04.541">transforming your data for analysis</p>
+      <p begin="01:04:04.708" end="01:04:05.791">can have really large</p>
+      <p begin="01:04:05.791" end="01:04:07.166">effects on your outcome.</p>
+      <p begin="01:04:07.833" end="01:04:09.791">So the example that's often used is,</p>
+      <p begin="01:04:09.791" end="01:04:11.375">let's say you want to evaluate the</p>
+      <p begin="01:04:11.375" end="01:04:13.458">effect of a novel</p>
+      <p begin="01:04:13.458" end="01:04:15.375">drug on some sort of health outcome,</p>
+      <p begin="01:04:16.125" end="01:04:17.208">and you think that there's a</p>
+      <p begin="01:04:17.208" end="01:04:18.208">different effect by age</p>
+      <p begin="01:04:18.208" end="01:04:18.708">over time.</p>
+      <p begin="01:04:19.541" end="01:04:21.666">So then to carry out your analysis,</p>
+      <p begin="01:04:21.666" end="01:04:22.625">let's say you want to</p>
+      <p begin="01:04:22.625" end="01:04:24.583">decide, how do I treat age</p>
+      <p begin="01:04:24.750" end="01:04:26.583">as a predictor in my model?</p>
+      <p begin="01:04:27.291" end="01:04:29.916">Maybe you do something like begin to</p>
+      <p begin="01:04:29.916" end="01:04:31.166">binary variable for</p>
+      <p begin="01:04:31.166" end="01:04:32.625">someone who's younger than 18</p>
+      <p begin="01:04:32.625" end="01:04:34.083">versus older age than 18.</p>
+      <p begin="01:04:34.833" end="01:04:36.000">Maybe you do it into categorical</p>
+      <p begin="01:04:36.000" end="01:04:38.208">outcomes from 18 and</p>
+      <p begin="01:04:38.208" end="01:04:41.916">younger, 19 to 25, 26 to 30,</p>
+      <p begin="01:04:41.916" end="01:04:42.666">et cetera.</p>
+      <p begin="01:04:43.125" end="01:04:44.833">Or maybe you treat it as a</p>
+      <p begin="01:04:44.833" end="01:04:47.083">continuous variable, or maybe you do</p>
+      <p begin="01:04:47.083" end="01:04:48.875">something like have a polynomial</p>
+      <p begin="01:04:49.416" end="01:04:50.250">order in there.</p>
+      <p begin="01:04:50.666" end="01:04:51.875">Any of these decision rules are</p>
+      <p begin="01:04:51.875" end="01:04:54.583">defensible on their own, but they</p>
+      <p begin="01:04:54.583" end="01:04:55.375">can also then have</p>
+      <p begin="01:04:55.375" end="01:04:56.708">an effect on your outcome of</p>
+      <p begin="01:04:56.708" end="01:04:58.958">interest if you're interacting with</p>
+      <p begin="01:04:58.958" end="01:05:02.791">your treatment variable there.</p>
+      <p begin="01:05:03.208" end="01:05:04.625">So this idea of gardening for gene</p>
+      <p begin="01:05:04.625" end="01:05:06.083">paths is that we make</p>
+      <p begin="01:05:06.083" end="01:05:08.708">these honest decisions when</p>
+      <p begin="01:05:08.708" end="01:05:10.208">we're transforming your data for</p>
+      <p begin="01:05:10.208" end="01:05:12.916">analysis, and it can end up having</p>
+      <p begin="01:05:12.916" end="01:05:13.791">these profound effects</p>
+      <p begin="01:05:13.916" end="01:05:16.125">on our analysis where they don't end</p>
+      <p begin="01:05:16.125" end="01:05:17.875">up replicating because of some</p>
+      <p begin="01:05:17.875" end="01:05:19.166">decision rules that a researcher</p>
+      <p begin="01:05:19.166" end="01:05:20.083">made, even if they</p>
+      <p begin="01:05:20.083" end="01:05:21.291">weren't at their age start.</p>
+      <p begin="01:05:21.916" end="01:05:22.625">So the idea of</p>
+      <p begin="01:05:22.625" end="01:05:23.708">gardening for gene paths.</p>
+      <p begin="01:05:25.000" end="01:05:26.625">The second idea that I often think</p>
+      <p begin="01:05:26.625" end="01:05:28.208">of when I'm going through</p>
+      <p begin="01:05:28.208" end="01:05:29.666">replication crises or thinking</p>
+      <p begin="01:05:29.708" end="01:05:32.583">about researchers is this kind of</p>
+      <p begin="01:05:32.583" end="01:05:34.625">joke, the infinite monkey theorem,</p>
+      <p begin="01:05:35.125" end="01:05:36.250">where if we had an</p>
+      <p begin="01:05:36.250" end="01:05:39.166">infinite amount of time, an infinite</p>
+      <p begin="01:05:39.166" end="01:05:40.291">amount of monkeys working on</p>
+      <p begin="01:05:40.291" end="01:05:41.625">different typewriters,</p>
+      <p begin="01:05:42.166" end="01:05:43.458">they would reproduce all the</p>
+      <p begin="01:05:43.458" end="01:05:44.625">published work of Shakespeare.</p>
+      <p begin="01:05:45.375" end="01:05:47.666">So it's this idea that by random</p>
+      <p begin="01:05:47.666" end="01:05:50.875">chance, with an infinite amount of</p>
+      <p begin="01:05:50.875" end="01:05:52.666">time, monkeys could</p>
+      <p begin="01:05:52.750" end="01:05:54.416">create all these masterpieces.</p>
+      <p begin="01:05:56.083" end="01:05:56.750">How does this relate</p>
+      <p begin="01:05:56.750" end="01:05:57.875">to academic research?</p>
+      <p begin="01:05:59.125" end="01:06:01.208">So often I think of it in terms of</p>
+      <p begin="01:06:01.208" end="01:06:03.750">there's thousands of</p>
+      <p begin="01:06:03.750" end="01:06:05.000">researchers trying to answer</p>
+      <p begin="01:06:05.000" end="01:06:05.958">some more questions.</p>
+      <p begin="01:06:06.458" end="01:06:08.750">We're all sitting at our computers.</p>
+      <p begin="01:06:09.291" end="01:06:11.458">We're all collecting data at the</p>
+      <p begin="01:06:11.458" end="01:06:13.791">same time, and we're running</p>
+      <p begin="01:06:13.791" end="01:06:15.000">regressions at the same</p>
+      <p begin="01:06:15.000" end="01:06:15.500">time.</p>
+      <p begin="01:06:16.375" end="01:06:18.750">And let's say that our threshold for</p>
+      <p begin="01:06:18.750" end="01:06:23.166">a type 1 error is 0.05, right?</p>
+      <p begin="01:06:23.750" end="01:06:26.833">Or rather, let's say we're all</p>
+      <p begin="01:06:26.833" end="01:06:28.500">running our regressions at a time.</p>
+      <p begin="01:06:29.000" end="01:06:30.375">Let's say our type 1 error rate is</p>
+      <p begin="01:06:30.375" end="01:06:34.375">0.05, or 95% confidence intervals.</p>
+      <p begin="01:06:35.583" end="01:06:37.916">We maybe end up just by chance</p>
+      <p begin="01:06:37.916" end="01:06:40.625">having 20 different researchers</p>
+      <p begin="01:06:40.625" end="01:06:42.250">looking at the same type of outcome.</p>
+      <p begin="01:06:43.250" end="01:06:45.375">One of them finds a false positive</p>
+      <p begin="01:06:45.375" end="01:06:46.458">or has a type 1 error.</p>
+      <p begin="01:06:46.875" end="01:06:47.916">That order comes from getting</p>
+      <p begin="01:06:47.916" end="01:06:49.375">published because it's</p>
+      <p begin="01:06:49.375" end="01:06:50.166">much more interesting.</p>
+      <p begin="01:06:50.833" end="01:06:51.166">There's nothing</p>
+      <p begin="01:06:51.166" end="01:06:52.916">nefarious in that case.</p>
+      <p begin="01:06:54.083" end="01:06:55.375">Or if we have all these researchers</p>
+      <p begin="01:06:55.375" end="01:06:58.250">working at the same time on the same</p>
+      <p begin="01:06:58.250" end="01:06:59.041">question as collecting</p>
+      <p begin="01:06:59.083" end="01:07:00.416">data, that person maybe</p>
+      <p begin="01:07:00.416" end="01:07:03.000">didn't do anything wrong.</p>
+      <p begin="01:07:03.250" end="01:07:04.958">It's just they had a sample that</p>
+      <p begin="01:07:04.958" end="01:07:07.250">ended up producing an outcome that</p>
+      <p begin="01:07:07.250" end="01:07:08.500">was very interesting.</p>
+      <p begin="01:07:09.916" end="01:07:11.416">So two kinds of key ideas for</p>
+      <p begin="01:07:11.416" end="01:07:13.791">replication, for own work in the</p>
+      <p begin="01:07:13.791" end="01:07:14.833">replication crisis.</p>
+      <p begin="01:07:15.625" end="01:07:16.958">P-hacking is definitely a problem.</p>
+      <p begin="01:07:18.375" end="01:07:19.541">But we can also think about things</p>
+      <p begin="01:07:19.541" end="01:07:20.458">like the garden of 14</p>
+      <p begin="01:07:20.458" end="01:07:23.000">pounds and the infinite monkey</p>
+      <p begin="01:07:23.000" end="01:07:23.458">theorem.</p>
+      <p begin="01:07:29.041" end="01:07:30.708">So multiple comparisons matter</p>
+      <p begin="01:07:30.708" end="01:07:32.833">because many studies implicitly test</p>
+      <p begin="01:07:32.833" end="01:07:33.750">multiple outcomes,</p>
+      <p begin="01:07:34.041" end="01:07:35.333">multiple specifications, and</p>
+      <p begin="01:07:35.333" end="01:07:36.125">multiple subgroups.</p>
+      <p begin="01:07:36.875" end="01:07:38.458">So even with a single natural</p>
+      <p begin="01:07:38.458" end="01:07:39.833">experiment, false positives</p>
+      <p begin="01:07:39.833" end="01:07:41.125">accumulate at that fraction.</p>
+      <p begin="01:07:41.958" end="01:07:43.250">So let's make this intuitive.</p>
+      <p begin="01:07:43.958" end="01:07:45.875">Suppose you have a policy shock and</p>
+      <p begin="01:07:45.875" end="01:07:46.791">you test 10 outcomes.</p>
+      <p begin="01:07:47.708" end="01:07:48.833">Even if the policy has no true</p>
+      <p begin="01:07:48.833" end="01:07:50.333">effect on the outcome, you should</p>
+      <p begin="01:07:50.333" end="01:07:51.875">expect some low P-values</p>
+      <p begin="01:07:51.875" end="01:07:52.583">just by chance.</p>
+      <p begin="01:07:53.750" end="01:07:56.250">So suppose alternatively that you</p>
+      <p begin="01:07:56.250" end="01:07:58.125">estimate the same effect under a</p>
+      <p begin="01:07:58.125" end="01:07:59.333">range of control sets</p>
+      <p begin="01:07:59.333" end="01:07:59.916">in Windows.</p>
+      <p begin="01:08:00.625" end="01:08:01.916">These combinations produce</p>
+      <p begin="01:08:01.916" end="01:08:03.416">significant results by law.</p>
+      <p begin="01:08:04.916" end="01:08:06.958">So multiplicity is not only an issue</p>
+      <p begin="01:08:06.958" end="01:08:08.791">in exploratory work, it's a</p>
+      <p begin="01:08:08.791" end="01:08:10.125">structural issue in empirical</p>
+      <p begin="01:08:10.208" end="01:08:10.750">practice.</p>
+      <p begin="01:08:11.500" end="01:08:13.458">So as a course take away for this is</p>
+      <p begin="01:08:13.458" end="01:08:15.083">if your pipeline implicitly</p>
+      <p begin="01:08:15.083" end="01:08:16.500">encourages many tests,</p>
+      <p begin="01:08:17.083" end="01:08:18.666">you need a plan for how you will</p>
+      <p begin="01:08:18.666" end="01:08:22.500">interpret them, adjust them, do</p>
+      <p begin="01:08:22.500" end="01:08:23.750">pre-specifications,</p>
+      <p begin="01:08:24.583" end="01:08:25.916">or try to do at a</p>
+      <p begin="01:08:25.916" end="01:08:27.000">minimum transparently.</p>
+      <p begin="01:08:32.000" end="01:08:33.666">So this slide is specifically about</p>
+      <p begin="01:08:33.666" end="01:08:36.083">why multiplicity shows up even when</p>
+      <p begin="01:08:36.083" end="01:08:37.041">you think your design is</p>
+      <p begin="01:08:37.041" end="01:08:37.333">strong.</p>
+      <p begin="01:08:38.291" end="01:08:39.750">Natural experiments often involve</p>
+      <p begin="01:08:39.750" end="01:08:41.833">many outcomes for treatment, events</p>
+      <p begin="01:08:41.833" end="01:08:42.583">to any coefficients</p>
+      <p begin="01:08:42.750" end="01:08:44.791">over time, and sensitivity across</p>
+      <p begin="01:08:44.791" end="01:08:45.625">Windows and controls.</p>
+      <p begin="01:08:46.500" end="01:08:47.333">So event studies</p>
+      <p begin="01:08:47.333" end="01:08:48.250">are a great example.</p>
+      <p begin="01:08:49.000" end="01:08:50.750">An event study is not one estimate,</p>
+      <p begin="01:08:51.125" end="01:08:52.333">it's a path of estimates.</p>
+      <p begin="01:08:52.833" end="01:08:54.666">We have multiple coefficients, each</p>
+      <p begin="01:08:54.666" end="01:08:55.708">in separate hypotheses.</p>
+      <p begin="01:08:56.416" end="01:08:58.250">You look at the path and visually</p>
+      <p begin="01:08:58.250" end="01:09:00.000">interpreting it without adjustment</p>
+      <p begin="01:09:00.000" end="01:09:01.458">can lead to overconfidence.</p>
+      <p begin="01:09:02.541" end="01:09:03.958">So another example is bandwidth</p>
+      <p begin="01:09:03.958" end="01:09:07.625">sensitivity in RDD designs.</p>
+      <p begin="01:09:08.333" end="01:09:09.833">So we have different bandwidth that</p>
+      <p begin="01:09:09.833" end="01:09:11.083">can yield different estimates.</p>
+      <p begin="01:09:12.208" end="01:09:13.708">And people may choose one that looks</p>
+      <p begin="01:09:13.708" end="01:09:15.208">right or is significant.</p>
+      <p begin="01:09:16.583" end="01:09:17.541">So multiplicity is</p>
+      <p begin="01:09:17.541" end="01:09:18.875">structural, not accidental.</p>
+      <p begin="01:09:19.541" end="01:09:21.000">It comes to the fact that robust</p>
+      <p begin="01:09:21.000" end="01:09:21.958">inference often</p>
+      <p begin="01:09:21.958" end="01:09:23.583">requires checking many angles.</p>
+      <p begin="01:09:24.208" end="01:09:25.208">And the moment you check many</p>
+      <p begin="01:09:25.208" end="01:09:26.291">angles, you can have</p>
+      <p begin="01:09:26.291" end="01:09:27.541">potential false positives.</p>
+      <p begin="01:09:28.916" end="01:09:29.625">The lesson is</p>
+      <p begin="01:09:29.625" end="01:09:31.375">never check robustness.</p>
+      <p begin="01:09:31.375" end="01:09:32.750">The lesson is to recognize that</p>
+      <p begin="01:09:32.750" end="01:09:35.583">robustness checks themselves can</p>
+      <p begin="01:09:35.583" end="01:09:36.833">become a search process</p>
+      <p begin="01:09:37.041" end="01:09:38.625">if you don't discipline them.</p>
+      <p begin="01:09:45.041" end="01:09:46.750">So this slide is the risk scenario,</p>
+      <p begin="01:09:47.041" end="01:09:47.708">trying alternative</p>
+      <p begin="01:09:47.708" end="01:09:49.416">controls, varying bandwidths or</p>
+      <p begin="01:09:49.416" end="01:09:50.500">cutoffs or exploring</p>
+      <p begin="01:09:50.500" end="01:09:51.541">subgroups post-hoc.</p>
+      <p begin="01:09:52.625" end="01:09:54.125">So without discipline, robustness</p>
+      <p begin="01:09:54.125" end="01:09:55.000">becomes overfitting.</p>
+      <p begin="01:09:55.875" end="01:09:57.125">Overfitting here doesn't mean</p>
+      <p begin="01:09:57.125" end="01:09:58.333">machine learning overfitting.</p>
+      <p begin="01:09:58.666" end="01:09:59.708">It means that you're fitting your</p>
+      <p begin="01:09:59.708" end="01:10:01.125">narrative to the combination of</p>
+      <p begin="01:10:01.125" end="01:10:02.125">choices that yields</p>
+      <p begin="01:10:02.125" end="01:10:03.333">the most compelling results.</p>
+      <p begin="01:10:04.375" end="01:10:05.583">So this is one reason why</p>
+      <p begin="01:10:05.583" end="01:10:06.958">transparent workflows matter.</p>
+      <p begin="01:10:07.583" end="01:10:09.583">If the full specification path is</p>
+      <p begin="01:10:09.583" end="01:10:12.708">visible, what was tried, what was</p>
+      <p begin="01:10:12.708" end="01:10:14.250">discarded, then readers</p>
+      <p begin="01:10:14.416" end="01:10:16.041">can assess whether the result is</p>
+      <p begin="01:10:16.041" end="01:10:17.125">robust or selective.</p>
+      <p begin="01:10:17.916" end="01:10:21.250">So this also motivates tools like</p>
+      <p begin="01:10:21.250" end="01:10:24.083">pre-registration, multiverse</p>
+      <p begin="01:10:24.083" end="01:10:27.791">analysis, and systematic robustness</p>
+      <p begin="01:10:27.791" end="01:10:28.166">reporting.</p>
+      <p begin="01:10:28.791" end="01:10:30.958">You don't have to adopt all those in</p>
+      <p begin="01:10:30.958" end="01:10:32.500">every project, but you should</p>
+      <p begin="01:10:32.500" end="01:10:33.500">understand why the</p>
+      <p begin="01:10:33.541" end="01:10:34.291">problem exists.</p>
+      <p begin="01:10:42.291" end="01:10:42.708">So what does</p>
+      <p begin="01:10:42.708" end="01:10:43.958">replication really test?</p>
+      <p begin="01:10:44.583" end="01:10:46.583">Replication evaluates data access,</p>
+      <p begin="01:10:47.083" end="01:10:49.166">code, executeability, analytic</p>
+      <p begin="01:10:49.166" end="01:10:51.208">transparency, and sensitivity to</p>
+      <p begin="01:10:51.250" end="01:10:51.708">assumptions.</p>
+      <p begin="01:10:52.708" end="01:10:55.833">We have exact numerical equality and</p>
+      <p begin="01:10:55.833" end="01:10:57.291">it's for--exact</p>
+      <p begin="01:10:57.291" end="01:10:58.916">numerical equality is fairly the</p>
+      <p begin="01:10:58.916" end="01:10:59.166">point.</p>
+      <p begin="01:11:01.125" end="01:11:02.500">Line matters because in</p>
+      <p begin="01:11:02.500" end="01:11:04.541">computational pipelines, exact</p>
+      <p begin="01:11:04.541" end="01:11:06.541">equality is often too strict.</p>
+      <p begin="01:11:07.416" end="01:11:08.458">Floating point differences,</p>
+      <p begin="01:11:08.708" end="01:11:11.208">parallelization, random seeds, and</p>
+      <p begin="01:11:11.208" end="01:11:12.541">version drift can produce</p>
+      <p begin="01:11:12.541" end="01:11:13.750">slightly different numbers.</p>
+      <p begin="01:11:14.500" end="01:11:16.208">So the deeper point is whether the</p>
+      <p begin="01:11:16.208" end="01:11:18.250">qualitative conclusions hold and</p>
+      <p begin="01:11:18.250" end="01:11:19.458">where the analytic pipeline</p>
+      <p begin="01:11:19.458" end="01:11:21.083">can be rerun and inspected.</p>
+      <p begin="01:11:22.041" end="01:11:23.291">So when we talk about replication,</p>
+      <p begin="01:11:23.500" end="01:11:24.791">it's helpful to separate.</p>
+      <p begin="01:11:25.416" end="01:11:25.791">We have</p>
+      <p begin="01:11:25.791" end="01:11:27.541">computational reproducibility.</p>
+      <p begin="01:11:28.458" end="01:11:29.208">Can I run your code</p>
+      <p begin="01:11:29.208" end="01:11:30.166">and get your results?</p>
+      <p begin="01:11:30.916" end="01:11:32.666">Replication of results to get the</p>
+      <p begin="01:11:32.666" end="01:11:34.916">same substantive conclusions when we</p>
+      <p begin="01:11:34.916" end="01:11:36.083">implement the same method</p>
+      <p begin="01:11:36.791" end="01:11:38.208">and robustness generalization.</p>
+      <p begin="01:11:38.541" end="01:11:40.291">Does the conclusion hold under</p>
+      <p begin="01:11:40.291" end="01:11:41.166">reasonable</p>
+      <p begin="01:11:41.166" end="01:11:42.750">variations or new samples?</p>
+      <p begin="01:11:43.708" end="01:11:44.791">So this lecture is going to focus</p>
+      <p begin="01:11:44.791" end="01:11:45.958">most on computational</p>
+      <p begin="01:11:45.958" end="01:11:47.500">reproducibility and research</p>
+      <p begin="01:11:47.500" end="01:11:49.125">artifacts because these are the</p>
+      <p begin="01:11:49.125" end="01:11:50.708">prerequisites for the other two.</p>
+      <p begin="01:11:56.583" end="01:11:58.708">So even with shared code and data,</p>
+      <p begin="01:11:58.708" end="01:11:59.708">results can differ across</p>
+      <p begin="01:11:59.708" end="01:12:01.375">machines, library versions</p>
+      <p begin="01:12:01.458" end="01:12:03.166">change behavior, and randomness is</p>
+      <p begin="01:12:03.166" end="01:12:03.833">handled differently.</p>
+      <p begin="01:12:04.708" end="01:12:05.750">This is one of the most</p>
+      <p begin="01:12:05.750" end="01:12:06.416">underestimated</p>
+      <p begin="01:12:06.416" end="01:12:07.875">problems in graduate training.</p>
+      <p begin="01:12:08.500" end="01:12:10.291">People assume code is deterministic.</p>
+      <p begin="01:12:10.875" end="01:12:12.333">In practice, it often isn't.</p>
+      <p begin="01:12:13.083" end="01:12:15.416">So for randomness, if you don't fix</p>
+      <p begin="01:12:15.416" end="01:12:16.708">seeds, models can</p>
+      <p begin="01:12:16.708" end="01:12:17.708">differ across runs.</p>
+      <p begin="01:12:18.458" end="01:12:20.416">Even with seeds, some libraries use</p>
+      <p begin="01:12:20.416" end="01:12:21.833">non-deterministic kernels.</p>
+      <p begin="01:12:22.333" end="01:12:23.625">This is especially a problem in</p>
+      <p begin="01:12:23.625" end="01:12:24.125">machine learning</p>
+      <p begin="01:12:24.125" end="01:12:24.916">and network science.</p>
+      <p begin="01:12:26.375" end="01:12:28.041">Then we also have library behavior.</p>
+      <p begin="01:12:28.750" end="01:12:29.208">So default</p>
+      <p begin="01:12:29.208" end="01:12:30.375">settings change over time.</p>
+      <p begin="01:12:30.875" end="01:12:32.791">A function that used to sort one way</p>
+      <p begin="01:12:32.791" end="01:12:33.833">may sort another way.</p>
+      <p begin="01:12:34.500" end="01:12:35.958">And then a model fitting function</p>
+      <p begin="01:12:35.958" end="01:12:37.208">may change an optimizer.</p>
+      <p begin="01:12:38.125" end="01:12:39.291">So computation is part</p>
+      <p begin="01:12:39.291" end="01:12:40.208">of the research design.</p>
+      <p begin="01:12:40.583" end="01:12:42.375">If your pipeline depends on defaults</p>
+      <p begin="01:12:42.375" end="01:12:44.875">you didn't specify, then your</p>
+      <p begin="01:12:44.875" end="01:12:45.875">pipeline is fragile.</p>
+      <p begin="01:12:52.041" end="01:12:54.416">So operating systems can also affect</p>
+      <p begin="01:12:54.416" end="01:12:54.958">your applications.</p>
+      <p begin="01:12:55.750" end="01:12:58.291">Results can vary across Linux, Mac,</p>
+      <p begin="01:12:59.333" end="01:13:01.291">Windows, file system behavior,</p>
+      <p begin="01:13:01.916" end="01:13:03.541">floating point implementations,</p>
+      <p begin="01:13:04.000" end="01:13:04.750">and path handle.</p>
+      <p begin="01:13:05.541" end="01:13:06.416">This is where a practical</p>
+      <p begin="01:13:06.416" end="01:13:08.583">collaboration pain comes from.</p>
+      <p begin="01:13:09.208" end="01:13:10.583">A script that uses a Windows-style</p>
+      <p begin="01:13:10.583" end="01:13:12.291">file path breaks on Linux.</p>
+      <p begin="01:13:13.166" end="01:13:14.875">A file name that differs only in</p>
+      <p begin="01:13:14.875" end="01:13:16.291">capitalization can behave</p>
+      <p begin="01:13:16.291" end="01:13:18.166">differently across file systems.</p>
+      <p begin="01:13:19.208" end="01:13:20.500">So inline endings can differ.</p>
+      <p begin="01:13:21.250" end="01:13:22.000">Some compile</p>
+      <p begin="01:13:22.000" end="01:13:23.500">dependencies behave differently.</p>
+      <p begin="01:13:24.166" end="01:13:25.333">So assuming identical</p>
+      <p begin="01:13:25.333" end="01:13:26.458">environments is unsafe.</p>
+      <p begin="01:13:27.250" end="01:13:29.041">The takeaway is, if you want to work</p>
+      <p begin="01:13:29.041" end="01:13:31.500">to be reproducible across machines,</p>
+      <p begin="01:13:32.000" end="01:13:33.458">you must treat the execution</p>
+      <p begin="01:13:33.458" end="01:13:35.041">environment as part of the project.</p>
+      <p begin="01:13:35.875" end="01:13:38.041">That includes path conventions,</p>
+      <p begin="01:13:38.500" end="01:13:39.416">dependency management,</p>
+      <p begin="01:13:39.791" end="01:13:40.875">and explicit instructions.</p>
+      <p begin="01:13:46.458" end="01:13:48.500">So over time, R and Python packages</p>
+      <p begin="01:13:48.500" end="01:13:50.625">updates, default behaviors change,</p>
+      <p begin="01:13:51.208" end="01:13:51.750">and deprecated</p>
+      <p begin="01:13:51.750" end="01:13:53.166">functions break pipelines.</p>
+      <p begin="01:13:53.791" end="01:13:54.875">Code that ran once</p>
+      <p begin="01:13:54.875" end="01:13:55.750">may not run again.</p>
+      <p begin="01:13:56.333" end="01:13:58.208">This is why I put my code on GitHub</p>
+      <p begin="01:13:58.208" end="01:13:59.541">is not the same as my</p>
+      <p begin="01:13:59.541" end="01:14:00.625">results for reproducible.</p>
+      <p begin="01:14:01.458" end="01:14:03.125">If you don't capture versions, your</p>
+      <p begin="01:14:03.125" end="01:14:03.791">collaborator might</p>
+      <p begin="01:14:03.791" end="01:14:05.625">install a newer package version</p>
+      <p begin="01:14:05.625" end="01:14:06.875">and get a different result.</p>
+      <p begin="01:14:07.083" end="01:14:08.250">The script may fail entirely.</p>
+      <p begin="01:14:09.208" end="01:14:10.833">So the habit is treat dependency</p>
+      <p begin="01:14:10.833" end="01:14:12.375">versions as part of your project.</p>
+      <p begin="01:14:18.833" end="01:14:20.041">So the best practice includes</p>
+      <p begin="01:14:20.041" end="01:14:22.208">explicit package versions.</p>
+      <p begin="01:14:22.250" end="01:14:25.208">We have locked files like R, Rn, and</p>
+      <p begin="01:14:25.208" end="01:14:27.000">R, and requirement.txt,</p>
+      <p begin="01:14:27.375" end="01:14:29.250">or a locked file in Python and</p>
+      <p begin="01:14:29.250" end="01:14:30.583">minimal system dependencies.</p>
+      <p begin="01:14:31.958" end="01:14:32.750">Environments must be</p>
+      <p begin="01:14:32.750" end="01:14:34.000">specified, not inferred.</p>
+      <p begin="01:14:34.958" end="01:14:36.083">So this is a key idea.</p>
+      <p begin="01:14:37.000" end="01:14:38.583">Don't rely on the reader to guess</p>
+      <p begin="01:14:38.583" end="01:14:39.208">your environment,</p>
+      <p begin="01:14:39.833" end="01:14:40.625">making it explicit</p>
+      <p begin="01:14:40.625" end="01:14:42.208">and easy to recreate.</p>
+      <p begin="01:14:43.083" end="01:14:44.750">So in practical course terms, this</p>
+      <p begin="01:14:44.750" end="01:14:46.083">is why we care about</p>
+      <p begin="01:14:46.125" end="01:14:49.083">requirements as a text file or a</p>
+      <p begin="01:14:49.083" end="01:14:49.958">locked file in Python.</p>
+      <p begin="01:14:50.708" end="01:14:52.875">R environment lock in R and</p>
+      <p begin="01:14:52.875" end="01:14:54.291">potential container definitions.</p>
+      <p begin="01:14:55.041" end="01:14:56.166">The goal is not perfection.</p>
+      <p begin="01:14:56.583" end="01:14:58.000">The goal is that someone can run</p>
+      <p begin="01:14:58.000" end="01:14:59.000">your pipeline without</p>
+      <p begin="01:14:59.000" end="01:15:00.208">heroic troubleshooting.</p>
+      <p begin="01:15:05.791" end="01:15:07.333">So what is Git as a scientific tool?</p>
+      <p begin="01:15:08.291" end="01:15:10.166">Git supports version code histories,</p>
+      <p begin="01:15:10.541" end="01:15:12.583">branching and experimentation,</p>
+      <p begin="01:15:13.041" end="01:15:14.333">and transferring collaboration.</p>
+      <p begin="01:15:15.416" end="01:15:17.250">So Git records how results evolved.</p>
+      <p begin="01:15:17.875" end="01:15:19.041">This is a major shift</p>
+      <p begin="01:15:19.041" end="01:15:20.583">from files on my laptop.</p>
+      <p begin="01:15:21.583" end="01:15:22.833">Git creates a history of changes.</p>
+      <p begin="01:15:23.333" end="01:15:24.333">That history is part of the</p>
+      <p begin="01:15:24.333" end="01:15:25.458">scientific transparency.</p>
+      <p begin="01:15:26.375" end="01:15:27.833">It also supports collaboration.</p>
+      <p begin="01:15:28.458" end="01:15:30.083">You can propose changes via branches</p>
+      <p begin="01:15:30.083" end="01:15:31.000">and pull requests,</p>
+      <p begin="01:15:31.250" end="01:15:32.416">review them, and merge</p>
+      <p begin="01:15:32.416" end="01:15:33.666">them in a controlled way.</p>
+      <p begin="01:15:34.583" end="01:15:36.416">So in this course, we treat Git as</p>
+      <p begin="01:15:36.416" end="01:15:36.791">part of the</p>
+      <p begin="01:15:36.791" end="01:15:38.375">scientific instrumentation,</p>
+      <p begin="01:15:38.750" end="01:15:40.041">not as a bureaucratic hurdle.</p>
+      <p begin="01:15:40.541" end="01:15:47.125">In Git Hub, we have commits.</p>
+      <p begin="01:15:47.541" end="01:15:48.458">So each commit should</p>
+      <p begin="01:15:48.458" end="01:15:50.166">represent a logical change.</p>
+      <p begin="01:15:50.666" end="01:15:52.375">It should be reversible and it</p>
+      <p begin="01:15:52.375" end="01:15:53.291">should be interpretable.</p>
+      <p begin="01:15:54.125" end="01:15:55.125">So our commit history</p>
+      <p begin="01:15:55.125" end="01:15:56.250">is our research law.</p>
+      <p begin="01:15:57.333" end="01:15:58.375">There's a practical way to think</p>
+      <p begin="01:15:58.375" end="01:15:59.125">about the discipline.</p>
+      <p begin="01:16:00.333" end="01:16:01.833">A clean commit history makes your</p>
+      <p begin="01:16:01.833" end="01:16:03.000">project easier to debug,</p>
+      <p begin="01:16:03.291" end="01:16:03.958">easier to audit,</p>
+      <p begin="01:16:04.166" end="01:16:05.000">and easier to explain.</p>
+      <p begin="01:16:06.458" end="01:16:06.666">So the useful here is that a commit message should tell you <br/>what</p>
+      <p begin="01:16:06.666" end="01:16:08.708">you want to do. The useful here is that a commit</p>
+      <p begin="01:16:08.708" end="01:16:09.666">message should tell</p>
+      <p begin="01:16:09.666" end="01:16:11.041">you what changed and why,</p>
+      <p begin="01:16:11.666" end="01:16:14.000">not in a verbose way, just enough to</p>
+      <p begin="01:16:14.000" end="01:16:14.916">understand the intent.</p>
+      <p begin="01:16:16.000" end="01:16:17.291">So in the same way that a lab</p>
+      <p begin="01:16:17.291" end="01:16:18.916">notebook reports experiments,</p>
+      <p begin="01:16:19.166" end="01:16:20.791">your commit history should report an</p>
+      <p begin="01:16:20.791" end="01:16:21.750">analytic evolution.</p>
+      <p begin="01:16:26.291" end="01:16:27.625">So containers handle</p>
+      <p begin="01:16:27.625" end="01:16:29.000">bung and dependencies,</p>
+      <p begin="01:16:29.916" end="01:16:32.666">isolate execution environments, and</p>
+      <p begin="01:16:32.666" end="01:16:33.958">improve portability.</p>
+      <p begin="01:16:34.625" end="01:16:36.333">So they reduce but may</p>
+      <p begin="01:16:36.333" end="01:16:37.541">not eliminate variability.</p>
+      <p begin="01:16:38.416" end="01:16:39.791">The key point is reduce here.</p>
+      <p begin="01:16:40.666" end="01:16:41.750">Containers help because they</p>
+      <p begin="01:16:41.750" end="01:16:43.041">standardize the environment,</p>
+      <p begin="01:16:43.041" end="01:16:44.541">operating system, libraries,</p>
+      <p begin="01:16:44.833" end="01:16:45.708">dependency versions,</p>
+      <p begin="01:16:46.041" end="01:16:46.916">and system packages.</p>
+      <p begin="01:16:47.583" end="01:16:48.000">But containers</p>
+      <p begin="01:16:48.000" end="01:16:49.083">don't solve everything.</p>
+      <p begin="01:16:49.875" end="01:16:51.125">They don't guarantee identical</p>
+      <p begin="01:16:51.125" end="01:16:52.708">hardware and they don't solve</p>
+      <p begin="01:16:52.708" end="01:16:53.708">conceptual errors.</p>
+      <p begin="01:16:54.416" end="01:16:56.166">But still for reproducible pipeline,</p>
+      <p begin="01:16:56.416" end="01:16:57.541">containers are often the closest</p>
+      <p begin="01:16:57.541" end="01:16:59.041">thing we have to run anywhere.</p>
+      <p begin="01:17:04.833" end="01:17:05.708">So I want to emphasize that</p>
+      <p begin="01:17:05.708" end="01:17:06.791">containers are not magic.</p>
+      <p begin="01:17:07.458" end="01:17:08.875">They do not fix data errors,</p>
+      <p begin="01:17:09.166" end="01:17:10.166">conceptual mistakes,</p>
+      <p begin="01:17:10.166" end="01:17:11.041">or poor documentation.</p>
+      <p begin="01:17:12.041" end="01:17:12.458">They address</p>
+      <p begin="01:17:12.458" end="01:17:13.958">execution, not inference.</p>
+      <p begin="01:17:15.125" end="01:17:16.708">This is a crucial clarification.</p>
+      <p begin="01:17:17.250" end="01:17:19.125">If your data are biased, a container</p>
+      <p begin="01:17:19.125" end="01:17:20.125">reproduces the bias.</p>
+      <p begin="01:17:20.833" end="01:17:22.541">If your model is misspecified, a</p>
+      <p begin="01:17:22.541" end="01:17:23.458">container reproduces</p>
+      <p begin="01:17:23.458" end="01:17:24.166">the mis-squefaction.</p>
+      <p begin="01:17:25.208" end="01:17:26.666">If your readme is unclear, a</p>
+      <p begin="01:17:26.666" end="01:17:27.250">container doesn't</p>
+      <p begin="01:17:27.250" end="01:17:28.333">explain what to run.</p>
+      <p begin="01:17:29.083" end="01:17:31.125">So containers are tools, not a</p>
+      <p begin="01:17:31.125" end="01:17:32.000">substitute for method.</p>
+      <p begin="01:17:34.000" end="01:17:36.375">[silence]</p>
+      <p begin="01:17:37.416" end="01:17:39.291">So a reproducible project produces</p>
+      <p begin="01:17:39.291" end="01:17:41.791">data, code, documentation, and</p>
+      <p begin="01:17:41.791" end="01:17:42.875">execution instructions.</p>
+      <p begin="01:17:43.750" end="01:17:45.333">The artifact is the contribution.</p>
+      <p begin="01:17:46.250" end="01:17:47.958">So this is a core course value.</p>
+      <p begin="01:17:48.541" end="01:17:49.166">If you build a</p>
+      <p begin="01:17:49.166" end="01:17:50.416">high-quality data product,</p>
+      <p begin="01:17:50.708" end="01:17:51.583">cleanly collected,</p>
+      <p begin="01:17:51.875" end="01:17:53.208">well-documented, validated,</p>
+      <p begin="01:17:53.416" end="01:17:54.250">with a pipeline that</p>
+      <p begin="01:17:54.250" end="01:17:55.375">others can then run,</p>
+      <p begin="01:17:55.916" end="01:17:57.375">the artifact itself is a</p>
+      <p begin="01:17:57.375" end="01:17:58.125">scholarly contribution.</p>
+      <p begin="01:17:58.916" end="01:18:00.000">And increasingly, that is how</p>
+      <p begin="01:18:00.000" end="01:18:01.458">serious research is evaluated.</p>
+      <p begin="01:18:01.916" end="01:18:04.208">Not only are results by the quality</p>
+      <p begin="01:18:04.208" end="01:18:05.750">and the reuse potential of the</p>
+      <p begin="01:18:05.750" end="01:18:06.958">underlying data and code.</p>
+      <p begin="01:18:08.083" end="01:18:12.208">[silence]</p>
+      <p begin="01:18:12.833" end="01:18:14.750">So reproducibility requires clear</p>
+      <p begin="01:18:14.750" end="01:18:16.208">readme, data proven,</p>
+      <p begin="01:18:17.000" end="01:18:18.250">known limitations, and</p>
+      <p begin="01:18:18.250" end="01:18:19.166">explicit assumptions.</p>
+      <p begin="01:18:20.000" end="01:18:20.666">So undocumented</p>
+      <p begin="01:18:20.666" end="01:18:24.125">pipelines are not reproducible.</p>
+      <p begin="01:18:25.291" end="01:18:26.708">So this is the soft part</p>
+      <p begin="01:18:26.708" end="01:18:28.041">of what's actually hard.</p>
+      <p begin="01:18:29.041" end="01:18:30.166">Documentation is the bridge between</p>
+      <p begin="01:18:30.166" end="01:18:31.166">your mental model</p>
+      <p begin="01:18:31.500" end="01:18:32.291">and someone else's</p>
+      <p begin="01:18:32.291" end="01:18:33.333">ability to run your work.</p>
+      <p begin="01:18:34.208" end="01:18:35.041">So a good readme will</p>
+      <p begin="01:18:35.041" end="01:18:36.291">answer what are the data,</p>
+      <p begin="01:18:37.416" end="01:18:38.000">how they are</p>
+      <p begin="01:18:38.000" end="01:18:39.458">attained and accessed them,</p>
+      <p begin="01:18:40.125" end="01:18:41.708">how to run the pipeline end-to-end,</p>
+      <p begin="01:18:42.666" end="01:18:44.458">what outputs are produced, and what</p>
+      <p begin="01:18:44.458" end="01:18:45.500">limitations are known.</p>
+      <p begin="01:18:46.625" end="01:18:47.541">So in this course, we're going to</p>
+      <p begin="01:18:47.541" end="01:18:48.541">treat documentation as</p>
+      <p begin="01:18:48.541" end="01:18:49.333">part of the pipeline,</p>
+      <p begin="01:18:50.375" end="01:18:51.750">not as an optional polish.</p>
+      <p begin="01:18:53.750" end="01:18:57.000">[silence]</p>
+      <p begin="01:18:58.083" end="01:18:59.291">So let me summarize the four</p>
+      <p begin="01:18:59.291" end="01:19:00.250">takeaways in this lecture.</p>
+      <p begin="01:19:01.000" end="01:19:02.875">Treat reproducibility and design,</p>
+      <p begin="01:19:03.375" end="01:19:04.250">build it in early.</p>
+      <p begin="01:19:05.250" end="01:19:07.291">Anticipate multiplicity, recognize</p>
+      <p begin="01:19:07.291" end="01:19:08.250">where multiple</p>
+      <p begin="01:19:08.250" end="01:19:09.625">comparisons and specifications</p>
+      <p begin="01:19:10.125" end="01:19:12.291">search arise, especially in natural</p>
+      <p begin="01:19:12.291" end="01:19:13.250">experiment settings.</p>
+      <p begin="01:19:14.208" end="01:19:14.875">You want to capture</p>
+      <p begin="01:19:14.875" end="01:19:15.875">environment early,</p>
+      <p begin="01:19:16.166" end="01:19:17.416">so you want to lock your versions,</p>
+      <p begin="01:19:17.666" end="01:19:18.125">minimize your</p>
+      <p begin="01:19:18.125" end="01:19:20.250">dependencies, and make reruns possible.</p>
+      <p begin="01:19:21.458" end="01:19:21.916">You want to make</p>
+      <p begin="01:19:21.916" end="01:19:23.666">artifacts usable by others.</p>
+      <p begin="01:19:24.125" end="01:19:25.750">Goal is that someone else can run</p>
+      <p begin="01:19:25.750" end="01:19:27.291">your project with minimal friction.</p>
+      <p begin="01:19:27.333" end="01:19:28.708">[silence]</p>
+      <p begin="01:19:28.708" end="01:19:30.250">And if you do these four things, you</p>
+      <p begin="01:19:30.250" end="01:19:32.791">will produce work that is</p>
+      <p begin="01:19:32.791" end="01:19:34.250">easier to collaborate on,</p>
+      <p begin="01:19:34.250" end="01:19:35.583">easier to validate, and</p>
+      <p begin="01:19:35.583" end="01:19:36.541">much easier to defend.</p>
+      <p begin="01:19:39.791" end="01:19:41.791">So a few key discussion ideas to</p>
+      <p begin="01:19:41.791" end="01:19:42.458">keep in your mind</p>
+      <p begin="01:19:42.458" end="01:19:44.000">during today's session.</p>
+      <p begin="01:19:44.583" end="01:19:45.416">So what kind of results</p>
+      <p begin="01:19:45.416" end="01:19:46.541">are hardest to reproduce?</p>
+      <p begin="01:19:47.208" end="01:19:49.083">Is it models with non-determinism,</p>
+      <p begin="01:19:49.541" end="01:19:51.000">pipelines with many dependencies,</p>
+      <p begin="01:19:51.583" end="01:19:52.583">or results that depend</p>
+      <p begin="01:19:52.583" end="01:19:53.708">on specific versions?</p>
+      <p begin="01:19:55.208" end="01:19:55.500">Where does</p>
+      <p begin="01:19:55.500" end="01:19:57.291">multiplicity enter your work?</p>
+      <p begin="01:19:57.625" end="01:19:59.625">Is it multiple outcomes, multiple</p>
+      <p begin="01:19:59.625" end="01:20:00.875">specifications, or</p>
+      <p begin="01:20:00.875" end="01:20:01.958">repeated rebusses checks?</p>
+      <p begin="01:20:03.291" end="01:20:04.750">And what is the minimal</p>
+      <p begin="01:20:04.750" end="01:20:05.875">reproducible artifact?</p>
+      <p begin="01:20:06.500" end="01:20:07.250">If you had to hand your</p>
+      <p begin="01:20:07.250" end="01:20:08.458">project to someone else,</p>
+      <p begin="01:20:09.083" end="01:20:10.250">what would they need</p>
+      <p begin="01:20:10.250" end="01:20:11.750">to rerun it to trust it?</p>
+      <p begin="01:20:13.125" end="01:20:19.291">[silence]</p>
+    </div>
+  </body>
+</tt>
