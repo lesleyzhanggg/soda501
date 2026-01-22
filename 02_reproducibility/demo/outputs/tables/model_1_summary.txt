@@ -1,0 +1,19 @@
+
+Call:
+lm(formula = income ~ education, data = education_income_clean)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-106748  -38179  -17233    8170  461604 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   156079      24681   6.324 8.79e-09 ***
+education     -17683       7361  -2.402   0.0183 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 88860 on 93 degrees of freedom
+Multiple R-squared:  0.05843,	Adjusted R-squared:  0.0483 
+F-statistic: 5.771 on 1 and 93 DF,  p-value: 0.01828
+
