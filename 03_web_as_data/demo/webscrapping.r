@@ -60,38 +60,77 @@ library(tibble)
 # That infobox is typically stored as an HTML table with class "infobox".
 
 # URL of the Wikipedia page
-url <- "https://en.wikipedia.org/wiki/Thomas_Brunell"
+# URL of the Wikipedia page
+url <- "https://en.wikipedia.org/wiki/Donald_Trump"
 
 # Read the HTML content
 page <- read_html(url)
 
-# Extract the infobox table from the page
-# - html_nodes("table.infobox") finds the infobox table(s)
-# - html_table() converts the HTML table into an R table
-table <- page %>%
-  html_nodes("table.infobox") %>%
-  html_table() %>%
-  .[[1]] %>%
-  data.frame()
+###############################################################################
+# 2) Identify the HTML “thing” you want
+#
+# Wikipedia biographies commonly have an "infobox": a table on the right side
+# that summarizes key facts (Born, Education, Occupation, etc.).
+#
+# In the HTML, this is usually a <table> element with class="infobox".
+#
+# CSS selector reminder:
+#   - "table.infobox" means: a <table> tag with class "infobox"
+#   - "." indicates a class; "#" indicates an id
+###############################################################################
 
-# Give the columns simple names (X1, X2, ...) so we can clean consistently
-colnames(table) <- paste0("X", 1:ncol(table))
+# Extract the infobox table (usually the first one on the page)
+infobox_nodes <- page %>% html_elements("table.infobox")
 
-# Clean the data:
-# - Remove rows where either column is missing
-# - Rename the first two columns to "Key" and "Value"
-cleaned_data <- table %>%
-  filter(!is.na(X1) & !is.na(X2)) %>%
-  rename(Key = X1, Value = X2)
+# (Optional safety check for teaching: if none found, you’d stop or change strategy)
+# length(infobox_nodes)
 
-# At this point, cleaned_data is a simple Key/Value table.
-# You can inspect it in the console:
-# print(cleaned_data)
+infobox_node <- infobox_nodes[[1]]
+
+###############################################################################
+# 3) Convert the HTML element to a data structure
+#
+# html_table() converts an HTML <table> into an R data frame-like object.
+# fill = TRUE helps because infobox tables often have merged cells / uneven rows.
+###############################################################################
+infobox_raw <- infobox_node %>%
+  html_table(fill = TRUE)
+
+###############################################################################
+# 4) Standardize column names (so cleaning code is consistent)
+#
+# Infobox tables usually come out as 2 columns:
+#   left column  = "label" (e.g., "Born")
+#   right column = "value" (e.g., "January 1, 19xx ...")
+#
+# But sometimes rows span columns, and the parsed table can look messy.
+###############################################################################
+colnames(infobox_raw) <- paste0("X", seq_len(ncol(infobox_raw)))
+
+###############################################################################
+# 5) Clean into "key-value" (tidy) format
+#
+# Goal: one row per field, with:
+#   field = label text
+#   value = value text
+#
+# Notes:
+# - filter() removes rows that aren’t label/value
+# - str_squish() collapses repeated whitespace + trims ends
+###############################################################################
+infobox_kv <- infobox_raw %>%
+  filter(!is.na(X1), !is.na(X2), X1 != "", X2 != "") %>%
+  transmute(
+    field = str_squish(as.character(X1)),
+    value = str_squish(as.character(X2))
+  )
+
+View(infobox_kv)
 
 # -----------------------------------------------------------------------------
-# Part 1B: Hard-code four Penn State faculty (social sciences broadly)
+# Part 1B: Hard-code three Penn State faculty (social sciences broadly)
 # -----------------------------------------------------------------------------
-# These are the four faculty members we will use throughout the script.
+# These are the three faculty members we will use throughout the script.
 # (We will repeat the same scraping steps for each person.)
 
 matt_name <- "Matt Golder"
@@ -112,9 +151,43 @@ derek_url  <- "https://sociology.la.psu.edu/people/derek-kreager/"
 # 1) Read the PSU profile page
 matt_page <- read_html(matt_url)
 
+# HTML headings run from <h1> through <h6> (six levels total), and they indicate document structure:
+#   h1 = page title (top-level; usually one per page)
+#   h2 = major section
+#   h3 = subsection
+#   h4 = sub-subsection
+#   h5 = very fine-grained subsection (rare in practice)
+#   h6 = smallest heading level (very rare)
+# In practice, most modern pages rarely use h5/h6; you usually see h1–h3 (sometimes h4).
+# For scraping, the *heading text* ("Research", "Publications", etc.) often matters more than the level,
+# so it’s common to search across multiple heading levels when mapping the page structure.
+
+heads <- matt_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+heads
+
+matt_page %>% html_elements("main, article, header, nav, footer") %>% length()
+matt_page %>% html_elements("p") %>% length()
+matt_page %>% html_elements("a") %>% length()
+matt_page %>% html_elements("table") %>% length()
+
+matt_page %>%
+  html_element("main") %>%
+  html_text(trim = TRUE)
+
+matt_page %>%
+  html_element("header") %>%
+  html_text(trim = TRUE)
+
+matt_page %>%
+  html_element("nav") %>%
+  html_text(trim = TRUE)
+
 # 2) Pull the full page text (useful for regex extraction)
 matt_text <- matt_page %>%
-  html_node("body") %>%
+  html_element("body") %>%
   html_text(trim = TRUE)
 
 # 3) Extract a job title line (regex)
@@ -123,29 +196,31 @@ matt_title <- str_extract(
   matt_text,
   "(Distinguished|Liberal Arts|Roy C\\.|Arnold S\\.|James P\\.)?\\s*(Associate\\s+)?Professor[^\\n\\r]{0,120}"
 )
+print(matt_title)
+matt_title <- trimws(matt_title)
 
 # 4) Extract a PSU email address (regex)
 matt_email <- str_extract(matt_text, "[A-Za-z0-9._%+-]+@psu\\.edu")
 
 # 5) Extract "Areas of Interest" (HTML)
 matt_areas <- matt_page %>%
-  html_nodes(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
   html_text(trim = TRUE)
 
-# 6) Extract "Research Interests" (HTML)
+# 6) Extract "Bio" (HTML)
 # (Some sites use h2, others use h3 — we grab both without deciding which is “right”.)
-matt_research <- matt_page %>%
-  html_nodes(xpath = paste0(
-    "//h2[normalize-space()='Research Interests']/following-sibling::*[1]",
+matt_bio <- matt_page %>%
+  html_elements(xpath = paste0(
+    "//h2[normalize-space()='Professional Bio']/following-sibling::*[1]",
     " | //h3[normalize-space()='Research Interests']/following-sibling::*[1]"
   )) %>%
   html_text(trim = TRUE)
 
 # 7) Combine whatever we found into one string (semicolon-separated)
-matt_interests <- paste(c(matt_areas, matt_research), collapse = "; ")
+matt_interests <- paste(c(matt_areas), collapse = "; ")
 
 # 8) Count how many interest items we captured
-matt_n_interest_items <- length(c(matt_areas, matt_research))
+matt_n_interest_items <- length(c(matt_areas))
 
 # 9) Store results in a single row (tibble)
 matt_row <- tibble(
@@ -155,7 +230,8 @@ matt_row <- tibble(
   scraped_title = matt_title,
   scraped_email = matt_email,
   scraped_interests = matt_interests,
-  n_interest_items = matt_n_interest_items
+  n_interest_items = matt_n_interest_items,
+  bio = matt_bio
 )
 
 # -----------------------------------------------------------------------------
@@ -164,7 +240,7 @@ matt_row <- tibble(
 sona_page <- read_html(sona_url)
 
 sona_text <- sona_page %>%
-  html_node("body") %>%
+  html_element("body") %>%
   html_text(trim = TRUE)
 
 sona_title <- str_extract(
@@ -172,21 +248,23 @@ sona_title <- str_extract(
   "(Distinguished|Liberal Arts|Roy C\\.|Arnold S\\.|James P\\.)?\\s*(Associate\\s+)?Professor[^\\n\\r]{0,120}"
 )
 
+sona_title <- trimws(sona_title)
+
 sona_email <- str_extract(sona_text, "[A-Za-z0-9._%+-]+@psu\\.edu")
 
 sona_areas <- sona_page %>%
-  html_nodes(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
   html_text(trim = TRUE)
 
-sona_research <- sona_page %>%
-  html_nodes(xpath = paste0(
-    "//h2[normalize-space()='Research Interests']/following-sibling::*[1]",
+sona_bio <- sona_page %>%
+  html_elements(xpath = paste0(
+    "//h2[normalize-space()='Professional Bio']/following-sibling::*[1]",
     " | //h3[normalize-space()='Research Interests']/following-sibling::*[1]"
   )) %>%
   html_text(trim = TRUE)
 
-sona_interests <- paste(c(sona_areas, sona_research), collapse = "; ")
-sona_n_interest_items <- length(c(sona_areas, sona_research))
+sona_interests <- paste(c(sona_areas), collapse = "; ")
+sona_n_interest_items <- length(c(sona_areas))
 
 sona_row <- tibble(
   name = sona_name,
@@ -195,7 +273,8 @@ sona_row <- tibble(
   scraped_title = sona_title,
   scraped_email = sona_email,
   scraped_interests = sona_interests,
-  n_interest_items = sona_n_interest_items
+  n_interest_items = sona_n_interest_items,
+  bio = sona_bio
 )
 
 # -----------------------------------------------------------------------------
@@ -204,7 +283,7 @@ sona_row <- tibble(
 derek_page <- read_html(derek_url)
 
 derek_text <- derek_page %>%
-  html_node("body") %>%
+  html_element("body") %>%
   html_text(trim = TRUE)
 
 derek_title <- str_extract(
@@ -212,21 +291,23 @@ derek_title <- str_extract(
   "(Distinguished|Liberal Arts|Roy C\\.|Arnold S\\.|James P\\.)?\\s*(Associate\\s+)?Professor[^\\n\\r]{0,120}"
 )
 
+derek_title <- trimws(derek_title)
+
 derek_email <- str_extract(derek_text, "[A-Za-z0-9._%+-]+@psu\\.edu")
 
 derek_areas <- derek_page %>%
-  html_nodes(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_elements(xpath = "//h2[normalize-space()='Research Interests']/following-sibling::ul[1]/li") %>%
   html_text(trim = TRUE)
 
-derek_research <- derek_page %>%
-  html_nodes(xpath = paste0(
-    "//h2[normalize-space()='Research Interests']/following-sibling::*[1]",
+derek_bio <- derek_page %>%
+  html_elements(xpath = paste0(
+    "//h2[normalize-space()='Professional Bio']/following-sibling::*[1]",
     " | //h3[normalize-space()='Research Interests']/following-sibling::*[1]"
   )) %>%
   html_text(trim = TRUE)
 
-derek_interests <- paste(c(derek_areas, derek_research), collapse = "; ")
-derek_n_interest_items <- length(c(derek_areas, derek_research))
+derek_interests <- paste(c(derek_areas), collapse = "; ")
+derek_n_interest_items <- length(derek_areas)
 
 derek_row <- tibble(
   name = derek_name,
@@ -235,7 +316,8 @@ derek_row <- tibble(
   scraped_title = derek_title,
   scraped_email = derek_email,
   scraped_interests = derek_interests,
-  n_interest_items = derek_n_interest_items
+  n_interest_items = derek_n_interest_items,
+  bio = derek_bio[2]
 )
 
 # -----------------------------------------------------------------------------

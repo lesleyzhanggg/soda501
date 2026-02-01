@@ -1,0 +1,641 @@
+---
+title: "SoDA 501_HWW3_Zhang"
+author: "Lesley Zhang"
+date: "2026-01-31"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+######PART 1#####
+#question 1
+1. In the social sciences, what are two ethical or scientific risks of collecting data via web scraping (e.g., representativeness, privacy, terms of service, measurement error, scraping-induced missingness)? For each risk, briefly describe one practical mitigation strategy you would use in a reproducible workflow.
+
+#answer
+One risk that web-scrapping often encounters is the unbalanced representation. For example, data available on web tend to show more information of individuals who are more publicly visible instead of representing the full population of interest. As a result, scraped datasets may systematically exclude less visible actors, leading to selection bias and limiting the generalizability of findings. 
+
+In addition, even when data are publicly accessible, web scraping can violate a website’s terms of service or unintentionally collect sensitive personal information, such as email addresses, institutional affiliations, or time-stamped activity data. This raises ethical concerns related to privacy and consent and can also create legal or access risks for researchers, including IP blocking or account restrictions.
+
+Researchers should clearly define the target population and document how the scraped sample may systematically differ from it, treating web data as a nonrandom sample rather than a complete census. In a reproducible workflow, this can be addressed by logging failed or missing scrape attempts, retaining metadata on coverage, and conducting sensitivity analyses that assess how results change when potentially overrepresented groups are downweighted or excluded. To address ethical and legal risks related to privacy and terms of service, researchers should limit data collection to information explicitly intended for public use, avoid scraping personally identifying or unnecessary fields, and adhere to platform-specific access rules such as rate limits. Documenting scraping decisions, access dates, and compliance considerations in code comments or a README, and sharing only derived or anonymized data when redistribution is restricted, further helps ensure that the research is both ethically responsible and reproducible.
+
+######PART 2#####
+#question 3 and question 5
+
+```{r scraping 10 profs google scholar}
+
+# -----------------------------------------------------------------------------
+# Setup
+# -----------------------------------------------------------------------------
+# Install (if needed) and load the necessary libraries.
+
+# install.packages(c("rvest", "dplyr", "ggplot2", "scholar", "stringr", "tibble"))
+library(rvest)
+library(dplyr)
+library(ggplot2)
+library(scholar)
+library(stringr)
+library(tibble)
+
+# -----------------------------------------------------------------------------
+# Part 2: Pulling Google Scholar Data (Citations Over Time)
+# -----------------------------------------------------------------------------
+# Goal:
+# - For each professor, we will:
+#   (1) Define the Google Scholar ID
+#   (2) Pull a profile summary
+#   (3) Pull publications (and view the first 5)
+#   (4) Pull citation history by year
+#   (5) Combine all citation histories into one table and plot them
+
+# -----------------------------------------------------------------------------
+# Step 1: Hard-code Google Scholar IDs
+# -----------------------------------------------------------------------------
+jwright_scholar_id   <- "DV5ECYgAAAAJ"
+jedgerton_scholar_id   <- "LLcIlUkAAAAJ"
+bdesmarais_scholar_id  <- "fRM8IN4AAAAJ"
+cloyle_scholar_id  <- "IMUIrJMAAAAJ"
+xcao_scholar_id <- "w18ZmkEAAAAJ"
+slinn_scholar_id <- "I7Jx1fAAAAAJ"
+rmcmanus_scholar_id   <- "3xe3Ck4AAAAJ"
+bmukherjee_scholar_id   <- "6sS40fEAAAAJ"
+dtavana_scholar_id  <- "j2a1_doAAAAJ"
+vyadav_scholar_id  <- "vGjxl7YAAAAJ"
+
+# -----------------------------------------------------------------------------
+# Step 2: Pull Google Scholar profiles (sequentially)
+# -----------------------------------------------------------------------------
+
+scholars <- tibble::tibble(
+  name = c(
+    "Joe Wright",
+    "Jared Edgerton",
+    "Bruce Desmarais",
+    "Cyanne Loyle",
+    "Xun Cao",
+    "Susanne Linn",
+    "Roseanne McManus",
+    "Bumba Mukherjee",
+    "Daniel Tavana",
+    "Vineeta Yadav"
+  ),
+  scholar_id = c(
+    jwright_scholar_id,
+    jedgerton_scholar_id,
+    bdesmarais_scholar_id,
+    cloyle_scholar_id,
+    xcao_scholar_id,
+    slinn_scholar_id,
+    rmcmanus_scholar_id,
+    bmukherjee_scholar_id,
+    dtavana_scholar_id,
+    vyadav_scholar_id
+  )
+)
+
+# -----------------------------------------------------------------------------
+# Step 2: Pull Google Scholar profiles (sequentially)
+# -----------------------------------------------------------------------------
+
+jwright_name   <- "Joe Wright"
+jedgerton_name <- "Jared Edgerton"
+bdesmarais_name<- "Bruce Desmarais"
+cloyle_name    <- "Cyanne Loyle"
+xcao_name      <- "Xun Cao"
+slinn_name     <- "Susanne Linn"
+rmcmanus_name  <- "Roseanne McManus"
+bmukherjee_name<- "Bumba Mukherjee"
+dtavana_name   <- "Daniel Tavana"
+vyadav_name    <- "Vineeta Yadav"
+
+
+jwright_profile    <- get_profile(jwright_scholar_id)
+jedgerton_profile  <- get_profile(jedgerton_scholar_id)
+bdesmarais_profile <- get_profile(bdesmarais_scholar_id)
+cloyle_profile     <- get_profile(cloyle_scholar_id)
+xcao_profile       <- get_profile(xcao_scholar_id)
+slinn_profile      <- get_profile(slinn_scholar_id)
+rmcmanus_profile   <- get_profile(rmcmanus_scholar_id)
+bmukherjee_profile <- get_profile(bmukherjee_scholar_id)
+dtavana_profile    <- get_profile(dtavana_scholar_id)
+vyadav_profile     <- get_profile(vyadav_scholar_id)
+
+```
+
+``` {r scraping 10 profs google scholar 2}
+
+cat("\n------------------------------\n")
+cat("Google Scholar Profile Summaries\n")
+cat("------------------------------\n")
+
+cat("\n", jwright_name, "\n", sep = "")
+print(jwright_profile)
+
+cat("\n", jedgerton_name, "\n", sep = "")
+print(jedgerton_profile)
+
+cat("\n", bdesmarais_name, "\n", sep = "")
+print(bdesmarais_profile)
+
+cat("\n", cloyle_name, "\n", sep = "")
+print(cloyle_profile)
+
+cat("\n", xcao_name, "\n", sep = "")
+print(xcao_profile)
+
+cat("\n", slinn_name, "\n", sep = "")
+print(slinn_profile)
+
+cat("\n", rmcmanus_name, "\n", sep = "")
+print(rmcmanus_profile)
+
+cat("\n", bmukherjee_name, "\n", sep = "")
+print(bmukherjee_profile)
+
+cat("\n", dtavana_name, "\n", sep = "")
+print(dtavana_profile)
+
+cat("\n", vyadav_name, "\n", sep = "")
+print(vyadav_profile)
+```
+
+```{r part 3}
+# -----------------------------------------------------------------------------
+# Step 3: Pull Google Scholar publications (sequentially)
+# -----------------------------------------------------------------------------
+jwright_pubs    <- get_publications(jwright_scholar_id)
+jedgerton_pubs  <- get_publications(jedgerton_scholar_id)
+bdesmarais_pubs <- get_publications(bdesmarais_scholar_id)
+cloyle_pubs     <- get_publications(cloyle_scholar_id)
+xcao_pubs       <- get_publications(xcao_scholar_id)
+slinn_pubs      <- get_publications(slinn_scholar_id)
+rmcmanus_pubs   <- get_publications(rmcmanus_scholar_id)
+bmukherjee_pubs <- get_publications(bmukherjee_scholar_id)
+dtavana_pubs    <- get_publications(dtavana_scholar_id)
+vyadav_pubs     <- get_publications(vyadav_scholar_id)
+
+cat("\n------------------------------\n")
+cat("Recent Publications (first 5)\n")
+cat("------------------------------\n")
+
+cat("\n", jwright_name, "\n", sep = "")
+print(head(jwright_pubs, 5))
+
+cat("\n", jedgerton_name, "\n", sep = "")
+print(head(jedgerton_pubs, 5))
+
+cat("\n", bdesmarais_name, "\n", sep = "")
+print(head(bdesmarais_pubs, 5))
+
+cat("\n", cloyle_name, "\n", sep = "")
+print(head(cloyle_pubs, 5))
+
+cat("\n", xcao_name, "\n", sep = "")
+print(head(xcao_pubs, 5))
+
+cat("\n", slinn_name, "\n", sep = "")
+print(head(slinn_pubs, 5))
+
+cat("\n", rmcmanus_name, "\n", sep = "")
+print(head(rmcmanus_pubs, 5))
+
+cat("\n", bmukherjee_name, "\n", sep = "")
+print(head(bmukherjee_pubs, 5))
+
+cat("\n", dtavana_name, "\n", sep = "")
+print(head(dtavana_pubs, 5))
+
+cat("\n", vyadav_name, "\n", sep = "")
+print(head(vyadav_pubs, 5))
+
+# -----------------------------------------------------------------------------
+# Step 4: Pull citation history (citations by year) and combine
+# -----------------------------------------------------------------------------
+jwright_ct    <- get_citation_history(jwright_scholar_id)    %>% mutate(name = jwright_name)
+jedgerton_ct  <- get_citation_history(jedgerton_scholar_id)  %>% mutate(name = jedgerton_name)
+bdesmarais_ct <- get_citation_history(bdesmarais_scholar_id) %>% mutate(name = bdesmarais_name)
+cloyle_ct     <- get_citation_history(cloyle_scholar_id)     %>% mutate(name = cloyle_name)
+xcao_ct       <- get_citation_history(xcao_scholar_id)       %>% mutate(name = xcao_name)
+slinn_ct      <- get_citation_history(slinn_scholar_id)      %>% mutate(name = slinn_name)
+rmcmanus_ct   <- get_citation_history(rmcmanus_scholar_id)   %>% mutate(name = rmcmanus_name)
+bmukherjee_ct <- get_citation_history(bmukherjee_scholar_id) %>% mutate(name = bmukherjee_name)
+dtavana_ct    <- get_citation_history(dtavana_scholar_id)    %>% mutate(name = dtavana_name)
+vyadav_ct     <- get_citation_history(vyadav_scholar_id)     %>% mutate(name = vyadav_name)
+
+citation_df <- bind_rows(
+  jwright_ct,
+  jedgerton_ct,
+  bdesmarais_ct,
+  cloyle_ct,
+  xcao_ct,
+  slinn_ct,
+  rmcmanus_ct,
+  bmukherjee_ct,
+  dtavana_ct,
+  vyadav_ct
+)
+
+# Print the combined citation data
+print(head(citation_df, 10))
+
+# -----------------------------------------------------------------------------
+# Step 5: Plot citations over time for each professor
+# -----------------------------------------------------------------------------
+ggplot(citation_df, aes(x = year, y = cites, color = name)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Google Scholar Citation History (Recent Years)",
+    x = "Year",
+    y = "Citations",
+    color = "Faculty"
+  )
+
+# -----------------------------------------------------------------------------
+# Step 6: Median citations per year for each professor
+# -----------------------------------------------------------------------------
+median_cites <- citation_df %>%
+  group_by(name) %>%
+  summarize(median_cites = median(cites, na.rm = TRUE), .groups = "drop")
+
+print(median_cites)
+
+```
+
+In this analysis, missing years are omitted rather than coded as zero citations. Treating missing years as zeros would implicitly assume that the scholar was active during those years but received no citations, which is often incorrect, especially for pre-career periods or gaps in observed activity. Omitting missing years avoids mechanically lowering the median citation measure, which is important because even a single zero can substantially affect the median when the number of observed years is limited. 
+
+
+
+
+#question 4
+
+
+```{r professors interests}
+
+# -----------------------------------------------------------------------------
+# Part 1: Hard-code three Penn State faculty (social sciences broadly)
+# -----------------------------------------------------------------------------
+# These are the three faculty members we will use throughout the script.
+# (We will repeat the same scraping steps for each person.)
+
+# Joe Wright
+jwright_name <- "Joe Wright"
+jwright_dept <- "Political Science (College of the Liberal Arts)"
+jwright_url  <- "https://polisci.la.psu.edu/people/jgw12/"
+
+# Xun Cao
+xcao_name <- "Xun Cao"
+xcao_dept <- "Political Science (College of the Liberal Arts)"
+xcao_url  <- "https://polisci.la.psu.edu/people/xuc11/"
+
+# Bruce Desmarais
+bdesmarais_name <- "Bruce Desmarais"
+bdesmarais_dept <- "Political Science (College of the Liberal Arts)"
+bdesmarais_url  <- "https://polisci.la.psu.edu/people/bbd5087/"
+
+# Jared Edgerton
+jedgerton_name <- "Jared Edgerton"
+jedgerton_dept <- "Political Science (College of the Liberal Arts)"
+jedgerton_url  <- "https://polisci.la.psu.edu/people/jared-edgerton/"
+
+# Susanne Linn
+slinn_name <- "Susanne Linn"
+slinn_dept <- "Political Science (College of the Liberal Arts)"
+slinn_url  <- "https://polisci.la.psu.edu/people/sld8/"
+
+# Cyanne Loyle
+cloyle_name <- "Cyanne Loyle"
+cloyle_dept <- "Political Science (College of the Liberal Arts)"
+cloyle_url  <- "https://polisci.la.psu.edu/people/cel5432/"
+
+# Roseanne McManus
+rmcmanus_name <- "Roseanne McManus"
+rmcmanus_dept <- "Political Science (College of the Liberal Arts)"
+rmcmanus_url  <- "https://polisci.la.psu.edu/people/rum842/"
+
+# Bumba Mukherjee
+bmukherjee_name <- "Bumba Mukherjee"
+bmukherjee_dept <- "Political Science (College of the Liberal Arts)"
+bmukherjee_url  <- "https://polisci.la.psu.edu/people/sxm73/"
+
+# Daniel Tavana
+dtavana_name <- "Daniel Tavana"
+dtavana_dept <- "Political Science (College of the Liberal Arts)"
+dtavana_url  <- "https://polisci.la.psu.edu/people/daniel-tavana/"
+
+# Vineeta Yadav
+vyadav_name <- "Vineeta Yadav"
+vyadav_dept <- "Political Science (College of the Liberal Arts)"
+vyadav_url  <- "https://polisci.la.psu.edu/people/vuy2/"
+
+# -----------------------------------------------------------------------------
+# Step 1: Scrape Matt Golder (one complete example, step-by-step)
+# -----------------------------------------------------------------------------
+# 1) Read the PSU profile page
+jwright_page <- read_html(jwright_url)
+
+# (Optional) quick structure check / debugging
+jwright_heads <- jwright_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+jwright_text <- jwright_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+# 2) Extract "Areas of Interest" (HTML) — interests only
+jwright_areas <- jwright_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+# 3) Combine into one string (semicolon-separated)
+jwright_interests <- paste(jwright_areas, collapse = "; ")
+
+# 4) Count items
+jwright_n_interest_items <- length(jwright_areas)
+
+# 5) Store results (tibble row)
+jwright_row <- tibble(
+  name = jwright_name,
+  department = jwright_dept,
+  url = jwright_url,
+  scraped_interests = jwright_interests,
+  n_interest_items = jwright_n_interest_items
+)
+
+xcao_page <- read_html(xcao_url)
+
+xcao_heads <- xcao_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+xcao_text <- xcao_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+xcao_areas <- xcao_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+xcao_interests <- paste(xcao_areas, collapse = "; ")
+xcao_n_interest_items <- length(xcao_areas)
+
+xcao_row <- tibble(
+  name = xcao_name,
+  department = xcao_dept,
+  url = xcao_url,
+  scraped_interests = xcao_interests,
+  n_interest_items = xcao_n_interest_items
+)
+
+
+bdesmarais_page <- read_html(bdesmarais_url)
+
+bdesmarais_heads <- bdesmarais_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+bdesmarais_text <- bdesmarais_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+bdesmarais_areas <- bdesmarais_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+bdesmarais_interests <- paste(bdesmarais_areas, collapse = "; ")
+bdesmarais_n_interest_items <- length(bdesmarais_areas)
+
+bdesmarais_row <- tibble(
+  name = bdesmarais_name,
+  department = bdesmarais_dept,
+  url = bdesmarais_url,
+  scraped_interests = bdesmarais_interests,
+  n_interest_items = bdesmarais_n_interest_items
+)
+
+
+jedgerton_page <- read_html(jedgerton_url)
+
+jedgerton_heads <- jedgerton_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+jedgerton_text <- jedgerton_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+jedgerton_areas <- jedgerton_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+jedgerton_interests <- paste(jedgerton_areas, collapse = "; ")
+jedgerton_n_interest_items <- length(jedgerton_areas)
+
+jedgerton_row <- tibble(
+  name = jedgerton_name,
+  department = jedgerton_dept,
+  url = jedgerton_url,
+  scraped_interests = jedgerton_interests,
+  n_interest_items = jedgerton_n_interest_items
+)
+
+
+slinn_page <- read_html(slinn_url)
+
+slinn_heads <- slinn_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+slinn_text <- slinn_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+slinn_areas <- slinn_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+slinn_interests <- paste(slinn_areas, collapse = "; ")
+slinn_n_interest_items <- length(slinn_areas)
+
+slinn_row <- tibble(
+  name = slinn_name,
+  department = slinn_dept,
+  url = slinn_url,
+  scraped_interests = slinn_interests,
+  n_interest_items = slinn_n_interest_items
+)
+
+cloyle_page <- read_html(cloyle_url)
+
+cloyle_heads <- cloyle_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+cloyle_text <- cloyle_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+cloyle_areas <- cloyle_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+cloyle_interests <- paste(cloyle_areas, collapse = "; ")
+cloyle_n_interest_items <- length(cloyle_areas)
+
+cloyle_row <- tibble(
+  name = cloyle_name,
+  department = cloyle_dept,
+  url = cloyle_url,
+  scraped_interests = cloyle_interests,
+  n_interest_items = cloyle_n_interest_items
+)
+
+rmcmanus_page <- read_html(rmcmanus_url)
+
+rmcmanus_heads <- rmcmanus_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+rmcmanus_text <- rmcmanus_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+rmcmanus_areas <- rmcmanus_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+rmcmanus_interests <- paste(rmcmanus_areas, collapse = "; ")
+rmcmanus_n_interest_items <- length(rmcmanus_areas)
+
+rmcmanus_row <- tibble(
+  name = rmcmanus_name,
+  department = rmcmanus_dept,
+  url = rmcmanus_url,
+  scraped_interests = rmcmanus_interests,
+  n_interest_items = rmcmanus_n_interest_items
+)
+
+bmukherjee_page <- read_html(bmukherjee_url)
+
+bmukherjee_heads <- bmukherjee_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+bmukherjee_text <- bmukherjee_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+bmukherjee_areas <- bmukherjee_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+bmukherjee_interests <- paste(bmukherjee_areas, collapse = "; ")
+bmukherjee_n_interest_items <- length(bmukherjee_areas)
+
+bmukherjee_row <- tibble(
+  name = bmukherjee_name,
+  department = bmukherjee_dept,
+  url = bmukherjee_url,
+  scraped_interests = bmukherjee_interests,
+  n_interest_items = bmukherjee_n_interest_items
+)
+
+dtavana_page <- read_html(dtavana_url)
+
+dtavana_heads <- dtavana_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+dtavana_text <- dtavana_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+dtavana_areas <- dtavana_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+dtavana_interests <- paste(dtavana_areas, collapse = "; ")
+dtavana_n_interest_items <- length(dtavana_areas)
+
+dtavana_row <- tibble(
+  name = dtavana_name,
+  department = dtavana_dept,
+  url = dtavana_url,
+  scraped_interests = dtavana_interests,
+  n_interest_items = dtavana_n_interest_items
+)
+
+vyadav_page <- read_html(vyadav_url)
+
+vyadav_heads <- vyadav_page %>%
+  html_elements("h1, h2, h3, h4") %>%
+  html_text(trim = TRUE)
+
+vyadav_text <- vyadav_page %>%
+  html_element("body") %>%
+  html_text(trim = TRUE)
+
+vyadav_areas <- vyadav_page %>%
+  html_elements(xpath = "//h2[normalize-space()='Areas of Interest']/following-sibling::ul[1]/li") %>%
+  html_text(trim = TRUE)
+
+vyadav_interests <- paste(vyadav_areas, collapse = "; ")
+vyadav_n_interest_items <- length(vyadav_areas)
+
+vyadav_row <- tibble(
+  name = vyadav_name,
+  department = vyadav_dept,
+  url = vyadav_url,
+  scraped_interests = vyadav_interests,
+  n_interest_items = vyadav_n_interest_items
+)
+
+
+
+
+# -----------------------------------------------------------------------------
+# Step 5: Combine the scraped rows into one data frame and inspect
+# -----------------------------------------------------------------------------
+faculty_interest_df <- bind_rows(
+  jwright_row, xcao_row, bdesmarais_row, jedgerton_row, slinn_row,
+  cloyle_row, rmcmanus_row, bmukherjee_row, dtavana_row, vyadav_row
+)
+
+print(faculty_interest_df)
+
+# -----------------------------------------------------------------------------
+# Step 6: Quick plot (interest items captured per faculty member)
+# -----------------------------------------------------------------------------
+library(dplyr)
+library(tidyr)
+library(stringr)
+
+
+interest_words <- faculty_interest_df %>%
+  filter(!is.na(scraped_interests), scraped_interests != "") %>%
+  separate_rows(scraped_interests, sep = ";") %>%
+  mutate(
+    scraped_interests = str_trim(scraped_interests),
+    scraped_interests = str_to_lower(scraped_interests)
+  ) %>%
+  count(scraped_interests, sort = TRUE)
+
+print(head(interest_words, 10))
+
+# install.packages("wordclound")
+library(wordcloud)
+
+set.seed(123)
+
+wordcloud(
+  words = interest_words$scraped_interests,
+  freq  = interest_words$n,
+  min.freq = 1,
+  max.words = 100,
+  random.order = FALSE,
+  colors = RColorBrewer::brewer.pal(8, "Dark2")
+)
+
+```
