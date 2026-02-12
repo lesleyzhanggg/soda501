@@ -106,6 +106,13 @@ users = pd.DataFrame({
 })
 
 # Pre-treatment metric (placebo outcome) correlated with baseline_activity
+# This creates a pre-treatment variable that is predictive of outcomes.
+# Importantly:
+# - It is measured BEFORE treatment assignment.
+# - It should not differ between treat and control in expectation.
+# - We later use it for balance checks and placebo tests.
+# Structure: pre_metric = baseline_activity + random noise
+
 users["pre_metric"] = users["baseline_activity"] + np.random.normal(0, 0.5, size=n_users)
 
 # Save raw user table
@@ -235,6 +242,13 @@ logging.info("Saved: data/processed/analysis_dataset.csv")
 # STEP 5: RANDOMIZATION CHECKS / BALANCE CHECKS
 ###############################################
 
+# A balance test checks whether PRE-TREATMENT characteristics
+# are similar across assignment arms (treat=1 vs treat=0).
+# With valid randomization, we expect:
+#   E[X | Z=1] ≈ E[X | Z=0] for baseline covariates X.
+# Large imbalances can indicate implementation problems or
+# (in small samples) chance imbalance.
+
 logging.info("Running randomization checks / balance checks")
 
 balance_table = (
@@ -269,6 +283,9 @@ smd_table.to_csv("outputs/tables/balance_smd.csv", index=False)
 ###############################################
 
 logging.info("Estimating treatment effects (ATE)")
+
+# ITT = E[Y | Z=1] - E[Y | Z=0], where Z is assignment (treat).
+# With perfect compliance in this synthetic pipeline, ITT = ATE.
 
 ate_converted = user.loc[user["treat"] == 1, "converted"].mean() - user.loc[user["treat"] == 0, "converted"].mean()
 ate_purchases = user.loc[user["treat"] == 1, "post_purchases"].mean() - user.loc[user["treat"] == 0, "post_purchases"].mean()
@@ -355,6 +372,13 @@ plt.close()
 
 logging.info("Running placebo tests (A/A and placebo outcome)")
 
+# ------------------------------------------------------------
+# PLACEBO TESTS
+# ------------------------------------------------------------
+# (1) Placebo outcome test: pre_metric is pre-treatment, so it should
+#     have ~0 estimated effect of assignment.
+# (2) A/A test: repeatedly split the CONTROL group into two fake arms
+#     and compute differences; this shows what 'noise-only' effects look like.
 # Placebo outcome: pre_metric should not differ by treatment
 placebo_pre = smf.ols("pre_metric ~ treat + C(block)", data=user).fit()
 placebo_pre.summary2().tables[1].to_csv("outputs/tables/placebo_pre_metric.csv")
