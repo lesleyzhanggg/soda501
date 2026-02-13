@@ -1,0 +1,16 @@
+2026-02-12 14:04:40,133 | INFO | Starting big data experiment pipeline
+2026-02-12 14:04:40,135 | INFO | n_users = 100000 | n_days = 14
+2026-02-12 14:04:40,135 | INFO | Generating synthetic user table
+2026-02-12 14:04:40,264 | INFO | Saved: data/raw/users.csv
+2026-02-12 14:04:40,264 | INFO | Creating blocked assignment table (and saving it)
+2026-02-12 14:04:40,431 | INFO | Saved: data/raw/assignment_table.csv
+2026-02-12 14:04:40,431 | INFO | Generating synthetic event logs (user-day table)
+2026-02-12 14:04:45,370 | INFO | Saved: data/raw/event_logs.csv
+2026-02-12 14:04:45,370 | INFO | Building analysis-ready dataset (user-level aggregation)
+2026-02-12 14:04:48,475 | INFO | Saved: data/processed/analysis_dataset.csv
+2026-02-12 14:04:48,475 | INFO | Running randomization checks / balance checks
+2026-02-12 14:04:48,483 | INFO | Estimating treatment effects (ATE)
+2026-02-12 14:04:48,660 | INFO | Creating figures
+2026-02-12 14:04:49,306 | INFO | Running placebo tests (A/A and placebo outcome)
+2026-02-12 14:04:49,837 | INFO | Saving environment information
+2026-02-12 14:04:49,852 | INFO | Pipeline complete

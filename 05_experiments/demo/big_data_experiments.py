@@ -431,3 +431,127 @@ with open("outputs/python_environment.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(env_lines) + "\n")
 
 logging.info("Pipeline complete")
+
+
+
+###############################################
+# STEP 10: PROBLEM SET EXTENSIONS
+###############################################
+
+#############EXTENSION 4#############
+logs["days_active"] = logs.groupby("user_id")["active"].transform("sum")
+logs["retained_any"] = (logs["days_active"] >= 1).astype(int)
+
+user_retention = logs[["user_id", "days_active", "retained_any"]].drop_duplicates()
+user = user.merge(user_retention, on="user_id", how="left")
+
+ate_days_active   = user.loc[user["treat"] == 1, "days_active"].mean() - user.loc[user["treat"] == 0, "days_active"].mean()
+ate_retained = user.loc[user["treat"] == 1, "retained_any"].mean() - user.loc[user["treat"] == 0, "retained_any"].mean()
+
+ate_simple2 = pd.DataFrame({
+    "outcome": ["converted", "post_purchases", "post_clicks","days_active","retained_any"],
+    "ate_diff_in_means": [ate_converted, ate_purchases, ate_clicks, ate_days_active, ate_retained]
+})
+
+ate_simple2.to_csv("outputs/tables/ate_diff_in_means_v2.csv", index=False)
+
+
+#Regression Adjustment
+
+fit_conv2 = smf.ols(
+    "converted ~ treat + baseline_activity + pre_metric + C(block) + days_active + retained_any",
+    data=user
+).fit(cov_type="cluster", cov_kwds={"groups": user["cluster_id"]})
+
+fit_pur2 = smf.ols(
+    "post_purchases ~ treat + baseline_activity + pre_metric + C(block) + days_active + retained_any",
+    data=user
+).fit(cov_type="cluster", cov_kwds={"groups": user["cluster_id"]})
+
+fit_conv2.summary2().tables[1].to_csv("outputs/tables/regression_converted2.csv")
+fit_pur2.summary2().tables[1].to_csv("outputs/tables/regression_purchases2.csv")
+
+#############EXTENSION 5#############
+
+p = 0.7
+
+user["received"] = 0
+treated_mask = user["treat"] == 1
+user.loc[treated_mask, "received"] = np.random.binomial(1, p, treated_mask.sum())
+
+
+#Regression Adjustment using received -- ITT
+
+fit_conv3 = smf.ols(
+    "converted ~ received + baseline_activity + pre_metric + C(block) + days_active + retained_any",
+    data=user
+).fit(cov_type="cluster", cov_kwds={"groups": user["cluster_id"]})
+
+fit_pur3 = smf.ols(
+    "post_purchases ~ received + baseline_activity + pre_metric + C(block) + days_active + retained_any",
+    data=user
+).fit(cov_type="cluster", cov_kwds={"groups": user["cluster_id"]})
+
+fit_conv3.summary2().tables[1].to_csv("outputs/tables/regression_converted3.csv")
+fit_pur3.summary2().tables[1].to_csv("outputs/tables/regression_purchases3.csv")
+
+
+#Regression Adjustment with IV -- LATE
+
+from linearmodels.iv import IV2SLS
+
+iv_conv = IV2SLS.from_formula(
+    "converted ~ 1 + baseline_activity + pre_metric + C(block) "
+    + "[received ~ treat]",
+    data=user
+).fit(cov_type="clustered", clusters=user["cluster_id"])
+
+print(iv_conv.summary)
+
+iv_pur = IV2SLS.from_formula(
+    "post_purchases ~ 1 + baseline_activity + pre_metric + C(block) "
+    + "[received ~ treat]",
+    data=user
+).fit(cov_type="clustered", clusters=user["cluster_id"])
+
+def iv_to_df(iv_res, outcome_name):
+    """Convert linearmodels IV2SLS results to a tidy DataFrame."""
+    df = iv_res.params.to_frame(name="coef")
+    df["std_err"] = iv_res.std_errors
+    df["t_stat"]  = iv_res.tstats
+    df["p_value"] = iv_res.pvalues
+    df["term"]    = df.index
+    df["outcome"] = outcome_name
+    df = df.reset_index(drop=True)
+    return df
+
+iv_conv_df_all = iv_to_df(iv_conv, "converted")
+iv_pur_df_all  = iv_to_df(iv_pur,  "post_purchases")
+
+
+iv_both = pd.concat([iv_conv_df_all, iv_pur_df_all], ignore_index=True)
+iv_both.to_csv("outputs/tables/iv_conv_iv_pur_full.csv", index=False)
+
+
+###############################################################################
+# 2) Print out ITT and TOT results
+#    ITT: fit_conv3, fit_pur3 (per your request)
+#    TOT: iv_conv, iv_pur
+###############################################################################
+print("\n==============================")
+print("ITT results (per your code: fit_conv3, fit_pur3)")
+print("==============================\n")
+print("ITT - converted (fit_conv3):")
+print(fit_conv3.summary2())
+
+print("\nITT - post_purchases (fit_pur3):")
+print(fit_pur3.summary2())
+
+print("\n==============================")
+print("TOT / LATE results (IV: iv_conv, iv_pur)")
+print("==============================\n")
+print("TOT - converted (iv_conv):")
+print(iv_conv.summary)
+
+print("\nTOT - post_purchases (iv_pur):")
+print(iv_pur.summary)
