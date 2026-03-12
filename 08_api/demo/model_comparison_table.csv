@@ -1,0 +1,5 @@
+Model,MAE,RMSE,Biden pred,Trump pred
+Actual (2020),—,—,0.513,0.468
+Baseline OLS,0.6864,0.7925,0.803,-0.614
+Ridge,0.0393,0.0403,0.465,0.438
+Random Forest,0.0464,0.0471,0.458,0.43
