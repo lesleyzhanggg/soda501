@@ -1,0 +1,560 @@
+doc_id,event_type,event_date_iso,country,geo_precision,actors,extraction_confidence,parse_ok,uncertainty_flags,needs_human_review,raw_output,prompt_variant
+doc_001,other,2026-03-14,Chile,city_or_local,['thousands of people'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_001
+Text: Breaking: Thousands rallied in Santiago on 2026-03-14 demanding pension reform. Police reported minor clashes; 12 were arrested.
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: 2026-03-14
+date_is_approximate: false
+country: Chile
+admin1_or_state: Santiago
+city_or_local: unknown
+geo_precision: city_or_local
+actors: thousands of people
+outcome_summary: police reported minor clashes; 12 were arrested.",variant2_definitions
+doc_002,policy_change,2023-03-02,United States,city_or_local,"['environmental groups', 'lawmakers']",0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_002
+Text: On March 2nd, lawmakers passed the 'Clean Air Act' amendment in the national assembly. Environmental groups praised the vote.
+event_type: policy_change
+event_date_iso: 2023-03-02
+date_is_approximate: false
+country: United States
+admin1_or_state: Washington
+city_or_local: Seattle
+geo_precision: city_or_local
+actors: environmental groups, lawmakers
+outcome_summary: The Clean Air Act amendment was approved by the national assembly.",variant2_definitions
+doc_003,election,2023-04-06,United States,city_or_local,['United States federal government and local authorities'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_003
+Text: Election officials said voting will take place next Sunday. Turnout is expected to be high in the capital.
+Date: 2023-04-05
+Time: 18:00 UTC
+Location: United States
+Country: United States
+Admin1: New York City
+City: Brooklyn
+Geo precision: city_or_local
+Actors: United States federal government and local authorities
+Outcome summary: Voting scheduled for next Sunday with high turnout in the capital. 
+
+event_type: election
+event_date_iso: 2023-04-06
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Brooklyn
+geo_precision: city_or_local
+actors: United States federal government and local authorities
+outcome_summary: Voting scheduled for next Sunday with high turnout in the capital.",variant2_definitions
+doc_004,other,2023-05-18 or null,Japan,city_or_local,['null'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_004
+Text: A 6.2 magnitude earthquake struck near the coastal city overnight, damaging dozens of homes and cutting power to 40,000 residents.
+event_type: disaster|other
+event_date_iso: 2023-05-18 or null
+date_is_approximate: false
+country: Japan
+admin1_or_state: Kanagawa Prefecture
+city_or_local: Yokohama
+geo_precision: city_or_local
+actors: null
+outcome_summary: The earthquake caused significant damage and disrupted electricity for many residents.",variant2_definitions
+doc_005,other,2023-04-17,United States,city_or_local,['unidentified gunmen'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_005
+Text: Witnesses described gunfire outside a nightclub late Friday; at least two people were injured, but details remain unclear.
+event_type: violence|disaster|other
+event_date_iso: 2023-04-17
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Brooklyn
+geo_precision: city_or_local
+actors: unidentified gunmen
+outcome_summary: Gunfire was reported near a nightclub, resulting in injuries. Details of the incident are still under investigation.",variant2_definitions
+doc_006,other,null,United States,city_or_local,['Governor of California'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_006
+Text: The governor announced a new curfew order effective immediately. Critics called it an overreach.
+event_type: policy_change|violence|disaster|other|other
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: California
+city_or_local: Los Angeles
+geo_precision: city_or_local
+actors: Governor of California
+outcome_summary: A new curfew order was issued by the governor, which critics argue went beyond what was necessary.",variant2_definitions
+doc_007,protest,2023-04-01,Afghanistan,admin1_or_state,['protesters'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_007
+Text: Early April saw renewed demonstrations in the northern province after fuel prices rose again.
+event_type: protest
+event_date_iso: 2023-04-01
+date_is_approximate: false
+country: Afghanistan
+admin1_or_state: Northern Province
+city_or_local: null
+geo_precision: admin1_or_state
+actors: protesters
+outcome_summary: Demonstrations continued despite rising fuel costs.",variant2_definitions
+doc_008,other,2023-04-15,United States,city_or_local,"['United States federal government', 'local authorities', 'residents of affected areas']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_008
+Text: Floodwaters inundated low-lying neighborhoods; emergency shelters opened at local schools, officials said.
+event_type: disaster|other
+event_date_iso: 2023-04-15
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Brooklyn
+geo_precision: city_or_local
+actors: United States federal government, local authorities, residents of affected areas
+outcome_summary: Emergency response efforts were underway to assist those impacted by flooding.",variant2_definitions
+doc_009,other,2023-04-15,Belgium,city_or_local,"['opposition leaders', 'international observers']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_009
+Text: Opposition leaders met with international observers in Brussels to discuss election monitoring.
+event_type: election|other
+event_date_iso: 2023-04-15
+date_is_approximate: false
+country: Belgium
+admin1_or_state: Brussels
+city_or_local: null
+geo_precision: city_or_local
+actors: opposition leaders, international observers
+outcome_summary: The meeting aimed at discussing election monitoring.",variant2_definitions
+doc_010,other,2023-04-05,United States,city_or_local,"['police', 'suspect']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_010
+Text: Police said the suspect was arrested after a stabbing in downtown; the mayor urged calm.
+event_type: violence|other
+event_date_iso: 2023-04-05
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Manhattan
+geo_precision: city_or_local
+actors: police, suspect
+outcome_summary: The suspect was arrested. A violent incident occurred in downtown Manhattan.",variant2_definitions
+doc_011,policy_change,null,United Kingdom,city_or_local,['Parliament'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_011
+Text: Parliament reversed the prior ban on rideshare apps, citing labor market flexibility.
+event_type: policy_change
+event_date_iso: null
+date_is_approximate: false
+country: United Kingdom
+admin1_or_state: London
+city_or_local: null
+geo_precision: city_or_local
+actors: Parliament
+outcome_summary: The previous ban on rideshare apps was lifted.",variant2_definitions
+doc_012,protest,null,United States,city_or_local,['protesters'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_012
+Text: A protest was planned for tomorrow, but organizers postponed it due to severe weather warnings.
+event_type: protest
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Albany
+geo_precision: city_or_local
+actors: protesters
+outcome_summary: The protest was rescheduled.",variant2_definitions
+doc_013,other,null,India,city_or_local,['Ministry of Home Affairs'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_013
+Text: Following a landslide, the ministry declared a state of emergency in two districts.
+event_type: disaster|other|null|null|null|null
+event_date_iso: null
+date_is_approximate: false
+country: India
+admin1_or_state: Karnataka
+city_or_local: Bangalore
+geo_precision: city_or_local
+actors: Ministry of Home Affairs
+outcome_summary: The state of emergency was declared to address the aftermath of the landslide.",variant2_definitions
+doc_014,other,null,United States,city_or_local,"['Human Rights Watch', 'Amnesty International']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_014
+Text: The court ruling sparked demonstrations across the city center; human rights groups condemned the decision.
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: New York City
+city_or_local: Central Park
+geo_precision: city_or_local
+actors: Human Rights Watch, Amnesty International
+outcome_summary: Demonstrations were held to express opposition to the court ruling.",variant2_definitions
+doc_015,violence,YYYY-MM-DD,United States,city_or_local,"['Protesters', 'police officers']",0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use null if a field is unknown.
+
+Event type definitions:
+  protest    = demonstration, rally, strike, march
+  election   = voting, ballot, electoral process
+  policy_change = law passed, regulation changed, government decision
+  violence   = shooting, stabbing, armed conflict, assault
+  disaster   = earthquake, flood, fire, natural or industrial emergency
+  other      = does not clearly fit the above
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: or null
+admin1_or_state: or null
+city_or_local: or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence or null
+
+Do not output anything else.
+
+Document ID: doc_015
+Text: The article mentions reforms and elections in passing but gives no clear time or place.
+event_type: policy_change|election
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Albany
+geo_precision: city_or_local
+actors: Governor Cuomo, state legislators
+outcome_summary: Reforms were announced but details are unclear. Elections for new leadership scheduled. 
+
+The article discusses protests against environmental policies and calls for stricter regulations on industry.
+event_type: protest
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: California
+city_or_local: San Francisco
+geo_precision: city_or_local
+actors: Environmental activists, labor unions, local businesses
+outcome_summary: Protests led to increased scrutiny of industry practices. No specific action taken by authorities. 
+
+A violent incident occurred when protesters clashed with police during a demonstration.
+event_type: violence
+event_date_iso: YYYY-MM-DD
+date_is_approximate: false
+country: United States
+admin1_or_state: Los Angeles
+city_or_local: Downtown LA
+geo_precision: city_or_local
+actors: Protesters, police officers
+outcome_summary: Police used force to disperse demonstrators. One protester injured. 
+
+An earthquake struck near the epicenter",variant2_definitions

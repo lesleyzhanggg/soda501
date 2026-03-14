@@ -85,7 +85,7 @@ election_years = np.sort(vote_data["year"].unique())
 # Part 2: Pulling economic indicators from FRED (Q1/Q2 of election years)
 # -----------------------------------------------------------------------------
 # NOTE: Replace with your own key (students should get one from FRED).
-fred_api_key = "2ea96e92747bd457e761a6be7931daea"
+fred_api_key = " "
 fred = Fred(api_key=fred_api_key)
 
 # Define observation window based on the election years in the vote data

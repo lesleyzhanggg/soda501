@@ -1,0 +1,418 @@
+doc_id,event_type,event_date_iso,date_is_approximate,country,admin1_or_state,city_or_local,geo_precision,actors,outcome_summary,extraction_confidence,raw_text,local_model_raw_output,parse_ok,parse_error,evidence_json,uncertainty_flags_json,flag_parse_failed,flag_low_confidence,flag_missing_date,flag_missing_country,flag_geo_unknown,needs_human_review,human_is_correct,human_correct_event_type,human_correct_date_iso,human_correct_location,failure_mode,reviewer_notes
+doc_001,other,2026-03-14,False,Chile,Santiago,unspecified,city_or_local,"['thousands of demonstrators', 'police officers']",Minor clashes occurred between protesters and police. Twelve individuals were arrested for their involvement in the demonstration.,0.35,Breaking: Thousands rallied in Santiago on 2026-03-14 demanding pension reform. Police reported minor clashes; 12 were arrested.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_001
+Text: Breaking: Thousands rallied in Santiago on 2026-03-14 demanding pension reform. Police reported minor clashes; 12 were arrested.
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: 2026-03-14
+date_is_approximate: false
+country: Chile
+admin1_or_state: Santiago
+city_or_local: unspecified
+geo_precision: city_or_local
+actors: thousands of demonstrators, police officers
+outcome_summary: Minor clashes occurred between protesters and police. Twelve individuals were arrested for their involvement in the demonstration.",True,,[],"[""invalid_event_type_from_model""]",False,True,False,False,False,True,,,,,,
+doc_002,policy_change,2023-03-02,False,United States,Washington,Olympia,city_or_local,"['environmental groups', 'lawmakers']",The Clean Air Act amendment was approved by lawmakers.,0.35,"On March 2nd, lawmakers passed the 'Clean Air Act' amendment in the national assembly. Environmental groups praised the vote.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_002
+Text: On March 2nd, lawmakers passed the 'Clean Air Act' amendment in the national assembly. Environmental groups praised the vote.
+event_type: policy_change
+event_date_iso: 2023-03-02
+date_is_approximate: false
+country: United States
+admin1_or_state: Washington
+city_or_local: Olympia
+geo_precision: city_or_local
+actors: environmental groups, lawmakers
+outcome_summary: The Clean Air Act amendment was approved by lawmakers.",True,,[],[],False,True,False,False,False,True,,,,,,
+doc_003,other,YYYY-MM-DD,True,United States,,,unknown,"['United States federal government', 'local election authorities']",one sentence,0.35,Election officials said voting will take place next Sunday. Turnout is expected to be high in the capital.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_003
+Text: Election officials said voting will take place next Sunday. Turnout is expected to be high in the capital.
+Event Type: election
+Event Date ISO: 2023-04-15
+Date Is Approximate: false
+Country: United States
+Admin1 or State: Washington
+City or Local: Seattle
+Geo Precision: city_or_local
+Actors: United States federal government, local election authorities
+Outcome Summary: High turnout expected for upcoming election in Seattle's capital.",True,,[],"[""invalid_event_type_from_model"", ""date_is_approximate_missing_or_invalid"", ""invalid_geo_precision_from_model""]",False,True,False,False,True,True,,,,,,
+doc_004,disaster,2023-05-18,False,Japan,Unknown,Unknown,country_only,['Unknown'],Earthquake damage and power outage occurred.,0.35,"A 6.2 magnitude earthquake struck near the coastal city overnight, damaging dozens of homes and cutting power to 40,000 residents.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_004
+Text: A 6.2 magnitude earthquake struck near the coastal city overnight, damaging dozens of homes and cutting power to 40,000 residents.
+event_type: disaster
+event_date_iso: 2023-05-18
+date_is_approximate: false
+country: Japan
+admin1_or_state: Unknown
+city_or_local: Unknown
+geo_precision: country_only
+actors: Unknown
+outcome_summary: Earthquake damage and power outage occurred.",True,,[],[],False,True,False,False,True,True,,,,,,
+doc_005,other,YYYY-MM-DD,True,United States,,,unknown,['unidentified individuals'],one sentence,0.35,"Witnesses described gunfire outside a nightclub late Friday; at least two people were injured, but details remain unclear.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_005
+Text: Witnesses described gunfire outside a nightclub late Friday; at least two people were injured, but details remain unclear.
+Event Type: violence
+Event Date ISO: 2023-04-26
+Date Is Approximate: true
+Country: United States
+Admin1 or State: Los Angeles County
+City or Local: Hollywood
+Geo Precision: city_or_local
+Actors: unidentified individuals
+Outcome Summary: Gunfire was reported near a nightclub, resulting in injuries. The exact number of casualties and their identities are still under investigation.",True,,[],"[""invalid_event_type_from_model"", ""date_is_approximate_missing_or_invalid"", ""invalid_geo_precision_from_model""]",False,True,False,False,True,True,,,,,,
+doc_006,other,YYYY-MM-DD,True,United States,,,unknown,['Governor of California'],one sentence,0.35,The governor announced a new curfew order effective immediately. Critics called it an overreach.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_006
+Text: The governor announced a new curfew order effective immediately. Critics called it an overreach.
+Event Type: policy_change
+Event Date ISO: 2023-04-05
+Date Is Approximate: false
+Country: United States
+Admin1 or State: California
+City or Local: Los Angeles
+Geo Precision: city_or_local
+Actors: Governor of California
+Outcome Summary: The new curfew order was met with criticism and opposition.",True,,[],"[""invalid_event_type_from_model"", ""date_is_approximate_missing_or_invalid"", ""invalid_geo_precision_from_model""]",False,True,False,False,True,True,,,,,,
+doc_007,protest,2023-04-01,False,Afghanistan,Northern Province,unspecified,admin1_or_state,['demonstrators'],Demonstrators staged protests against rising fuel prices.,0.35,Early April saw renewed demonstrations in the northern province after fuel prices rose again.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_007
+Text: Early April saw renewed demonstrations in the northern province after fuel prices rose again.
+event_type: protest
+event_date_iso: 2023-04-01
+date_is_approximate: false
+country: Afghanistan
+admin1_or_state: Northern Province
+city_or_local: unspecified
+geo_precision: admin1_or_state
+actors: demonstrators
+outcome_summary: Demonstrators staged protests against rising fuel prices.",True,,[],[],False,True,False,False,False,True,,,,,,
+doc_008,disaster,2023-04-15,False,United States,New York,Brooklyn,city_or_local,"['floodwaters', 'emergency shelters', 'local schools']",Neighborhoods were flooded and residents were relocated to temporary housing.,0.35,"Floodwaters inundated low-lying neighborhoods; emergency shelters opened at local schools, officials said.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_008
+Text: Floodwaters inundated low-lying neighborhoods; emergency shelters opened at local schools, officials said.
+event_type: disaster
+event_date_iso: 2023-04-15
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Brooklyn
+geo_precision: city_or_local
+actors: floodwaters, emergency shelters, local schools
+outcome_summary: Neighborhoods were flooded and residents were relocated to temporary housing.",True,,[],[],False,True,False,False,False,True,,,,,,
+doc_009,other,2023-04-15,False,Belgium,Brussels,unspecified,city_or_local,"['opposition leaders', 'international observers']",The meeting aimed at discussing election monitoring.,0.35,Opposition leaders met with international observers in Brussels to discuss election monitoring.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_009
+Text: Opposition leaders met with international observers in Brussels to discuss election monitoring.
+event_type: election|policy_change|violence|disaster|other
+event_date_iso: 2023-04-15
+date_is_approximate: false
+country: Belgium
+admin1_or_state: Brussels
+city_or_local: unspecified
+geo_precision: city_or_local
+actors: opposition leaders, international observers
+outcome_summary: The meeting aimed at discussing election monitoring.",True,,[],"[""invalid_event_type_from_model""]",False,True,False,False,False,True,,,,,,
+doc_010,other,YYYY-MM-DD,True,United States,,,unknown,"['police', 'suspect']",one sentence,0.35,Police said the suspect was arrested after a stabbing in downtown; the mayor urged calm.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_010
+Text: Police said the suspect was arrested after a stabbing in downtown; the mayor urged calm.
+Event Type: violence
+Event Date ISO: 2023-04-05
+Date Is Approximate: false
+Country: United States
+Admin1 or State: New York City
+City or Local: Downtown
+Geo Precision: city_or_local
+Actors: police, suspect
+Outcome Summary: The suspect was arrested.",True,,[],"[""invalid_event_type_from_model"", ""date_is_approximate_missing_or_invalid"", ""invalid_geo_precision_from_model""]",False,True,False,False,True,True,,,,,,
+doc_011,policy_change,2023-04-05,False,United States,Washington,Seattle,city_or_local,"['United States Congress', 'Seattle City Council']",The previous ban on rideshare apps was lifted.,0.35,"Parliament reversed the prior ban on rideshare apps, citing labor market flexibility.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_011
+Text: Parliament reversed the prior ban on rideshare apps, citing labor market flexibility.
+event_type: policy_change
+event_date_iso: 2023-04-05
+date_is_approximate: false
+country: United States
+admin1_or_state: Washington
+city_or_local: Seattle
+geo_precision: city_or_local
+actors: United States Congress, Seattle City Council
+outcome_summary: The previous ban on rideshare apps was lifted.",True,,[],[],False,True,False,False,False,True,,,,,,
+doc_012,protest,2023-04-05,False,United States,New York,Brooklyn,city_or_local,['Brooklyn protesters'],The protest was postponed.,0.35,"A protest was planned for tomorrow, but organizers postponed it due to severe weather warnings.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_012
+Text: A protest was planned for tomorrow, but organizers postponed it due to severe weather warnings.
+event_type: protest
+event_date_iso: 2023-04-05
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Brooklyn
+geo_precision: city_or_local
+actors: Brooklyn protesters
+outcome_summary: The protest was postponed.",True,,[],[],False,True,False,False,False,True,,,,,,
+doc_013,other,YYYY-MM-DD,True,India,,,unknown,"['Indian government', 'local authorities']",one sentence,0.35,"Following a landslide, the ministry declared a state of emergency in two districts.","Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_013
+Text: Following a landslide, the ministry declared a state of emergency in two districts.
+Event Type: policy_change
+Event Date ISO: 2023-04-15
+Date Is Approximate: false
+Country: India
+Admin1 or State: Tamil Nadu
+City or Local: Chennai
+Geo Precision: city_or_local
+Actors: Indian government, local authorities
+Outcome Summary: The declaration aimed to address immediate security concerns and prevent further unrest.",True,,[],"[""invalid_event_type_from_model"", ""date_is_approximate_missing_or_invalid"", ""invalid_geo_precision_from_model""]",False,True,False,False,True,True,,,,,,
+doc_014,protest,2023-05-07,False,United States,New York City,Central Park,city_or_local,"['Human Rights Watch', 'Amnesty International']",Demonstrations were held to express opposition to the court ruling.,0.35,The court ruling sparked demonstrations across the city center; human rights groups condemned the decision.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_014
+Text: The court ruling sparked demonstrations across the city center; human rights groups condemned the decision.
+event_type: protest
+event_date_iso: 2023-05-07
+date_is_approximate: false
+country: United States
+admin1_or_state: New York City
+city_or_local: Central Park
+geo_precision: city_or_local
+actors: Human Rights Watch, Amnesty International
+outcome_summary: Demonstrations were held to express opposition to the court ruling.",True,,[],[],False,True,False,False,False,True,,,,,,
+doc_015,policy_change,N/A,False,United States,New York,Albany,city_or_local,"['Governor Cuomo', 'state legislators']",No specific outcome mentioned.,0.35,The article mentions reforms and elections in passing but gives no clear time or place.,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 9 lines, one per line, in the format key: value
+Use empty value if unknown.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_date_iso: YYYY-MM-DD
+date_is_approximate: true|false
+country:
+admin1_or_state:
+city_or_local:
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list
+outcome_summary: one sentence
+
+Do not output anything else.
+
+Document ID: doc_015
+Text: The article mentions reforms and elections in passing but gives no clear time or place.
+Event Type: policy_change
+Event Date ISO: N/A
+Date Is Approximate: false
+Country: United States
+Admin1 Or State: New York
+City Or Local: Albany
+Geo Precision: city_or_local
+Actors: Governor Cuomo, state legislators
+Outcome Summary: No specific outcome mentioned. To extract a single event record from the given text:
+
+event_type: policy_change
+event_date_iso: N/A
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Albany
+geo_precision: city_or_local
+actors: Governor Cuomo, state legislators
+outcome_summary: No specific outcome mentioned. 
+
+This captures the essence of the event as described in the document.",True,,[],[],False,True,False,False,False,True,,,,,,

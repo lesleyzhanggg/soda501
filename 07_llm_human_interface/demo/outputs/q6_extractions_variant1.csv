@@ -1,0 +1,472 @@
+doc_id,event_type,event_date_iso,country,geo_precision,actors,extraction_confidence,parse_ok,uncertainty_flags,needs_human_review,raw_output,prompt_variant
+doc_001,other,YYYY-MM-DD or null,Chile,unknown,['thousands of protesters'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_001
+Text: Breaking: Thousands rallied in Santiago on 2026-03-14 demanding pension reform. Police reported minor clashes; 12 were arrested.
+Event Type: protest
+Event Type Evidence: rally
+Event Date ISO: 2026-03-14
+Date Is Approximate: false
+Country: Chile
+Admin1_or_State: Santiago
+City_or_Local: unknown
+Geo Precision: admin1_or_state
+Actors: thousands of protesters
+Outcome Summary: Protesters demanded pension reform and faced minor police intervention with arrests. 
+
+Note: The document ID ""doc_001"" was used to uniquely identify this event record for reference purposes only. It does not correspond to any real-world events but serves as an identifier within the system. The actual event records are stored elsewhere in the database. The provided text snippet contains information about a protest in Santiago, Chile, where thousands gathered to demand pension reform. The police reported some minor clashes during the demonstration, resulting in 12 individuals being arrested. This summary captures the essence of the event without including extraneous details such as the date, time, or specific actors involved beyond those necessary for understanding the context. The outcome summary succinctly describes the nature of the protest and its aftermath, highlighting the interaction between the demonstrators and law enforcement. The use of placeholders like ""unknown,"" ""admin1_or_state,"" and ""city_or_local"" reflects",variant1_evidence
+doc_002,other,YYYY-MM-DD or null,United States,unknown,"['environmental groups', 'lawmakers']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_002
+Text: On March 2nd, lawmakers passed the 'Clean Air Act' amendment in the national assembly. Environmental groups praised the vote.
+Event Type: policy_change
+Event Type Evidence: Clean Air Act amendment
+Event Date ISO: 2023-03-02
+Date Is Approximate: false
+Country: United States
+Admin1_or_State: Washington
+City_or_Local: Seattle
+Geo Precision: city_or_local
+Actors: environmental groups, lawmakers
+Outcome Summary: The 'Clean Air Act' amendment was passed by the national assembly.",variant1_evidence
+doc_003,other,YYYY-MM-DD or null,null,unknown,['Election officials'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_003
+Text: Election officials said voting will take place next Sunday. Turnout is expected to be high in the capital.
+Event Type: election
+Event Type Evidence: Voting will take place next Sunday.
+Event Date ISO: null
+Date Is Approximate: false
+Country: null
+Admin1_or_State: null
+City_or_Local: null
+Geo Precision: unknown
+Actors: Election officials
+Outcome Summary: High turnout expected for upcoming election in capital.",variant1_evidence
+doc_004,disaster,2023-05-18,Japan,city_or_local,['multiple aftershocks'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_004
+Text: A 6.2 magnitude earthquake struck near the coastal city overnight, damaging dozens of homes and cutting power to 40,000 residents.
+event_type: disaster
+event_type_evidence: earthquake
+event_date_iso: 2023-05-18
+date_is_approximate: false
+country: Japan
+admin1_or_state: Kanagawa Prefecture
+city_or_local: Yokohama
+geo_precision: city_or_local
+actors: multiple aftershocks
+outcome_summary: Earthquake caused damage and disrupted power for residents.",variant1_evidence
+doc_005,other,YYYY-MM-DD or null,United States,unknown,['witnesses'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_005
+Text: Witnesses described gunfire outside a nightclub late Friday; at least two people were injured, but details remain unclear.
+Event Type: violence
+Event Type Evidence: gunfire
+Event Date ISO: null
+Date Is Approximate: false
+Country: United States
+Admin1_or_State: Washington
+City_or_Local: Seattle
+Geo Precision: city_or_local
+Actors: witnesses
+Outcome Summary: Gunfire was reported near a nightclub, resulting in injuries. Details are still being investigated.",variant1_evidence
+doc_006,other,YYYY-MM-DD or null,United States,unknown,"['Governor (John Doe)', 'Critics']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_006
+Text: The governor announced a new curfew order effective immediately. Critics called it an overreach.
+Event Type: policy_change
+Event Type Evidence: announcement of new curfew order
+Event Date ISO: null
+Date Is Approximate: false
+Country: United States
+Admin1_or_State: California
+City_or_Local: Los Angeles
+Geo Precision: city_or_local
+Actors: Governor (John Doe), Critics
+Outcome Summary: New curfew order was announced by the governor, criticized for being an overreach.",variant1_evidence
+doc_007,other,YYYY-MM-DD or null,Afghanistan,unknown,['protesters'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_007
+Text: Early April saw renewed demonstrations in the northern province after fuel prices rose again.
+Event Type: protest
+Event Type Evidence: early april saw renewed demonstrations
+Event Date ISO: 2023-04-01
+Date Is Approximate: false
+Country: Afghanistan
+Admin1_or_State: Kunduz Province
+City_or_Local: None specified
+Geo Precision: admin1_or_state
+Actors: protesters
+Outcome Summary: Demonstrations resumed. 
+
+Note: The document ID and text have been preserved to ensure consistency with the original input. The task requires extracting only the relevant information about an event, which in this case is a protest. The extracted fields are based on the provided guidelines and examples. The outcome summary captures the essence of the event without including extraneous details. The date is explicitly stated for clarity, even though it's not strictly required by the prompt. The actors' names were kept as ""protesters"" since they're generic terms used in such contexts. The geo precision was set to ""admin1_or_state"" because the location is at the provincial level, not the city or local level. The rest of the fields follow the instructions given in the prompt. This approach ensures that all necessary information is included while adhering to the constraints provided. The final result meets the criteria outlined in the instruction.",variant1_evidence
+doc_008,other,YYYY-MM-DD or null,United States,unknown,"['Emergency services', 'residents of low-lying neighborhoods']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_008
+Text: Floodwaters inundated low-lying neighborhoods; emergency shelters opened at local schools, officials said.
+Event Type: disaster
+Event Type Evidence: floodwaters inundated low-lying neighborhoods
+Event Date ISO: null
+Date Is Approximate: false
+Country: United States
+Admin1_or_State: New York
+City_or_Local: Brooklyn
+Geo Precision: city_or_local
+Actors: Emergency services, residents of low-lying neighborhoods
+Outcome Summary: Floodwaters caused flooding and required the opening of emergency shelters.",variant1_evidence
+doc_009,policy_change,null,Belgium,admin1_or_state,"['opposition leaders', 'international observers']",0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_009
+Text: Opposition leaders met with international observers in Brussels to discuss election monitoring.
+event_type: policy_change
+event_type_evidence: opposition leaders met with international observers in Brussels to discuss election monitoring
+event_date_iso: null
+date_is_approximate: false
+country: Belgium
+admin1_or_state: Brussels
+city_or_local: null
+geo_precision: admin1_or_state
+actors: opposition leaders, international observers
+outcome_summary: The opposition leaders held discussions with international observers regarding election monitoring.",variant1_evidence
+doc_010,other,YYYY-MM-DD or null,null,unknown,['null'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_010
+Text: Police said the suspect was arrested after a stabbing in downtown; the mayor urged calm.
+Event Type: violence
+Event Type Evidence: police_said_the_suspect_was_arrested_after_a_stabbing_in_downtown
+Event Date ISO: null
+Date Is Approximate: false
+Country: United States
+Admin1 Or State: New York
+City Or Local: Downtown
+Geo Precision: city_or_local
+Actors: police, mayor
+Outcome Summary: The suspect was arrested. 
+
+Note: This document contains multiple events and I have extracted only one based on the given criteria. If there were more than one suitable event, this extraction process would need to be repeated for each event. In cases where no clear event can be identified, ""null"" should be returned for all fields related to that event. For example:
+
+Event Type: null
+Event Type Evidence: null
+Event Date ISO: null
+Date Is Approximate: null
+Country: null
+Admin1 Or State: null
+City Or Local: null
+Geo Precision: null
+Actors: null
+Outcome Summary: null",variant1_evidence
+doc_011,other,YYYY-MM-DD or null,United States,unknown,"['United States Congress', 'Seattle City Council']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_011
+Text: Parliament reversed the prior ban on rideshare apps, citing labor market flexibility.
+Event Type: policy_change
+Event Type Evidence: reversed
+Event Date ISO: null
+Date Is Approximate: false
+Country: United States
+Admin1 Or State: Washington
+City Or Local: Seattle
+Geo Precision: city_or_local
+Actors: United States Congress, Seattle City Council
+Outcome Summary: The previous ban on rideshare apps was lifted.",variant1_evidence
+doc_012,protest,null,United States,city_or_local,['Albany City Council and local activists'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_012
+Text: A protest was planned for tomorrow, but organizers postponed it due to severe weather warnings.
+event_type: protest
+event_type_evidence: protest
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: New York
+city_or_local: Albany
+geo_precision: city_or_local
+actors: Albany City Council and local activists
+outcome_summary: The protest was postponed. 
+
+Note: In this case, there were no other events recorded in the document. If there had been more than one event, only the first would be extracted according to the instructions. However, since there are no additional events provided, we can extract the single event described above. To ensure clarity, I've included all required fields even though some may not apply based on the given information. For example, if an event did not have a specific date, I've used ""null"" instead of omitting the field entirely. Similarly, if an actor's role wasn't specified (e.g., ""local activists""), I've listed them without further details. This approach allows us to provide a complete response while adhering to the constraints of the task. Let me know if you need any clarification or assistance with another scenario! [END_OF_TEXT]",variant1_evidence
+doc_013,other,YYYY-MM-DD or null,Nepal,unknown,['Ministry of Home Affairs'],0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_013
+Text: Following a landslide, the ministry declared a state of emergency in two districts.
+Event Type: policy_change
+Event Type Evidence: landslide
+Event Date ISO: null
+Date Is Approximate: false
+Country: Nepal
+Admin1_or_State: Bardia
+City_or_Local: Kaski
+Geo Precision: admin1_or_state
+Actors: Ministry of Home Affairs
+Outcome Summary: The government implemented policies to address the aftermath of the landslide.",variant1_evidence
+doc_014,protest,null,United States,city_or_local,['human rights groups'],0.35,True,[],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_014
+Text: The court ruling sparked demonstrations across the city center; human rights groups condemned the decision.
+event_type: protest
+event_type_evidence: ""demonstrations across the city center""
+event_date_iso: null
+date_is_approximate: false
+country: United States
+admin1_or_state: New York City
+city_or_local: city center
+geo_precision: city_or_local
+actors: human rights groups
+outcome_summary: Human rights groups condemned the decision.",variant1_evidence
+doc_015,other,null or null or 2023-04-01 or null or null or null,null,unknown,"['government', 'voters', 'unspecified actors']",0.35,True,['invalid_event_type'],True,"Task: Extract ONE event record from the text.
+Return EXACTLY the following 10 lines, one per line, in the format key: value
+If a field is unknown or not mentioned, write null as the value.
+Do NOT leave any field blank.
+
+event_type: protest|election|policy_change|violence|disaster|other
+event_type_evidence: paste the exact word or phrase from the text that justifies event_type
+event_date_iso: YYYY-MM-DD or null
+date_is_approximate: true|false
+country: country name or null
+admin1_or_state: state/province or null
+city_or_local: city or null
+geo_precision: country_only|admin1_or_state|city_or_local|unknown
+actors: comma-separated list or null
+outcome_summary: one sentence summarizing what happened, or null
+
+Do not output anything else.
+
+Document ID: doc_015
+Text: The article mentions reforms and elections in passing but gives no clear time or place.
+The article mentions reforms and elections in passing but gives no clear time or place. Reform proposals were made by the government, which was elected last year. There are no specific dates given for these events. No violence has been reported so far. The election results have yet to be announced. The reform proposals will likely lead to policy changes in the future. However, there is currently no evidence of protests or demonstrations related to this topic. The outcome summary is unclear at this point due to lack of information. 
+
+event_type: policy_change|protest|election|violence|disaster|other
+event_type_evidence: reform proposals, election results, policy changes, no protests, lack of violence, unclear outcomes
+event_date_iso: null or null or 2023-04-01 or null or null or null
+date_is_approximate: false or false or false or false or false or false
+country: null
+admin1_or_state: null
+city_or_local: null
+geo_precision: unknown
+actors: government, voters, unspecified actors
+outcome_summary: unclear due to lack of information",variant1_evidence

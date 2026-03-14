@@ -1,0 +1,4 @@
+prompt_variant,macro_F1,accuracy,review_queue_n,review_queue_pct
+baseline,0.389,0.5,15,100.0
+variant1_evidence,0.111,0.125,15,100.0
+variant2_definitions,0.389,0.375,15,100.0
