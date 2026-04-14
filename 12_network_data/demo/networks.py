@@ -38,6 +38,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from datetime import date
+import os
+
+# Create output directory for saved figures
+os.makedirs("figures", exist_ok=True)
 
 # Reproducibility
 np.random.seed(123)
@@ -156,6 +160,42 @@ print("\nReconstructed graph summary:")
 print("  Nodes:", G2.number_of_nodes())
 print("  Edges:", G2.number_of_edges())
 
+# -------------------------------------------------------------------------
+# Spaghetti-style network visualization
+# -------------------------------------------------------------------------
+# This is a classic "hairball" style plot:
+# - edges are thin and transparent
+# - nodes are colored by true community
+# - spring layout puts more connected nodes closer together
+
+plt.figure(figsize=(10, 10))
+
+# Layout for the graph
+pos = nx.spring_layout(G2, seed=123, k=0.15)
+
+# Draw faint edges first
+nx.draw_networkx_edges(
+    G2,
+    pos,
+    alpha=0.08,
+    width=0.4
+)
+
+# Draw nodes on top, colored by true community
+nx.draw_networkx_nodes(
+    G2,
+    pos,
+    node_color=true_labels,
+    node_size=18,
+    alpha=0.9
+)
+
+plt.title("Synthetic network spaghetti plot")
+plt.axis("off")
+plt.tight_layout()
+plt.savefig("figures/01_spaghetti_network.png", dpi=150, bbox_inches="tight")
+plt.show()
+
 # -----------------------------------------------------------------------------
 # Step 3: Convert the graph to a sparse adjacency matrix
 # -----------------------------------------------------------------------------
@@ -163,7 +203,12 @@ print("  Edges:", G2.number_of_edges())
 # - Sparse matrices are essential for large graphs.
 # - Dense adjacency is O(n^2) memory, which becomes impossible quickly.
 
-A = nx.to_scipy_sparse_array(G2, format="csr", dtype=np.float32)
+A = nx.to_scipy_sparse_array(
+    G2,
+    nodelist=np.arange(num_nodes),
+    format="csr",
+    dtype=np.float32
+)
 print("\nAdjacency matrix:")
 print("  Shape:", A.shape)
 print("  Nonzeros:", A.nnz)
@@ -191,6 +236,7 @@ plt.title("Degree distribution (synthetic SBM)")
 plt.xlabel("Degree")
 plt.ylabel("Count of nodes")
 plt.tight_layout()
+plt.savefig("figures/02_degree_distribution.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # -----------------------------------------------------------------------------
@@ -208,6 +254,7 @@ plt.title("Approximate betweenness centrality distribution")
 plt.xlabel("Betweenness (approx)")
 plt.ylabel("Count of nodes")
 plt.tight_layout()
+plt.savefig("figures/03_betweenness_distribution.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # -----------------------------------------------------------------------------
@@ -222,7 +269,40 @@ plt.title("Eigenvector centrality distribution")
 plt.xlabel("Eigenvector centrality")
 plt.ylabel("Count of nodes")
 plt.tight_layout()
+plt.savefig("figures/04_eigenvector_distribution.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+# -----------------------------------------------------------------------------
+# Top 10 nodes under each centrality measure
+# -----------------------------------------------------------------------------
+top10_deg = pd.Series(deg).sort_values(ascending=False).head(10)
+top10_betw = pd.Series(betw).sort_values(ascending=False).head(10)
+top10_eig = pd.Series(eig).sort_values(ascending=False).head(10)
+
+print("\nTop 10 nodes by degree:")
+print(top10_deg.to_string())
+
+print("\nTop 10 nodes by betweenness centrality:")
+print(top10_betw.to_string())
+
+print("\nTop 10 nodes by eigenvector centrality:")
+print(top10_eig.to_string())
+
+# Compare overlap across measures
+top10_sets = {
+    "Degree": set(top10_deg.index),
+    "Betweenness": set(top10_betw.index),
+    "Eigenvector": set(top10_eig.index)
+}
+
+print("\nOverlap between top-10 lists:")
+print("  Degree & Betweenness:", len(top10_sets["Degree"] & top10_sets["Betweenness"]), "nodes in common")
+print("  Degree & Eigenvector:", len(top10_sets["Degree"] & top10_sets["Eigenvector"]), "nodes in common")
+print("  Betweenness & Eigenvector:", len(top10_sets["Betweenness"] & top10_sets["Eigenvector"]), "nodes in common")
+print("  All three:", len(top10_sets["Degree"] & top10_sets["Betweenness"] & top10_sets["Eigenvector"]), "nodes in common")
+
+
+
 
 # -----------------------------------------------------------------------------
 # Part 4: Community Detection (Louvain) + Evaluation
@@ -299,6 +379,45 @@ print("  Validation accuracy:", val_acc_lr)
 print("  Test accuracy:", test_acc_lr)
 
 # -----------------------------------------------------------------------------
+# Visualization: Community size bar plot
+# -----------------------------------------------------------------------------
+comm_ids = list(range(len(louvain_comms)))
+
+plt.figure()
+plt.bar(comm_ids, louvain_sizes[:len(comm_ids)], color=["#534AB7", "#1D9E75", "#D85A30", "#378ADD", "#D4537E"][:len(comm_ids)])
+plt.title("Louvain community sizes")
+plt.xlabel("Community ID")
+plt.ylabel("Number of nodes")
+plt.xticks(comm_ids)
+plt.tight_layout()
+plt.savefig("figures/07_louvain_community_sizes.png", dpi=150, bbox_inches="tight")
+plt.show()
+
+# -----------------------------------------------------------------------------
+# Side-by-side comparison: ground truth vs Louvain
+# -----------------------------------------------------------------------------
+true_sizes = block_sizes  # [400, 350, 250]
+true_ids = list(range(len(true_sizes)))
+
+fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+
+axes[0].bar(true_ids, true_sizes, color=["#534AB7", "#1D9E75", "#D85A30"])
+axes[0].set_title("Ground-truth block sizes")
+axes[0].set_xlabel("Block ID")
+axes[0].set_ylabel("Number of nodes")
+axes[0].set_xticks(true_ids)
+
+axes[1].bar(comm_ids, louvain_sizes[:len(comm_ids)], color=["#534AB7", "#1D9E75", "#D85A30", "#378ADD", "#D4537E"][:len(comm_ids)])
+axes[1].set_title("Louvain community sizes")
+axes[1].set_xlabel("Community ID")
+axes[1].set_ylabel("Number of nodes")
+axes[1].set_xticks(comm_ids)
+
+fig.suptitle(f"Community structure comparison (ARI = {ari:.3f})")
+fig.tight_layout()
+plt.savefig("figures/08_community_comparison.png", dpi=150, bbox_inches="tight")
+plt.show()
+# -----------------------------------------------------------------------------
 # Part 6: Graph Neural Network (GCN) — Node Classification
 # -----------------------------------------------------------------------------
 # We implement the classic 2-layer GCN update:
@@ -362,6 +481,13 @@ optimizer = torch.optim.Adam(list(lin1.parameters()) + list(lin2.parameters()), 
 # We do 30 epochs to keep the output manageable in class.
 epochs = 30
 
+# Store training history so we can visualize performance across epochs
+epoch_list = []
+loss_history = []
+train_acc_history = []
+val_acc_history = []
+test_acc_history = []
+
 for epoch in range(1, epochs + 1):
 
     # Forward pass
@@ -389,6 +515,51 @@ for epoch in range(1, epochs + 1):
 
     print("Epoch", epoch, "| loss:", float(loss.detach().cpu().numpy()),
           "| train_acc:", train_acc, "| val_acc:", val_acc, "| test_acc:", test_acc)
+    # Save values for plotting after training
+    epoch_list.append(epoch)
+    loss_history.append(float(loss.detach().cpu().numpy()))
+    train_acc_history.append(train_acc)
+    val_acc_history.append(val_acc)
+    test_acc_history.append(test_acc)
+
+
+# -----------------------------------------------------------------------------
+# Spaghetti-style training curves
+# -----------------------------------------------------------------------------
+# This shows how train / validation / test accuracy move across epochs.
+# We also plot loss separately so students can compare optimization vs accuracy.
+
+history_df = pd.DataFrame({
+    "epoch": epoch_list,
+    "loss": loss_history,
+    "train_acc": train_acc_history,
+    "val_acc": val_acc_history,
+    "test_acc": test_acc_history
+})
+
+# Accuracy spaghetti plot
+plt.figure()
+plt.plot(history_df["epoch"], history_df["train_acc"], label="Train accuracy")
+plt.plot(history_df["epoch"], history_df["val_acc"], label="Validation accuracy")
+plt.plot(history_df["epoch"], history_df["test_acc"], label="Test accuracy")
+plt.title("GCN accuracy across epochs")
+plt.xlabel("Epoch")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.tight_layout()
+plt.savefig("figures/05_gcn_accuracy.png", dpi=150, bbox_inches="tight")
+plt.show()
+
+# Loss plot
+plt.figure()
+plt.plot(history_df["epoch"], history_df["loss"], label="Training loss")
+plt.title("GCN training loss across epochs")
+plt.xlabel("Epoch")
+plt.ylabel("Cross-entropy loss")
+plt.legend()
+plt.tight_layout()
+plt.savefig("figures/06_gcn_loss.png", dpi=150, bbox_inches="tight")
+plt.show()
 
 # -----------------------------------------------------------------------------
 # Part 7: Post-Training Diagnostics (Confusion Matrix + Comparison)

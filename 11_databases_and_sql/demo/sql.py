@@ -498,3 +498,5 @@ print("\nSaved plot: contributions_by_party.png")
 # Close the database connection
 # -----------------------------------------------------------------------------
 con.close()
+
+

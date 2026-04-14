@@ -1,0 +1,20 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+Directed vs. undirected. A directed edge means A connects to B but not necessarily the reverse; an undirected edge treats every tie as mutual. In this lab, the SBM network is undirected, so all algorithms treat connections as reciprocal. If the network were directed, centrality rankings would change: a node that receives many incoming ties but sends few would have high in-degree but low out-degree, a distinction that collapses into a single score when edges are undirected. Community detection would also shift, since asymmetric ties between groups could reveal directional flows that symmetrizing the network would hide.\
+Weighted vs. unweighted. Unweighted degree counts connections; weighted degree sums edge weights. In the lab's unweighted SBM, a node with three weak ties ranks the same as one with three strong ties. Adding weights could reshuffle centrality rankings by letting fewer but heavier connections outrank many thin ones. Community detection would shift too, since modularity optimization would favor clusters linked by strong ties over clusters linked by many weak ones.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \outl0\strokewidth0 \strokec2 The three centrality measures produce largely non-overlapping top-10 lists. Degree and betweenness share zero nodes in common, and degree and eigenvector also share zero. Betweenness and eigenvector overlap on 5 nodes (352, 129, 394, 291, 390), but no single node appears in all three lists. This divergence reflects the fact that each measure captures a different dimension of importance. Degree rewards raw connectivity -- the top degree nodes (163, 378, 158) simply have the most edges, and their indices suggest they sit in the largest block (community 0, nodes 0-399). Betweenness surfaces nodes like 530 and 570 that sit at community boundaries and broker shortest paths between blocks, even if they lack high degree. Eigenvector centrality rewards nodes embedded in dense, well-connected neighborhoods, which is why it partially overlaps with betweenness (both are sensitive to position within the broader network structure) but not with degree (which only sees local edge count). The results confirm that "importance" is not a single concept -- the choice of centrality measure encodes an assumption about what kind of influence matters.
+\f1\b \strokec2 \
+\
+
+\f0\b0 \strokec2 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \strokec2 The Adjusted Rand Index (ARI) of 1.000 indicates that Louvain perfectly recovered the three ground-truth SBM blocks, assigning every node to its correct community. ARI ranges from -0.5 to 1, where 1 means perfect agreement, 0 means agreement no better than random, and negative values mean systematic disagreement. The perfect score here is not surprising given the SBM's relatively strong community structure: within-block connection probabilities (0.04-0.06) are substantially higher than between-block probabilities (0.005-0.01), making the communities easy to detect. However, Louvain would not always achieve perfect recovery. If the off-diagonal probabilities in P were increased (making between-community mixing stronger), Louvain could begin merging true blocks that become hard to distinguish. Conversely, if a true block had uneven internal density -- some subregion much denser than the rest -- Louvain might split it into two communities to achieve a local modularity gain, even though the ground truth treats it as one block. This is a known limitation called the resolution limit of modularity: the objective function has a built-in scale preference and cannot always detect communities that are much smaller or much larger than that characteristic scale.\
+}
