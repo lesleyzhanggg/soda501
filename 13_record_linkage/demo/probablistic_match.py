@@ -31,6 +31,10 @@ import recordlinkage as rl
 from rapidfuzz.distance import Levenshtein
 
 from datetime import date
+import os
+
+# Create output directory for saved figures
+os.makedirs("figures", exist_ok=True)
 
 
 # -----------------------------------------------------------------------------
@@ -165,6 +169,8 @@ det_matches = (
 )
 
 print("Number of deterministic matches:", det_matches.shape[0])
+match_rate = det_matches.shape[0] / len(df_a)
+print("Match rate (matches / df_a size):", round(match_rate, 4))
 
 
 # -----------------------------------------------------------------------------
@@ -196,19 +202,26 @@ print("Number of candidate pairs after blocking:", len(candidate_pairs))
 # Step 4B: Create similarity features (comparisons)
 # -----------------------------------------------------------------------------
 # We'll create a feature matrix with one row per candidate pair.
-# Features:
-# - firstname similarity (Jaro-Winkler)
-# - lastname similarity (Jaro-Winkler)
-# - birthyear similarity (Gaussian similarity around equality)
-# - zipcode exact match (should mostly be 1 due to blocking, but we keep it explicit)
+# Features are BINARIZED (0/1) because ECMClassifier expects binary agree/disagree
+# vectors (this is a core assumption of the Fellegi-Sunter model).
+# The threshold parameter converts continuous similarity to binary:
+#   1 if similarity >= threshold, 0 otherwise.
+# - firstname: Jaro-Winkler >= 0.85 -> 1 (agree)
+# - lastname:  Jaro-Winkler >= 0.85 -> 1 (agree)
+# - birthyear: Gaussian similarity >= 0.5 -> 1 (agree) [binarized after compute]
+# - zipcode:   exact match (already binary)
 
 compare = rl.Compare()
-compare.string("firstname", "firstname", method="jarowinkler", label="firstname_sim")
-compare.string("lastname",  "lastname",  method="jarowinkler", label="lastname_sim")
+compare.string("firstname", "firstname", method="jarowinkler", threshold=0.85, label="firstname_sim")
+compare.string("lastname",  "lastname",  method="jarowinkler", threshold=0.85, label="lastname_sim")
 compare.numeric("birthyear", "birthyear", method="gauss", offset=0, scale=2, label="birthyear_sim")
 compare.exact("zipcode", "zipcode", label="zipcode_exact")
 
 features = compare.compute(candidate_pairs, df_a, df_b)
+
+# Binarize birthyear_sim (numeric comparison doesn't support threshold parameter)
+# Values >= 0.5 are treated as "agree"
+features["birthyear_sim"] = (features["birthyear_sim"] >= 0.5).astype(int)
 
 print(features.head())
 
@@ -255,6 +268,7 @@ plt.xlabel("Threshold level (posterior probability cutoff)")
 plt.ylabel("Count of matches returned")
 plt.title("Match count vs threshold")
 plt.tight_layout()
+plt.savefig("figures/01_match_count_vs_threshold.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 
@@ -341,6 +355,7 @@ plt.ylabel("Mean Levenshtein distance (first name)")
 plt.title("Match quality vs posterior probability (first name distance)")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
+plt.savefig("figures/02_first_name_distance.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # Plot: mean last-name distance by posterior bin
@@ -351,6 +366,7 @@ plt.ylabel("Mean Levenshtein distance (last name)")
 plt.title("Match quality vs posterior probability (last name distance)")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
+plt.savefig("figures/03_last_name_distance.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # Plot: mean birthyear distance by posterior bin
@@ -361,4 +377,33 @@ plt.ylabel("Mean absolute difference (birth year)")
 plt.title("Match quality vs posterior probability (birth year difference)")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
+plt.savefig("figures/04_birth_year_distance.png", dpi=150, bbox_inches="tight")
+plt.show()
+
+# -----------------------------------------------------------------------------
+# Step 7: Boxplot of distances by posterior bin (Question 6 visualization)
+# -----------------------------------------------------------------------------
+fig, axes = plt.subplots(1, 3, figsize=(14, 5))
+
+pairs_plus_ab.boxplot(column="first_name_distance", by="threshold_bin", ax=axes[0])
+axes[0].set_title("First name distance")
+axes[0].set_xlabel("Posterior bin")
+axes[0].set_ylabel("Levenshtein distance")
+axes[0].tick_params(axis="x", rotation=45)
+
+pairs_plus_ab.boxplot(column="last_name_distance", by="threshold_bin", ax=axes[1])
+axes[1].set_title("Last name distance")
+axes[1].set_xlabel("Posterior bin")
+axes[1].set_ylabel("Levenshtein distance")
+axes[1].tick_params(axis="x", rotation=45)
+
+pairs_plus_ab.boxplot(column="birth_year_distance", by="threshold_bin", ax=axes[2])
+axes[2].set_title("Birth year distance")
+axes[2].set_xlabel("Posterior bin")
+axes[2].set_ylabel("Absolute difference")
+axes[2].tick_params(axis="x", rotation=45)
+
+fig.suptitle("Match quality by posterior probability bin")
+fig.tight_layout()
+plt.savefig("figures/05_match_quality_boxplots.png", dpi=150, bbox_inches="tight")
 plt.show()
