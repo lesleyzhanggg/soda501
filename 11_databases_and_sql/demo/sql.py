@@ -31,6 +31,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from datetime import date, timedelta
+import os
+
+os.makedirs("figures", exist_ok=True)
 
 # -----------------------------------------------------------------------------
 # Part 1: Create and Populate a Local SQLite Database
@@ -258,6 +261,24 @@ print(pd.read_sql_query("""
     ON co.candidate_id = ca.id
   LIMIT 5;
 """, con))
+
+# -----------------------------------------------------------------------------
+# Question 4: Schema inspection (PRAGMA table_info)
+# -----------------------------------------------------------------------------
+print("\n------------------------------")
+print("Schema: candidates")
+print("------------------------------")
+print(pd.read_sql_query("PRAGMA table_info(candidates);", con))
+
+print("\n------------------------------")
+print("Schema: contributors")
+print("------------------------------")
+print(pd.read_sql_query("PRAGMA table_info(contributors);", con))
+
+print("\n------------------------------")
+print("Schema: contributions")
+print("------------------------------")
+print(pd.read_sql_query("PRAGMA table_info(contributions);", con))
 
 # -----------------------------------------------------------------------------
 # Part 2: SQL Queries for Analysis
@@ -489,10 +510,96 @@ plt.title("Total Contributions by Party")
 plt.xlabel("Party")
 plt.ylabel("Total Amount ($)")
 plt.tight_layout()
-plt.savefig("contributions_by_party.png", dpi=150)
+plt.savefig("figures/contributions_by_party.png", dpi=150)
 plt.show()
 
 print("\nSaved plot: contributions_by_party.png")
+
+# =============================================================================
+# PROBLEM SET ANSWERS: Questions 4, 5, 6
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Question 5: Join + aggregation (required query)
+# -----------------------------------------------------------------------------
+# Join contributions to candidates, filter amount > 1000,
+# output: party, total_amount, num_contributions
+
+query_q5 = """
+  SELECT
+    ca.party,
+    SUM(co.amount) AS total_amount,
+    COUNT(*) AS num_contributions
+  FROM contributions co
+  JOIN candidates ca
+    ON co.candidate_id = ca.id
+  WHERE co.amount > 1000
+  GROUP BY ca.party
+  ORDER BY total_amount DESC;
+"""
+q5_result = pd.read_sql_query(query_q5, con)
+
+print("\n------------------------------")
+print("Q5: Total contributions by party (amount > $1000)")
+print("------------------------------")
+print(q5_result)
+
+# Q5 bar plot
+plt.figure()
+plt.bar(q5_result["party"], q5_result["total_amount"],
+        color=["#534AB7", "#1D9E75", "#D85A30"])
+plt.title("Total contributions by party (amount > $1000)")
+plt.xlabel("Party")
+plt.ylabel("Total Amount ($)")
+plt.tight_layout()
+plt.savefig("figures/q5_contributions_by_party_gt1000.png", dpi=150, bbox_inches="tight")
+plt.show()
+
+# -----------------------------------------------------------------------------
+# Question 6: Indexes + EXPLAIN QUERY PLAN
+# -----------------------------------------------------------------------------
+
+# 6A: Check which indexes exist on contributions
+print("\n------------------------------")
+print("Q6: Existing indexes on the database")
+print("------------------------------")
+indexes = pd.read_sql_query("""
+  SELECT type, name, tbl_name, sql
+  FROM sqlite_master
+  WHERE type = 'index';
+""", con)
+print(indexes)
+
+# 6B: Run EXPLAIN QUERY PLAN on a query that filters by candidate_id and amount
+print("\n------------------------------")
+print("Q6: EXPLAIN QUERY PLAN (filter by candidate_id and amount > 1000)")
+print("------------------------------")
+explain_result = pd.read_sql_query("""
+  EXPLAIN QUERY PLAN
+  SELECT candidate_id, SUM(amount) AS total
+  FROM contributions
+  WHERE candidate_id = 1 AND amount > 1000
+  GROUP BY candidate_id;
+""", con)
+print(explain_result)
+
+# 6C: EXPLAIN QUERY PLAN on the Q5 join query for comparison
+print("\n------------------------------")
+print("Q6: EXPLAIN QUERY PLAN (Q5 join query)")
+print("------------------------------")
+explain_join = pd.read_sql_query("""
+  EXPLAIN QUERY PLAN
+  SELECT
+    ca.party,
+    SUM(co.amount) AS total_amount,
+    COUNT(*) AS num_contributions
+  FROM contributions co
+  JOIN candidates ca
+    ON co.candidate_id = ca.id
+  WHERE co.amount > 1000
+  GROUP BY ca.party;
+""", con)
+print(explain_join)
 
 # -----------------------------------------------------------------------------
 # Close the database connection

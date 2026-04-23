@@ -1,0 +1,31 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 A relational schema organizes data into separate tables, each representing a distinct entity, and defines how those tables connect to one another. This structure is useful for social data because it eliminates redundancy: instead of repeating a candidate's name and party on every single donation row, that information is stored once in the candidates table and referenced by ID elsewhere.\
+In the lab's campaign finance database, there are three tables. The candidates table has a primary key 
+\fs26 id
+\fs24  that uniquely identifies each candidate. The contributors table has its own primary key 
+\fs26 id
+\fs24  that uniquely identifies each donor. The contributions table sits in the middle and contains two foreign keys: 
+\fs26 contributor_id
+\fs24 , which references 
+\fs26 contributors.id
+\fs24 , and 
+\fs26 candidate_id
+\fs24 , which references 
+\fs26 candidates.id
+\fs24 . Each row in contributions records a single donation linking one contributor to one candidate.\
+Primary keys enforce uniqueness that no two candidates can share the same 
+\fs26 id
+\fs24 . Foreign keys enforce referential integrity, every 
+\fs26 candidate_id
+\fs24  in contributions must correspond to an actual row in candidates. Together, they reduce duplication by letting each entity (a person, a candidate) be stored exactly once, while the contributions table records the relationships between them. Joins reconstruct the full picture at query time: for example, joining contributions to candidates on 
+\fs26 candidate_id = candidates.id
+\fs24  lets us compute total donations by party without ever duplicating candidate-level information across a million contribution rows.\
+}
