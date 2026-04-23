@@ -1,0 +1,18 @@
+variable,description,notes
+responseid,Unique respondent identifier (from survey platform),Do not share raw IDs publicly in a replication package
+start_date,Survey start time (parsed),Timezone set to America/New_York for class consistency
+end_date,Survey end time (parsed),Timezone set to America/New_York for class consistency
+duration_seconds,"Time spent in survey (seconds, from platform metadata)",Can be noisy if respondent leaves tab open
+ipaddress,IP address (platform metadata; treat as sensitive),Often should not be released publicly; check IRB / policy
+platform,Recruitment platform indicator (Prolific / MTurk / Department pool),Platform differences can affect data quality
+prolific_id,Prolific participant ID (if applicable),Blank for non-Prolific respondents
+mturk_workerid,MTurk worker ID (if applicable),Blank for non-MTurk respondents
+consent,Consent to participate (Yes/No),Use to filter out non-consenting cases
+age_num,Age in years (numeric; missing if refused/blank),Converted from string; 'Prefer not to say' -> NA
+gender,Self-reported gender (cleaned; missing if refused/blank),Converted 'Prefer not to say' and blank -> NA
+partyid,Self-reported party identification (blank -> NA),Blank -> NA
+attentioncheck,Attention check response (used for quality screening),Incorrect response indicates low attention
+q1_policy,Policy attitude item 1 (Likert text),Consider mapping to numeric 1--5 for analysis
+q2_policy,Policy attitude item 2 (Likert text),Consider mapping to numeric 1--5 for analysis
+q3_policy,Policy attitude item 3 (Likert text),Consider mapping to numeric 1--5 for analysis
+q4_policy,Policy attitude item 4 (Likert text),Consider mapping to numeric 1--5 for analysis

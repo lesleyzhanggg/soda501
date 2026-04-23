@@ -1,0 +1,21 @@
+variable,description,notes
+response_id,Unique response identifier (Qualtrics),"Qualtrics-generated, format R_xxxx"
+start_date,Survey start timestamp (parsed datetime),Parsed from v8; format YYYY/MM/DD HH:MM
+end_date,Survey end timestamp (parsed datetime),Parsed from v9; format YYYY/MM/DD HH:MM
+time_pre,Survey duration in seconds (platform metadata),Extreme outliers present (max ~454k sec); cap or flag
+duration_min,Survey duration in minutes (derived from time_pre),Derived: time_pre / 60
+ip_address,Respondent IP address (sensitive metadata),Treat as sensitive; do not publish
+uid,Platform-assigned unique participant ID,Hashed panel ID
+consent,"Consent to participate (1=Yes, 2=No)",Drop if consent != 1
+age,Age in years (numeric),Range 18-70 in this sample
+sex,"Sex (0=female, 1=male)",Binary coded
+edu,"Education level (0=low, 0.5=mid, 1=high)",3-level ordinal
+polint,Political interest (numeric scale),Higher = more interested
+ideology,Political ideology (numeric scale),Higher = more conservative
+q1,"Survey item Q1 (numeric, 8/9 recoded to NA)",8 and 9 recoded to NA (don't know / refused)
+q2,"Survey item Q2 (numeric, 8/9 recoded to NA)",Same recoding as Q1
+q3,"Survey item Q3 (numeric, 8/9 recoded to NA)",Same recoding as Q1
+satisfice,"Satisficing flag from original data (0=no, 1=mild, 2=severe)",Pre-computed by original researchers
+totalclick,Total article clicks in experiment,Count of articles clicked during experiment
+condition,Experimental condition assignment,Experimental group assignment
+selective,Selective exposure measure,Computed selective exposure score
