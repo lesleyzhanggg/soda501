@@ -1,0 +1,411 @@
+Date: 2020-01-15
+Title: LCQ14: Services of the accident and emergency departments of public hospitals
+URL: https://www.info.gov.hk/gia/general/202001/15/P2020011400653.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ14: Services of the accident and emergency departments of public hospitals
+LCQ14: Services of the accident and emergency departments of public hospitals
+*****************************************************************************
+Following is a question by Dr the Hon Pierre Chan and a written reply by the Secretary for Food and Health, Professor Sophia Chan, in the Legislative Council today (January 15):
+Question:
+On June 18, 2017, the Hospital Authority (HA) raised the charge payable by eligible persons for using the services of the accident and emergency (A&E) departments of public hospitals from $100 to $180, so as to encourage A&E patients whose conditions are not the most urgent to switch to using outpatient services. In this connection, will the Government inform this Council if it knows:
+(1) the attendances of the A&E departments of public hospitals in each month of the past three financial years and the current financial year (up to December 31, 2019), with a breakdown by the triage category to which the patients belonged (set out in tables of the same format as the table below);
+Financial year:
+Year and month
+Attendances of A&E departments
+Category I
+(Critical)
+Category II
+(Emergency)
+Category III
+(Urgent)
+Category IV
+(Semi-urgent)
+Category V
+(Non-urgent)
+(2) whether HA has reviewed the effectiveness of raising the charge for using the services of the A&E departments on reducing those A&E attendances of patients belonging to triage Categories IV and V; if HA has, of the outcome (including the duration for which the effect has lasted); if not, the reasons for that; and
+(3) (i) the average cost per attendance and (ii) the average waiting time of patients of each triage category in respect of the services of the A&E departments of public hospitals in each of the past three financial years and the current financial year (up to December 31, 2019)?
+Reply:
+President,
+In consultation with the Hospital Authority (HA), I provide a reply to the various parts of the question raised by Dr the Hon Pierre Chan as follows:
+(1) The tables below set out the numbers of accident and emergency (A&E) attendances of HA hospitals by triage category in the recent four financial years:
+2016-17
+Month
+Number of A&E attendances
+Triage 1
+(Critical)
+Triage 2
+(Emergency)
+Triage 3
+(Urgent)
+Triage 4
+(Semi-urgent)
+Triage 5
+(Non-urgent)
+April 2016
+1 567
+3 954
+60 798
+109 451
+10 746
+May 2016
+1 618
+3 970
+63 080
+115 918
+11 039
+June 2016
+1 498
+3 665
+57 776
+105 442
+8 360
+July 2016
+1 528
+3 816
+59 094
+106 604
+8 803
+August 2016
+1 488
+3 780
+59 302
+103 678
+8 491
+September 2016
+1 551
+3 884
+59 190
+108 121
+8 883
+October 2016
+1 569
+3 831
+60 937
+111 283
+9 257
+November 2016
+1 690
+3 810
+58 883
+103 052
+8 278
+December 2016
+1 913
+4 079
+60 690
+101 591
+8 914
+January 2017
+2 004
+4 322
+60 197
+98 624
+7 834
+February 2017
+1 867
+3 956
+57 639
+91 755
+7 628
+March 2017
+1 917
+4 424
+65 145
+109 849
+9 412
+2017-18
+Month
+Number of A&E attendances
+Triage 1
+(Critical)
+Triage 2
+(Emergency)
+Triage 3
+(Urgent)
+Triage 4
+(Semi-urgent)
+Triage 5
+(Non-urgent)
+April 2017
+1 693
+4 093
+62 334
+107 161
+9 839
+May 2017
+1 661
+4 198
+65 435
+112 939
+10 005
+June 2017
+1 711
+4 253
+64 429
+106 330
+8 216
+July 2017
+1 873
+4 361
+65 887
+104 965
+8 471
+August 2017
+1 634
+4 194
+59 193
+93 461
+7 046
+September 2017
+1 590
+4 123
+58 529
+93 995
+7 065
+October 2017
+1 726
+4 172
+61 341
+101 731
+7 786
+November 2017
+1 718
+4 081
+61 050
+97 361
+7 005
+December 2017
+2 042
+4 621
+63 620
+97 224
+7 757
+January 2018
+2 262
+4 858
+66 364
+102 374
+7 730
+February 2018
+2 370
+4 572
+58 140
+88 828
+6 666
+March 2018
+1 864
+4 585
+62 857
+99 052
+7 089
+2018-19
+Month
+Number of A&E attendances
+Triage 1
+(Critical)
+Triage 2
+(Emergency)
+Triage 3
+(Urgent)
+Triage 4
+(Semi-urgent)
+Triage 5
+(Non-urgent)
+April 2018
+1 674
+4 278
+59 506
+96 679
+7 216
+May 2018
+1 690
+4 273
+62 959
+102 583
+7 117
+June 2018
+1 600
+3 939
+59 094
+95 680
+6 019
+July 2018
+1 670
+4 195
+62 916
+98 873
+6 329
+August 2018
+1 813
+4 268
+62 567
+96 504
+6 175
+September 2018
+1 596
+4 177
+59 526
+94 963
+6 175
+October 2018
+1 812
+4 350
+63 840
+103 051
+6 831
+November 2018
+1 828
+4 166
+62 644
+100 337
+6 475
+December 2018
+2 161
+4 542
+64 804
+100 102
+6 717
+January 2019
+2 411
+4 909
+67 445
+105 497
+7 002
+February 2019
+1 919
+4 134
+56 398
+88 061
+6 042
+March 2019
+2 056
+4 785
+66 944
+105 803
+7 161
+2019-20 (as at November 30, 2019) [provisional figures]
+Month
+Number of A&E attendances
+Triage 1
+(Critical)
+Triage 2
+(Emergency)
+Triage 3
+(Urgent)
+Triage 4
+(Semi-urgent)
+Triage 5
+(Non-urgent)
+April 2019
+1 777
+4 392
+64 761
+106 111
+7 192
+May 2019
+1 760
+4 582
+66 535
+109 892
+7 272
+June 2019
+1 737
+4 420
+63 870
+105 284
+6 168
+July 2019
+1 769
+4 396
+65 577
+105 694
+5 564
+August 2019
+1 780
+4 382
+61 264
+95 862
+5 141
+September 2019
+1 718
+4 387
+61 390
+99 702
+5 558
+October 2019
+1 804
+4 421
+61 847
+100 508
+5 667
+November 2019
+1 808
+4 511
+60 807
+94 945
+5 265
+(2) The fee for A&E services at public hospitals was revised from $100 to $180 on June 18, 2017.  According to the HA’s information, the overall number of A&E attendances between July 2017 and June 2018 had decreased by about 4.4 per cent when compared with the corresponding period before the fee revision.  The numbers of Triage 4 (Semi-urgent) and Triage 5 (Non-urgent) attendances had decreased by 6.9 per cent and 17.6 per cent respectively, while the total number of Triage 1 (Critical), Triage 2 (Emergency) and Triage 3 (Urgent) attendances had increased by 1.3 per cent.
+As for the period from July 2018 to June 2019, the numbers of Triage 4 (Semi-urgent) and Triage 5 (Non-urgent) attendances had decreased by 3.7 per cent and 24.7 per cent respectively, while the total number of Triage 1 (Critical), Triage 2 (Emergency) and Triage 3 (Urgent) attendances had increased by 4.4 per cent when compared with the corresponding period before the fee revision two years ago.
+The number of attendances before and after the fee revision may, to some extent, show that the fee revision has led to certain behavioural change of patients with less urgent conditions (i.e. Triage 4 and 5) in seeking medical consultation.  Nonetheless, it is likely that the fee revision does not have much impact on the behavior of patients with more urgent conditions (i.e. Triage 1, 2 and 3) in seeking medical consultation.
+The Government and the HA will continue to monitor the utilisation and quality of A&E services to ensure timely treatment for patients in need.
+(3) The table below sets out the average cost per attendance of A&E services provided by the HA from 2016-17 to 2018-19.  The average cost per attendance of A&E services provided by the HA for 2019-20 is not yet available.
+Year
+Average cost per attendance ($)
+2016-17
+1,300
+2017-18
+1,390
+2018-19
+1,530
+The HA's service costs include direct staff costs (such as salary expenditure on doctors and nurses) for providing services to patients; expenditure incurred for various clinical support services (such as pharmacy, diagnostic radiology and pathology tests); and other operating costs (such as utility expenses and repair and maintenance costs of medical equipment).  The average cost per attendance represents an average computed with reference to the total A&E service costs and the corresponding activities (in terms of attendances) provided.
+The table below sets out the average waiting time for HA's A&E services under each triage category in the recent four financial years:
+Year
+Average waiting time (minute) for A&E services
+Triage 1
+(Critical)
+Triage 2 (Emergency)
+Triage 3 (Urgent)
+Triage 4 (Semi-urgent)
+Triage 15 (Non-urgent)
+2016-17
+0
+8
+24
+103
+126
+2017-18
+0
+8
+26
+114
+127
+2018-19
+0
+8
+26
+111
+125
+2019-20
+(as at November 30, 2019)
+[provisional figures]
+0
+7
+26
+121
+134
+Ends/Wednesday, January 15, 2020
+Issued at HKT 14:35
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases

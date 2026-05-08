@@ -1,0 +1,50 @@
+Date: 2019-10-30
+Title: LCQ9: Access to patient information by Police
+URL: https://www.info.gov.hk/gia/general/201910/30/P2019103000299.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ9: Access to patient information by Police
+LCQ9: Access to patient information by Police
+*********************************************
+Following is a question by Dr the Hon Kwok Ka-ki and a written reply by the Secretary for Food and Health, Professor Sophia Chan, in the Legislative Council today (October 30):
+Question:
+After serious confrontations between police officers and demonstrators in the vicinity of Admiralty on June 12 this year, some demonstrators who had gone to the accident and emergency (A&E) departments of public hospitals for treatment of injuries were arrested there by the Police. It was reported in the press on June 18 that any person could access, through the computers in the A&E departments without going through the procedure for logging in with a password, the patient information contained in the Accident and Emergency Information System (AEIS), and that the system had a page designated "For Police". The Hospital Authority (HA) subsequently clarified that AEIS was for the exclusive use of healthcare workers and the page concerned was only a printing option in the "Disaster" module of AEIS. The HA also indicated that from June 20 onwards, the AEIS could be accessed only after going through the procedure for logging in with a password. In this connection, will the Government inform this Council:
+(1) of the number of aforesaid persons arrested in the A&E departments, with a tabulated breakdown by (i) name of hospital, (ii) the offences allegedly committed by them and (iii) the age group to which they belonged (i.e. under 16 years old, 16 to 18 years old, 19 to 25 years old, 26 to 40 years old, 41 to 65 years old, and above 65 years old);
+(2) regarding the situation about the AEIS as mentioned in the aforesaid press report, whether the management staff of (i) the Food and Health Bureau, (ii) the Security Bureau, (iii) the Department of Health (DH) and (iv) the HA were aware of it beforehand; if so, since when they became aware of it;
+(3) since which date the Police had been able to obtain the patient information contained in the AEIS, of the types of information obtained and the to-date number of patients involved; the to-date number of persons arrested by the Police based on such information, with a tabulated breakdown by the offences allegedly committed by them and the locations of arrest (the name of hospital if in hospital); and
+(4) whether currently the Police are able to access the patient information contained in the computer systems of the clinics under the DH and of private hospitals; if so, how the Government ensures that the privacy of patients is properly safeguarded?
+Reply:
+President,
+In consultation with the Security Bureau, the Department of Health (DH) and the Hospital Authority (HA), I provide below a consolidated reply to the various parts of the question raised by Dr the Hon Kwok Ka-ki.
+As at October 17, 2019, the Police arrested a total of five persons, aged from 22 to 29, at Queen Elizabeth Hospital, Yan Chai Hospital and Kwong Wah Hospital for riot-related offences regarding the protest on June 12.
+(2) The HA's Accident and Emergency Information System (AEIS) is an internal system, and has all along had a "disaster module" to facilitate the management of major incidents in the community by the HA Major Incident Control Centre. It covers various types of major incidents which require service co-ordination, such as major traffic accidents, fire, earthquakes, landslides, mass gatherings and major sports events, etc. Other modules, such as "heatstroke module" and "hypothermia module", are also available. The AEIS is a closed system which is not linked or connected to any computer systems outside the HA. It is only accessible to HA staff with access rights, and no such rights have been given to non-HA personnel.
+The AEIS has a report mode with five report options, namely "Medical", "Police", "Helpdesk", "Information Services Department" and "General", which provides, as appropriate, information to relevant stakeholders according to different circumstances. All information requests should be made to the HA by the requesting party, and should fulfill the dual purposes of facilitating rescue and assisting the injured or their families.
+There is a well-established mechanism in public hospitals for handling requests for patient information from law enforcement officers. All HA and public hospital staff must strictly observe the guidelines on personal data privacy and information access. For any violation of or non-compliance with patient privacy protection guidelines in handling patient information, the HA will take appropriate human resources procedures.
+To address the public concerns about patient data security of the AEIS, the HA set up a special task group in late June 2019 to review the security risk of the clinical system with regard to patient privacy protection and frontline operation and make recommendations for improvement. The HA adopted the report submitted by the special task group and is implementing the following improvement measures and arrangements:
+1. To strengthen system access control of the AEIS, including mandatory personal log-in and access rights based on operational needs of users and audit controls;
+2. to enhance traceability and accountability of user activities in the AEIS;
+3. to introduce electronic documentation into accident and emergency (A&E) process and workflow to minimise the risk of exposure of hardcopies of patient information;
+4. to designate "public area", "clinical area" and "staff area" in the A&E departments; and to enhance privacy protection measures on computers and display monitors;
+5. to review and enhance the content of AEIS "disaster module" reports and to provide only the necessary patient information;
+6. to enhance staff awareness and training on patient information protection and proper handling of requests from other organisations for patient information;
+7. to further collaborate with the Privacy Commissioner for Personal Data to enhance policy and practice on handling patient information; and
+8. to explore technological solutions to facilitate fast log-in to the AEIS such that operational efficiency could be maintained in the heavily loaded A&E departments while ensuring effective access control.
+(3) According to section 50 of the Police Force Ordinance (Cap. 232), a police officer may apprehend a person who he reasonably believes has committed an offence for which that person may be sentenced to imprisonment, or under specified circumstances.
+The Police will not obstruct any person from receiving medical treatment during investigation or any operation in hospitals. The Police have absolute respect for patients' privacy and any right that a person should be entitled to, including the right to legal representation. Where it is necessary to obtain personal data from hospital for investigation or court trials, the Police will make a written request to the hospital after obtaining the data subject's consent or under the exemptions provided for in the Personal Data (Privacy) Ordinance (Cap. 486). Applications for search warrants will be made to the court if necessary.
+(4) The information system, containing client information, in the clinics of the DH is operated on the Government intranet and is only accessible by relevant officers of the DH. Unless authorised by law, non-DH personnel cannot access or obtain information contained in the relevant system.
+On the other hand, private hospitals should develop policies and procedures in handling patient data (including information stored electronically). Such policies and procedures should comply with relevant legislation (including the Personal Data (Privacy) Ordinance) and guidelines/codes of practice issued by professional bodies (e.g. the Medical Council of Hong Kong).
+Ends/Wednesday, October 30, 2019
+Issued at HKT 12:25
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases

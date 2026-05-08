@@ -1,0 +1,78 @@
+Date: 2020-04-22
+Title: LCQ19: Supply and demand for and training of land surveyors
+URL: https://www.info.gov.hk/gia/general/202004/22/P2020042200405.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ19: Supply and demand for and training of land surveyors
+LCQ19: Supply and demand for and training of land surveyors
+***********************************************************
+Following is a question by the Hon Tony Tse and a written reply by the Secretary for Development, Mr Michael Wong, in the Legislative Council today (April 22):
+Question:
+Some members of the land surveying sector have pointed out that as there is growing popularity of the application of land spatial data and an increasing demand for more accurate land surveying data for work such as monitoring ground settlement, they expect that the demand for land surveyors will increase. Nevertheless, the numbers of training programme places and in-service training places for land surveyors have not increased correspondingly. In this connection, will the Government inform this Council:
+(1)       whether it carried out any assessment in the past five years on the manpower supply and demand for as well as the training of land surveyors; if so, of the outcome; if not, whether it will carry out such an assessment;
+(2)       of the numbers of land surveying degree programmes offered by the various local tertiary institutions and the total number of places of such programmes, in each of the past five years; whether it knows if the various institutions have plans to offer more programmes of this type or more such places in the coming three years; and
+(3)       of the respective numbers of land surveying graduate trainee vacancies offered by the relevant government departments and the respective numbers of such trainees employed by them, in each of the past five years; whether such departments have plans to increase the numbers of vacancies for this type of trainees in the coming three years?
+Reply:
+President,
+Land surveyors are equipped with the professional knowledge of surveying, mapping, and maintaining and analysing land spatial data.  Both the Government (mainly the Survey and Mapping Office (SMO) of the Lands Department (LandsD)) and private institutions employ land surveyors, whose major responsibilities include collecting and processing surveying data, and producing survey record plans for land and works through the use of surveying technology to support the work related to town planning, land development, housing development, and construction projects.
+Having consulted the Education Bureau, our reply to the various parts of the question raised by Hon Tse is as follows:
+(1) The SMO of LandsD has been conducting assessment on the manpower demand and supply of the land surveyors within the Government, having regard to the technological development in land surveying, requirements of land surveying work, development of spatial data policies and the number of graduates from the relevant disciplines. The SMO also maintains communication with practitioners in the field regarding the development of the entire profession.
+In recent years, the Government is keen to promote the use of common spatial data, which will be conducive to spurring social innovation, enhancing data-driven decision-making process and improving the quality of life for the community.  We are speeding up our work in this area, starting with the roll-out of a Common Spatial Data Infrastructure (CSDI) portal with at least 240 datasets in phases, first within the Government by end 2021 and then to the public by end 2022. Four quick win projects, including Map Application Programming Interface, Geotagging Tool, Address Data Infrastructure, and District-based Spatial Information Dashboard will also be launched by end 2020 for public use. Starting from this year, a high-quality three-dimensional (3D) map showing topographical and exterior features of terrain, buildings and infrastructures will be gradually opened up in phases, and its coverage is expected to extend across the territory by end 2023. We will also publish 3D pedestrian network data covering various locations over the territory and a 3D digital map showing the internal layout for 1 250 buildings. The Development Bureau (DEVB) is currently seeking funding approval of $300 million from the Finance Committee of the Legislative Council to implement the above spatial data-related initiatives. Upon the official commencement of the abovementioned projects, we will be able to explore with the practitioners and the academic sector the development opportunities and the manpower requirements of the industry in more concrete terms.
+(2) According to information provided by the Education Bureau, the number of land surveying programmes accredited by the Hong Kong Institute of Surveyors (HKIS) and other related programmes (including programmes related to urban informatics) offered by local post-secondary institutions, and the actual number of student intakes from the 2015/16 to 2019/20 academic years are set out in the table below:
+Academic year
+Number of programmes
+Actual number of student intakes
+2015/16
+5
+166
+2016/17
+5
+163
+2017/18
+5
+127
+2018/19
+5
+139
+2019/20
+5
+166
+(provisional figure)
+Note: The above post-secondary programmes include sub-degree, bachelor’s degree (including first-year first-degree and senior year undergraduate) and taught postgraduate programmes.
+To this day, the Government has not been notified of any plans from the institutions to adjust the number of intakes for their current programmes. In addition, we are aware that the Hong Kong Polytechnic University and the University of Hong Kong will each launch a new master programme on urban informatics in the 2020/2021 academic year, exact number of student intake for each programme to be confirmed.
+The SMO of LandsD will keep under review the manpower situation of land surveyors within the Government and maintain communication with the practitioners and the academic sector regarding the development of the entire industry, so as to convey their views on land surveying and related programmes provided by local post-secondary institutions to the University Grants Committee as appropriate.
+(3) LandsD has been hiring university graduates who are graduating or were graduated from the relevant disciplines in the current year or previous years to be Land Surveying Graduates (LSGs) under the Graduate Training Scheme. These LSGs are provided with two years of practical training to enable them to meet the basic requirement of training period under the Assessment of Professional Competence of the Land Surveying Division of the HKIS. The details of the recruitment of LSGs in the past five years are as follows:
+Year of recruitment
+Quota for recruitment of LSGs
+Actual number of LSGs recruited
+2015
+11
+11
+2016
+11
+11
+2017
+11
+11
+2018
+14
+14
+2019
+14
+14
+LandsD plans to further increase the quota of LSG to at least 25 in 2020, with a view to relieving the impact of the epidemic on the employment of graduates and coping with the training needs of the industry. We will keep under review the number of LSG positions having regard to the development of land surveying and spatial data policies, the number of graduates from related disciplines and their employment situation, and the departmental resources.
+Ends/Wednesday, April 22, 2020
+Issued at HKT 14:13
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases

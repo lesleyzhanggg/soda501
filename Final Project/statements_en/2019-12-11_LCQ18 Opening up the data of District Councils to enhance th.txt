@@ -1,0 +1,72 @@
+Date: 2019-12-11
+Title: LCQ18: Opening up the data of District Councils to enhance the transparency of operation
+URL: https://www.info.gov.hk/gia/general/201912/11/P2019121100588.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ18: Opening up the data of District Councils to enhance the transparency of operation
+LCQ18: Opening up the data of District Councils to enhance the transparency of operation
+****************************************************************************************
+​Following is a question by the Hon Charles Mok and a written reply by the Secretary for Home Affairs, Mr Lau Kong-wah, in the Legislative Council today (December 11):
+Question:
+Some academics of public policies have pointed out that there have been inconsistencies in the quantities and formats of the information made public by various District Councils (DCs). Most of the data uploaded onto the websites have not adopted machine-readable format, and some important decisions (such as those on funding applications) are not recorded in any minutes of meetings as the decisions have been made by way of circulation of papers. Such situations have made it difficult for them to obtain the data needed for conducting analyses, and also hindered the participation of members of the public in policy discussion and monitoring the Council's operation. On opening up the data of DCs to enhance the transparency of operation and to encourage members of the public to participate in district affairs, will the Government inform this Council:
+(1) of the situation concerning DC documents (i.e. (i) agendas, (ii) discussion papers, (iii) minutes of meetings, (iv) records of DC members' speeches, (v) records of voting results, (vi) funding-related information (such as proposals), (vii) records of declaration of interests, (viii) evaluation reports of activities, and (ix) financial reports) being made available to members of the public, including (a) whether the said documents have been made public (if not, of the reasons for that), (b) whether English versions of them are provided, (c) whether English versions of them can be provided upon request, (d) whether they have been uploaded onto the websites of DCs (if so, of the time taken in general), (e) whether the data uploaded onto the websites are in machine-readable format, and (f) whether the data uploaded onto the websites are shown in a visualized manner (set out the information by name of DC and in tables of the same format as the table below);
+Name of DC:
+Documents
+The situation concerning the documents being made available
+to members of the public
+(a)
+(b)
+(c)
+(d)
+(e)
+(f)
+(i)
+…
+(ix)
+(2) in respect of each DC, of (i) the percentage of the documents set out in (1) being uploaded onto its website and the average time taken, and (ii) the types of documents not uploaded onto its website and the reasons for that;
+(3) whether it will further open up the data of the meetings of DCs and their committees, including the provision of records of voting results in machine-readable format; if so, of the format to be adopted, whether it will provide the original files and data interfaces, and whether it will introduce visualization of data reporting;
+(4) whether it will allocate additional resources to the various DC secretariats to facilitate their stepping up efforts in opening up data and co-operating with data developers, so as to ensure that the websites of various DCs provide data in formats that suit users' needs;
+(5) whether it will, with the aim of facilitating (i) browsing on mobile phones, (ii) the operation of search engines and (iii) the extraction of data of meetings, design afresh the websites of various DCs, including consolidating DC members' personal files and records of declaration of interests they made in respect of funding applications, as well as providing complete records of DC members' attendance at meetings and speeches (such as providing the relevant records of each DC member at each meeting in CSV format);
+(6) whether it will, on the data.gov.hk portal, expand the scope of datasets in opening up data relating to DC members and meetings;
+(7) whether it will allocate additional resources or set up funds to assist the various DCs in making good use of technology, so as to enhance the efficiency of policy discussions;
+(8) given that the Government will organize the City I&T Grand Challenge next year in which participants will have to offer innovation and technology-based solutions with the objective to improve the public's daily lives or benefit specific communities, whether the Government will invite the various DCs to take part in it, thereby enabling the project to better suit the needs of the public in their daily lives;
+(9) as the Government has indicated that it will produce analyses relating to community involvement projects for DCs to facilitate their management of DC funds, whether such analyses will be uploaded onto the websites of DCs; if so, of the details; if not, the reasons for that;
+(10) of the number of applications received by each DC in each of the past five years for access to information under the Code on Access to Information, and among them, the respective numbers and percentages of those approved and rejected; if there were rejected applications, of the reasons for that; and
+(11) whether it will consider amending the District Councils Ordinance (Cap. 547) to stipulate that DCs must broadcast their meetings live, so as to enhance the transparency of operation?
+Reply:
+President,
+The Government agrees that enhancing the transparency of operation of District Councils (DCs) and opening up data of DCs help encourage members of the public to participate in district affairs. At present, DC Secretariats (Secretariats) upload documents of DC, committee and working group meetings, including agendas, discussion papers, minutes and audio recordings of meetings, onto the DC websites, except for matters discussed at closed-door meetings (Note) (e.g. those concerning internal administration and sensitive information involving tenders and quotations etc).
+​
+All along, Secretariats and DCs are committed to enhancing their services in making documents available to the public and uploading documents onto the DC websites. In the past few years, the Home Affairs Department (HAD) has been strengthening its support to Secretariats by increasing the manpower of Secretariats. Since 2017-18, about 80 posts, including Executive Officers and Clerical Grades staff, have been created in District Offices to enhance the effectiveness of the District Administration Scheme. Meanwhile, we allocated additional resources for Secretariats to recruit non-civil service contract staff to expedite the process of uploading of various documents onto the DC websites and to handle opening up of data.
+Notwithstanding the above efforts, the volume of documents handled by Secretariats remains huge as there are currently 104 committees and 250 working groups under the 18 DCs and some Secretariats will have to arrange the uploading of documents having regard to the manpower. Secretariats have strived to prioritise different work demands in order to strike a balance. Members of the public may approach the relevant Secretariats for assistance if they wish to view the small number of documents which has not yet been uploaded or other open documents.
+My reply to various parts of the question is as follows:
+(1) and (2) Details of documents made public by DCs are at Annex 1.
+(3) to (7) We understand that the interface and function of the DC websites should be designed for the convenience of the public. In that regard, we modified the design of DC websites in 2017 to facilitate public browsing of DC information on mobile phones. Most documents currently available on the DC websites are in DOC/DOCX format or PDF format produced from the original text documents for easy searching by members of the public via search engines. For example, for the Registration of Members' Interests completed by DC Members, in addition to the scanned version, we started to provide the text version in 2018 for easy browsing and searching by members of the public.
+Furthermore, in line with the Government's policy of opening up government data in the 2018 Policy Address, the HAD formulated and published its open data plan in 2018 and uploaded relevant DC datasets, including the list of DC Members, meeting calendar of DCs and attendance record of DC Members onto the data.gov.hk portal. We have consolidated the above information from 18 DCs and uploaded the information in CSV format, a machine-readable format. DCs have also included records of voting results in minutes of meeting, which are uploaded onto their websites for public access.
+We will closely monitor the operational needs of DCs and consider further opening up of data. We will examine the manpower and resources implications and facilitate feasible proposals from the DCs for opening up data, striking a balance between facilitating public access to DC information and the optimal use of recources.
+Furthermore, we will conduct timely review on the information uploaded onto the data.gov.hk portal to examine if more suitable DC datasets could be made available on the portal for further opening up the data to facilitate public browsing.
+​
+(8) The City Innovation and Technology Grand Challenge encourages the general public to use innovation and technology (I&T) to tackle issues that are closely related to our daily lives and at the same time enhances the awareness and importance of I&T in the society. The Government will set a theme for the competition every year for participants to put forward solutions with I&T elements, with the objective of improving the public's daily lives or benefiting specific community groups. The Innovation and Technology Commission will consult relevant government departments and stakeholders during the preparation process.
+(9) The HAD has prepared an analysis on the use of DC funding since 2017-18 for DCs' reference. When considering funding allocation for various community involvement projects, they can make reference to that analysis. We will upload the relevant analysis onto the HAD website, and individual Secretariats may arrange for the uploading of the analysis onto the DC websites in accordance with their established practice.
+(10) The number of applications for access to information made under the Code on Access to Information handled by DCs from 2015 to 2019 is at Annex 2.
+(11) Currently, the operation of DCs is already fairly transparent. Members of the public may obtain various types of information from the DC websites such as agendas, papers, audio recordings and minutes of meeting, and observe these meetings. When important issues are discussed at the DCs, they receive extensive reporting by the media, including television and electronic media.
+Details of the arrangement of DC meetings are set out in the District Council Standing Orders (DCSO), instead of the District Councils Ordinance. In fact, according to the model text of the DCSO provided by the HAD for DCs' reference, members of public observing the meeting are not forbidden to broadcast live during the meeting but are only prohibited from disrupting the conduct of meeting. DCs can allow members of the public who observe a meeting to broadcast live provided that the meeting is not disrupted. It is fairly common for members of public observing the meeting to broadcast DC meetings live.
+Note: As stipulated in the model text of the District Council Standing Orders issued by the HAD, unless the Chairman of the DC on the advice of members determines otherwise, any meeting of the DC or any part of such a meeting shall be open to the public (including the media).
+Ends/Wednesday, December 11, 2019
+Issued at HKT 18:55
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases
+Attachment
+LCQ18 Annex 1
+LCQ18 Annex 2

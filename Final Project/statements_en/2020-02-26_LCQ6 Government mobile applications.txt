@@ -1,0 +1,47 @@
+Date: 2020-02-26
+Title: LCQ6: Government mobile applications
+URL: https://www.info.gov.hk/gia/general/202002/26/P2020022500808.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ6: Government mobile applications
+LCQ6: Government mobile applications
+************************************
+Following is a question by the Hon Paul Tse and a written reply by the Secretary for Innovation and Technology, Mr Nicholas W Yang, in the Legislative Council today (February 26):
+Question:
+It is learnt that the Government has launched more than 200 mobile applications (apps) in recent years, costing the public coffers more than $22 million. The Office of the Government Chief Information Officer promulgated in 2018 the "Practice Guide for Developing Mobile Apps", requesting government departments to review whether those apps that have been launched for many years but not yet reached 10 000 accumulated downloads should be decommissioned. It has been reported that just a few government departments integrated or decommissioned their apps last year. As of now, as many as 80 of such apps remain available for public download, involving an annual recurrent expenditure of more than $2 million. Among such apps, quite a number of them recorded zero growth in the number of downloads from April to October last year (e.g. the "1069 Test Finder" launched by the Department of Health). Furthermore, some apps overlap with one another in function (e.g. Radio Television Hong Kong offering seven different apps for public download with "RTHK On The Go" (which has the largest number of downloads among such apps) featuring at the same time those functions provided by the other six apps), causing members of the public to query whether the Government is wasting public money. In addition, some members of the public have relayed to me that government apps are often launched for the sake of launching and could not cater for the needs of members of the public. On the other hand, they suggest that in view of the scattered anti-epidemic information at present, the Government should consider developing a platform for central dissemination of the relevant information. In this connection, will the Government inform this Council:
+(1) in view of the severe situation of the Wuhan pneumonia epidemic at present and the prevalence of voluminous fake news and rumours on the Internet, whether the Government will, in response to the criticisms and suggestions of members of the public, launch apps that meet the needs and demands of the community as far as possible, and provide various sorts of real-time information on the epidemic (including information on the face masks and other supplies purchased by the Government and distributed to various government departments, the provision of subsidies or assistance to local organisations in producing face masks, as well as the supply situation of anti-epidemic items); if so, of the details of the apps, the costs of development and the recurrent expenditures involved;
+(2) whether various government departments have launched any new apps for public use since the end of April 2019; if so, of the intent and purposes of developing these apps, the target users, the costs of development, and the monthly recurrent expenditures involved;
+(3) of the respective (i) numbers of downloads and (ii) month-on-month growth rates of the numbers of active users in respect of the new apps mentioned in (2) since their launch; whether those figures have reached the targets set for the apps when they were first launched;
+(4) of the total number of apps currently provided by the Government for public download; among such apps, the number of those which have experienced no growth in their numbers of downloads or active users in the past six months; whether reviews have been conducted to identify the reasons for the unpopularity of those apps; and whether the needs of the target users had been taken as the basis for consideration before a decision was made on whether or not those apps should be developed; if so, of the details; if not, the reasons for that;
+(5) whether it has assessed if the apps with no growth in their numbers of downloads or active users referred to in (4) have met the criteria for the decommissioning of apps as specified in the "Practice Guide for Developing Mobile Apps"; and
+(6) as some members of the public have criticised that some apps launched by government departments overlap with or resemble one another in function and are wasting public money in effect, whether the Government will consider further urging the various government departments to step up their efforts in integrating the apps, so as to avoid confusing members of the public on the one hand and cut back unnecessary public expenditure on the other?
+Reply:
+President,
+Having consulted the relevant government bureaux/departments (B/Ds), the reply to the various parts of the question is as follows:
+(1) According to the "Practice Guide for Developing Mobile Apps" issued by the Office of the Government Chief Information Officer (OGCIO) in November 2018, for purposes confined to information dissemination, B/Ds should, instead of using mobile apps, consider developing websites with a responsive design so that the public can access information through computers and smartphones. In view of the development of the COVID-19 epidemic, the Centre for Health Protection (CHP) of the Department of Health has set up a dedicated website (
+www.coronavirus.gov.hk
+) to disseminate information related to the epidemic. In addition, the relevant B/Ds collaborate with the local information technology industry to launch the "Novel Coronavirus Infection Local Situation Interactive Map Dashboard" (
+chp-dashboard.geodata.gov.hk
+) (the Interactive Map) on February 3. It makes use of government open data to enable the public to more conveniently learn about the latest developments of the epidemic at a glance on their computers and smartphones. CHP's dedicated website, the Interactive Map, and the related open data on the Public Sector Information Portal will be updated from time to time.
+The development and continuous enhancements to CHP's dedicated web page and the Interactive Map are undertaken through deployment of internal existing resources of B/Ds without involving any new resources. The technical support provided by the local industry is entirely voluntary in nature and does not involve any charges.
+(2) and (3) The Government has launched two new mobile apps since April 2019, namely the "E&M Connect" and "E&M Trade App" under the Electrical and Mechanical Services Department (EMSD) in December 2019. The relevant information is at Annex. Both apps are at an early stage and new functions will be added progressively by the EMSD to bring greater convenience to the public and electrical and mechanical practitioners. The EMSD will keep in view closely and review the usage as well as make timely improvements to meet users' needs.
+(4) and (5) As of end-January 2020, B/Ds provide a total of 82 mobile apps for download by the public. These mobile apps have all recorded growth in the number of downloads over the past six months. As required by OGCIO, B/Ds have to conduct regular reviews after launching a mobile app, including whether the app has met users' needs and achieved the expected results and cost-effectiveness. If the projects/measures related to the mobile app have been completed, or there are other more effective ways to provide such service, or the needs of the target user groups have changed, B/Ds should consider decommissioning the app. For those mobile apps designed for the general public, B/Ds have to decommission them if the number of downloads was below 10 000 one year after the launch.
+(6) Having regard to their operational needs and modes of service, B/Ds will take into account various factors, including the objectives and usage of the apps, needs of the target user groups, resources required for development and maintenance of the mobile apps, whether the additional functions would render the apps complicated and difficult to use, etc., to decide whether to develop new mobile apps or consolidate existing ones. For example, in 2018, the Transport Department integrated "eTraffic News", "HKeRouting" and "HKeTransport" into the existing "HKeMobility" mobile app.
+The OGCIO will circulate the relevant guidelines regularly to remind B/Ds of the need to launch and update mobile apps or consolidate existing mobile apps in a cost-effective manner in accordance with the "Practice Guide for Developing Mobile Apps".
+Ends/Wednesday, February 26, 2020
+Issued at HKT 11:45
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases
+Attachment
+LCQ6  Annex

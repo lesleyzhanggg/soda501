@@ -1,0 +1,45 @@
+Date: 2020-06-03
+Title: LCQ18: 5G mobile communications and technology
+URL: https://www.info.gov.hk/gia/general/202006/03/P2020060300263.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ18: 5G mobile communications and technology
+LCQ18: 5G mobile communications and technology
+**********************************************
+Following is a question by the Hon Chan Hak-kan and a written reply by the Secretary for Commerce and Economic Development, Mr Edward Yau, in the Legislative Council today (June 3):
+Question:
+Three mobile network operators (MNOs) already launched the commercial fifth generation (5G) mobile communications services on April 1 this year. In this connection, will the Government inform this Council:
+(1) of the current coverage of 5G mobile communications services;
+(2) of its plan to extend the coverage of 5G mobile communications services and the relevant timetable;
+(3) of the current number of 5G radio base stations across the territory and, among them, the number and percentage of those provided in government premises;
+(4) as the Government has indicated that it is proactively exploring with satellite operators the feasibility of relocating the satellite earth stations from Tai Po to Chung Hom Kok Teleport to enable MNOs to make wider use of all 5G bands (including the 3.5 GHz band) in Hong Kong for the provision of services, of the progress of the relevant exploration;
+(5) whether it knows the current number of 5G cybersecurity specialists in Hong Kong; of the Government’s measures to increase the number of such specialists to help promote the development of 5G mobile communications services; and
+(6) as the Office of the Communications Authority launched the "Subsidy Scheme for Encouraging Early Deployment of 5G" under the Anti-epidemic Fund last month to encourage the various sectors to deploy 5G technology to foster innovation and smart city applications, of the effectiveness of the Scheme as envisaged by the Government?
+Reply:
+President,
+In consultation with the Office of the Government Chief Information Officer, our reply to the Member's question is as follows:
+(1) to (3) Mobile network operators in Hong Kong launched 5G services in April 2020. The strategies and timetables for the rollout of 5G networks are commercial decisions of the operators. Experience shows that in developing a new generation of mobile services, operators generally adopt a gradual and orderly approach in rolling out networks, usually with coverage first provided to hotspots with high pedestrian flow or high usage and then gradually extended to other locations in the territory.
+As at end-May 2020, the Office of the Communications Authority examined applications for the use of a total of over 3 800 5G base stations, about 5 per cent of which located at government premises.
+(4) To resolve the issue of the 5G restriction zone in Tai Po in the long run, the Government is proactively discussing with the related satellite operators about relocation of their satellite earth stations from Tai Po to Chung Hom Kok. Since relocation of the facilities of satellite earth stations involves complex land allocation and technical issues, including site selection, land grant, site formation, construction works and establishment of another set of satellite antennae, as well as the need to ensure that operation of the existing satellites in orbit will not be affected, the related relocation is expected to take several years to complete.
+The restriction zone only affects 5G base stations of the 3.5 GHz band. Operators can still make use of the radio spectrum in other bands (e.g. the 3.3 GHz, 4.9 GHz and 26/28 GHz bands), and re-farm their existing spectrum used for providing the second to the fourth generation mobile services to provide 5G services in Tai Po district.
+(5) According to the information of the Information Systems Audit and Control Association (ISACA) as well as the International Information Systems Security Certification Consortium, Inc. (ISC)², there were over 5 300 personnel with major professional qualifications in cybersecurity in Hong Kong as at the end of 2019. Considering that some may possess more than one relevant qualification concurrently, the estimated number of personnel undertaking information security and related duties was over 4 000.
+The Government is committed to facilitating the development and manpower training of the information technology (IT) security industry in Hong Kong by providing support in organising events, including conferences and professional training (e.g. cloud security professional certification, certification courses on information security and the annual Information Security Summit), promoting security certification and professional qualification among enterprises, organisations and IT personnel, and encouraging tertiary institutions to provide more relevant programmes in IT-related disciplines.
+Moreover, to attract talent from around the world to Hong Kong, the Government has launched a Technology Talent Admission Scheme in 2018 to provide a fast-track arrangement for admission of overseas and Mainland research and development talent (including cybersecurity specialists) so as to meet the needs of local economic and technological development.
+(6) The Subsidy Scheme for Encouraging Early Deployment of 5G under the Anti-epidemic Fund launched on May 5, 2020 aims to foster innovative communications technology and smart city applications so as to improve operational efficiency and service quality, thereby enhancing Hong Kong's overall competitiveness.
+Approved projects under the Scheme should be able to bring substantive benefits (such as enhancement of efficiency, productivity and service quality) to the business or sector concerned and demonstrate innovation or cross-sectoral synergy through the deployment of 5G technology. The Government will subsidise 50 per cent of the actual cost directly relevant to the deployment of 5G technology in a project, subject to a cap of $500,000. Around 100 qualified projects will be subsidised. As at end-May 2020, 50 applications have been received. We anticipate that the first batch of applications will be approved and the first portion of subsidy will be disbursed by the end of June.
+We will require the grantees to share and exchange with the trade and industry their experiences in the enhancement of operational efficiency and services through the deployment of 5G technology upon completion of their projects so as to benefit different sectors and facilitate the continuous innovation of the Hong Kong economy.
+Ends/Wednesday, June 3, 2020
+Issued at HKT 15:00
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases

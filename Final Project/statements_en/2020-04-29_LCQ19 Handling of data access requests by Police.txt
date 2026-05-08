@@ -1,0 +1,37 @@
+Date: 2020-04-29
+Title: LCQ19: Handling of data access requests by Police
+URL: https://www.info.gov.hk/gia/general/202004/29/P2020042900355.htm
+Language: English
+============================================================
+
+Go to main content
+Brand HK
+|
+Font Size:
+|
+Sitemap
+LCQ19: Handling of data access requests by Police
+LCQ19: Handling of data access requests by Police
+*************************************************
+Following is a question by the Dr Hon Kwok Ka-ki and a written reply by the Secretary for Security, Mr John Lee, in the Legislative Council today (April 29):
+Question:
+Under section 18 of the Personal Data (Privacy) Ordinance (Cap 486), any individual is entitled to make a data access request to a data user (e.g. a government department), i.e. to be informed whether the data user holds the personal data of which the individual is the data subject, and (if the data user holds such data) be provided with a copy of such data. Under sections 19 and 28 of the Ordinance, a data user must comply with such a request within a specified period, and may charge, for complying with the request, a fee that is not excessive. Regarding the Police's handling of data access requests made by members of the public, will the Government inform this Council:
+(1) of (i) the respective numbers of requests received and approved by the Police for providing copies of their video footages, and (ii) the highest, lowest, average and total amounts of fees charged by the Police to the applicants, in each of the past three years; how the Police determine the amount of fees to be charged; if the Police do not possess the above information, whether they will compile such statistics immediately; and
+(2) of the procedure under which the Police provide copies of their video footages to data subjects; whether such procedure involves the step of using software to blur or redact the personal data (such as the facial images) of persons other than the applicants who are captured in the footages, and whether fees are charged for this step; if so, of the details; if such step is not involved, how the Police ensure that they will not, in providing copies of their video footages, disclose the personal data of other persons without such persons’ consent?
+Reply:
+President,
+The Personal Data (Privacy) Ordinance (PDPO) (Cap 486) is applicable to public and private organisations as well as government departments. All organisations/departments are required to comply with PDPO and its relevant Data Protection Principles when collecting and using personal data, including the requirements about the purpose of data collection, data security and data use.
+Section 10 of the Police Force Ordinance (Cap 232) stipulates that the statutory duties of the Police force include taking lawful measures for preserving public peace, preventing and detecting crimes and offences, as well as preventing injuries to life and property, etc. Personal data collected by the Police in the course of case investigation will only be used for the purposes of crime detection and prevention. The Police have clear and strict guidelines and procedures for handling video clips captured by body-worn video cameras and digital camcorders. Video clips with investigative or evidential value will be classified as evidence and be retained until the relevant investigation or judicial procedures are completed. Video clips carrying no investigative or evidential value, or constituting no other legitimate purpose, will be deleted after 31 days from the date of recording.
+A consolidated reply to various parts of Dr Hon Kwok Ka-ki's question is as follows:
+The Police will handle data access requests (DAR) in accordance with PDPO. Section 18 of PDPO enables an individual to be informed by a data user whether the data user holds personal data of which the individual is the data subject and if so, be supplied with a copy of such data. Normally, except where a DAR falls within the circumstances in which the request can be refused under section 20 of PDPO, or that the data user has relied on the exemption provisions in Part VIII of PDPO to refuse the DAR, the data user will usually supply a copy of the requested data to the requestor within 40 calendar days after receiving the request.
+If the Police decide to comply with a DAR, they will supply a copy of the personal data to the data subject as far as practicable. PDPO enables a data user to impose a fee for complying with a DAR which should not be considered "excessive". A data user is allowed to charge the requestor only for the costs which are directly related to and necessary for complying with a DAR, and the fee imposed will depend on the scope and complexity of the request concerned.
+Besides, if the data requested by a data subject comprises data of a third party, the Police will remove personal data of a third party in the requested copy unless they are satisfied that the third party has consented to the disclosure. According to the Guidance Note of the Privacy Commissioner for Personal Data, Hong Kong, a data user may charge the costs for technical assistance in duplicating and editing a tape to remove images of other individuals.
+The Police do not maintain the other statistics requested in the question.
+Ends/Wednesday, April 29, 2020
+Issued at HKT 15:30
+NNNN
+Archives
+Yesterday's Press Releases
+Back to Index Page
+Back to top
+Today's Press Releases
